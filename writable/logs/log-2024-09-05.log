@@ -1,0 +1,509 @@
+CRITICAL - 2024-09-05 19:27:56 --> Class "Locale" not found
+in SYSTEMPATH\CodeIgniter.php on line 214.
+ 1 ROOTPATH\spark(88): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2024-09-05 19:27:56 --> Uncaught Error: Class "Locale" not found in C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php:498
+Stack trace:
+#0 C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php(227): CodeIgniter\HTTP\IncomingRequest->setLocale('es')
+#1 C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php(184): CodeIgniter\HTTP\IncomingRequest->detectLocale(Object(Config\App))
+#2 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(563): CodeIgniter\HTTP\IncomingRequest->__construct(Object(Config\App), Object(CodeIgniter\HTTP\SiteURI), '', Object(CodeIgniter\HTTP\UserAgent))
+#3 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#4 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(NULL, false)
+#5 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#6 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(519): CodeIgniter\Config\BaseService::getSharedInstance('request', NULL)
+#7 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request()
+#8 C:\wamp64\www\proyectopanaderia\system\Debug\Exceptions.php(135): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#9 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Error))
+#10 {main}
+  thrown
+【Previous Exception】
+Error
+Class "Locale" not found
+#0 C:\wamp64\www\proyectopanaderia\spark(88): CodeIgniter\CodeIgniter->initialize()
+#1 {main}
+in SYSTEMPATH\HTTP\IncomingRequest.php on line 498.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-05 19:30:37 --> Class "Locale" not found
+in SYSTEMPATH\CodeIgniter.php on line 214.
+ 1 ROOTPATH\spark(88): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2024-09-05 19:30:37 --> Uncaught Error: Class "Locale" not found in C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php:498
+Stack trace:
+#0 C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php(227): CodeIgniter\HTTP\IncomingRequest->setLocale('es')
+#1 C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php(184): CodeIgniter\HTTP\IncomingRequest->detectLocale(Object(Config\App))
+#2 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(563): CodeIgniter\HTTP\IncomingRequest->__construct(Object(Config\App), Object(CodeIgniter\HTTP\SiteURI), '', Object(CodeIgniter\HTTP\UserAgent))
+#3 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#4 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(NULL, false)
+#5 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#6 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(519): CodeIgniter\Config\BaseService::getSharedInstance('request', NULL)
+#7 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request()
+#8 C:\wamp64\www\proyectopanaderia\system\Debug\Exceptions.php(135): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#9 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Error))
+#10 {main}
+  thrown
+【Previous Exception】
+Error
+Class "Locale" not found
+#0 C:\wamp64\www\proyectopanaderia\spark(88): CodeIgniter\CodeIgniter->initialize()
+#1 {main}
+in SYSTEMPATH\HTTP\IncomingRequest.php on line 498.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-05 19:30:38 --> Class "Locale" not found
+in SYSTEMPATH\CodeIgniter.php on line 214.
+ 1 ROOTPATH\spark(88): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2024-09-05 19:30:38 --> Uncaught Error: Class "Locale" not found in C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php:498
+Stack trace:
+#0 C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php(227): CodeIgniter\HTTP\IncomingRequest->setLocale('es')
+#1 C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php(184): CodeIgniter\HTTP\IncomingRequest->detectLocale(Object(Config\App))
+#2 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(563): CodeIgniter\HTTP\IncomingRequest->__construct(Object(Config\App), Object(CodeIgniter\HTTP\SiteURI), '', Object(CodeIgniter\HTTP\UserAgent))
+#3 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#4 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(NULL, false)
+#5 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#6 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(519): CodeIgniter\Config\BaseService::getSharedInstance('request', NULL)
+#7 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request()
+#8 C:\wamp64\www\proyectopanaderia\system\Debug\Exceptions.php(135): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#9 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Error))
+#10 {main}
+  thrown
+【Previous Exception】
+Error
+Class "Locale" not found
+#0 C:\wamp64\www\proyectopanaderia\spark(88): CodeIgniter\CodeIgniter->initialize()
+#1 {main}
+in SYSTEMPATH\HTTP\IncomingRequest.php on line 498.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-05 19:33:27 --> Class "Locale" not found
+in SYSTEMPATH\CodeIgniter.php on line 214.
+ 1 ROOTPATH\spark(88): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2024-09-05 19:33:27 --> Uncaught Error: Class "Locale" not found in C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php:498
+Stack trace:
+#0 C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php(227): CodeIgniter\HTTP\IncomingRequest->setLocale('es')
+#1 C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php(184): CodeIgniter\HTTP\IncomingRequest->detectLocale(Object(Config\App))
+#2 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(563): CodeIgniter\HTTP\IncomingRequest->__construct(Object(Config\App), Object(CodeIgniter\HTTP\SiteURI), '', Object(CodeIgniter\HTTP\UserAgent))
+#3 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#4 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(NULL, false)
+#5 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#6 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(519): CodeIgniter\Config\BaseService::getSharedInstance('request', NULL)
+#7 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request()
+#8 C:\wamp64\www\proyectopanaderia\system\Debug\Exceptions.php(135): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#9 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Error))
+#10 {main}
+  thrown
+【Previous Exception】
+Error
+Class "Locale" not found
+#0 C:\wamp64\www\proyectopanaderia\spark(88): CodeIgniter\CodeIgniter->initialize()
+#1 {main}
+in SYSTEMPATH\HTTP\IncomingRequest.php on line 498.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-05 19:34:04 --> Class "Locale" not found
+in SYSTEMPATH\CodeIgniter.php on line 214.
+ 1 ROOTPATH\spark(88): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2024-09-05 19:34:04 --> Uncaught Error: Class "Locale" not found in C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php:498
+Stack trace:
+#0 C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php(227): CodeIgniter\HTTP\IncomingRequest->setLocale('es')
+#1 C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php(184): CodeIgniter\HTTP\IncomingRequest->detectLocale(Object(Config\App))
+#2 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(563): CodeIgniter\HTTP\IncomingRequest->__construct(Object(Config\App), Object(CodeIgniter\HTTP\SiteURI), '', Object(CodeIgniter\HTTP\UserAgent))
+#3 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#4 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(NULL, false)
+#5 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#6 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(519): CodeIgniter\Config\BaseService::getSharedInstance('request', NULL)
+#7 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request()
+#8 C:\wamp64\www\proyectopanaderia\system\Debug\Exceptions.php(135): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#9 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Error))
+#10 {main}
+  thrown
+【Previous Exception】
+Error
+Class "Locale" not found
+#0 C:\wamp64\www\proyectopanaderia\spark(88): CodeIgniter\CodeIgniter->initialize()
+#1 {main}
+in SYSTEMPATH\HTTP\IncomingRequest.php on line 498.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-05 19:34:39 --> Class "Locale" not found
+in SYSTEMPATH\CodeIgniter.php on line 214.
+ 1 ROOTPATH\spark(88): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2024-09-05 19:34:39 --> Uncaught Error: Class "Locale" not found in C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php:498
+Stack trace:
+#0 C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php(227): CodeIgniter\HTTP\IncomingRequest->setLocale('es')
+#1 C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php(184): CodeIgniter\HTTP\IncomingRequest->detectLocale(Object(Config\App))
+#2 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(563): CodeIgniter\HTTP\IncomingRequest->__construct(Object(Config\App), Object(CodeIgniter\HTTP\SiteURI), '', Object(CodeIgniter\HTTP\UserAgent))
+#3 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#4 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(NULL, false)
+#5 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#6 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(519): CodeIgniter\Config\BaseService::getSharedInstance('request', NULL)
+#7 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request()
+#8 C:\wamp64\www\proyectopanaderia\system\Debug\Exceptions.php(135): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#9 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Error))
+#10 {main}
+  thrown
+【Previous Exception】
+Error
+Class "Locale" not found
+#0 C:\wamp64\www\proyectopanaderia\spark(88): CodeIgniter\CodeIgniter->initialize()
+#1 {main}
+in SYSTEMPATH\HTTP\IncomingRequest.php on line 498.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-05 19:35:02 --> Class "Locale" not found
+in SYSTEMPATH\CodeIgniter.php on line 214.
+ 1 ROOTPATH\spark(88): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2024-09-05 19:35:02 --> Uncaught Error: Class "Locale" not found in C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php:498
+Stack trace:
+#0 C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php(227): CodeIgniter\HTTP\IncomingRequest->setLocale('es')
+#1 C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php(184): CodeIgniter\HTTP\IncomingRequest->detectLocale(Object(Config\App))
+#2 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(563): CodeIgniter\HTTP\IncomingRequest->__construct(Object(Config\App), Object(CodeIgniter\HTTP\SiteURI), '', Object(CodeIgniter\HTTP\UserAgent))
+#3 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#4 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(NULL, false)
+#5 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#6 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(519): CodeIgniter\Config\BaseService::getSharedInstance('request', NULL)
+#7 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request()
+#8 C:\wamp64\www\proyectopanaderia\system\Debug\Exceptions.php(135): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#9 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Error))
+#10 {main}
+  thrown
+【Previous Exception】
+Error
+Class "Locale" not found
+#0 C:\wamp64\www\proyectopanaderia\spark(88): CodeIgniter\CodeIgniter->initialize()
+#1 {main}
+in SYSTEMPATH\HTTP\IncomingRequest.php on line 498.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-05 19:36:47 --> Class "Locale" not found
+in SYSTEMPATH\CodeIgniter.php on line 214.
+ 1 ROOTPATH\spark(88): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2024-09-05 19:36:47 --> Uncaught Error: Class "Locale" not found in C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php:498
+Stack trace:
+#0 C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php(227): CodeIgniter\HTTP\IncomingRequest->setLocale('es')
+#1 C:\wamp64\www\proyectopanaderia\system\HTTP\IncomingRequest.php(184): CodeIgniter\HTTP\IncomingRequest->detectLocale(Object(Config\App))
+#2 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(563): CodeIgniter\HTTP\IncomingRequest->__construct(Object(Config\App), Object(CodeIgniter\HTTP\SiteURI), '', Object(CodeIgniter\HTTP\UserAgent))
+#3 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#4 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(NULL, false)
+#5 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#6 C:\wamp64\www\proyectopanaderia\system\Config\Services.php(519): CodeIgniter\Config\BaseService::getSharedInstance('request', NULL)
+#7 C:\wamp64\www\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request()
+#8 C:\wamp64\www\proyectopanaderia\system\Debug\Exceptions.php(135): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#9 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Error))
+#10 {main}
+  thrown
+【Previous Exception】
+Error
+Class "Locale" not found
+#0 C:\wamp64\www\proyectopanaderia\spark(88): CodeIgniter\CodeIgniter->initialize()
+#1 {main}
+in SYSTEMPATH\HTTP\IncomingRequest.php on line 498.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-05 19:42:39 --> Class "Locale" not found
+in SYSTEMPATH\CodeIgniter.php on line 214.
+ 1 ROOTPATH\spark(88): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2024-09-05 19:42:39 --> Uncaught Error: Class "Locale" not found in C:\xampp\htdocs\proyectopanaderia\system\HTTP\IncomingRequest.php:498
+Stack trace:
+#0 C:\xampp\htdocs\proyectopanaderia\system\HTTP\IncomingRequest.php(227): CodeIgniter\HTTP\IncomingRequest->setLocale('es')
+#1 C:\xampp\htdocs\proyectopanaderia\system\HTTP\IncomingRequest.php(184): CodeIgniter\HTTP\IncomingRequest->detectLocale(Object(Config\App))
+#2 C:\xampp\htdocs\proyectopanaderia\system\Config\Services.php(563): CodeIgniter\HTTP\IncomingRequest->__construct(Object(Config\App), Object(CodeIgniter\HTTP\SiteURI), '', Object(CodeIgniter\HTTP\UserAgent))
+#3 C:\xampp\htdocs\proyectopanaderia\system\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#4 C:\xampp\htdocs\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(NULL, false)
+#5 C:\xampp\htdocs\proyectopanaderia\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#6 C:\xampp\htdocs\proyectopanaderia\system\Config\Services.php(519): CodeIgniter\Config\BaseService::getSharedInstance('request', NULL)
+#7 C:\xampp\htdocs\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request()
+#8 C:\xampp\htdocs\proyectopanaderia\system\Debug\Exceptions.php(135): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#9 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Error))
+#10 {main}
+  thrown
+【Previous Exception】
+Error
+Class "Locale" not found
+#0 C:\xampp\htdocs\proyectopanaderia\spark(88): CodeIgniter\CodeIgniter->initialize()
+#1 {main}
+in SYSTEMPATH\HTTP\IncomingRequest.php on line 498.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-05 19:46:29 --> Class "Locale" not found
+in SYSTEMPATH\CodeIgniter.php on line 214.
+ 1 ROOTPATH\spark(88): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2024-09-05 19:46:29 --> Uncaught Error: Class "Locale" not found in C:\xampp\htdocs\proyectopanaderia\system\HTTP\IncomingRequest.php:498
+Stack trace:
+#0 C:\xampp\htdocs\proyectopanaderia\system\HTTP\IncomingRequest.php(227): CodeIgniter\HTTP\IncomingRequest->setLocale('es')
+#1 C:\xampp\htdocs\proyectopanaderia\system\HTTP\IncomingRequest.php(184): CodeIgniter\HTTP\IncomingRequest->detectLocale(Object(Config\App))
+#2 C:\xampp\htdocs\proyectopanaderia\system\Config\Services.php(563): CodeIgniter\HTTP\IncomingRequest->__construct(Object(Config\App), Object(CodeIgniter\HTTP\SiteURI), '', Object(CodeIgniter\HTTP\UserAgent))
+#3 C:\xampp\htdocs\proyectopanaderia\system\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#4 C:\xampp\htdocs\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(NULL, false)
+#5 C:\xampp\htdocs\proyectopanaderia\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#6 C:\xampp\htdocs\proyectopanaderia\system\Config\Services.php(519): CodeIgniter\Config\BaseService::getSharedInstance('request', NULL)
+#7 C:\xampp\htdocs\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request()
+#8 C:\xampp\htdocs\proyectopanaderia\system\Debug\Exceptions.php(135): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#9 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Error))
+#10 {main}
+  thrown
+【Previous Exception】
+Error
+Class "Locale" not found
+#0 C:\xampp\htdocs\proyectopanaderia\spark(88): CodeIgniter\CodeIgniter->initialize()
+#1 {main}
+in SYSTEMPATH\HTTP\IncomingRequest.php on line 498.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-05 19:46:30 --> Class "Locale" not found
+in SYSTEMPATH\CodeIgniter.php on line 214.
+ 1 ROOTPATH\spark(88): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2024-09-05 19:46:30 --> Uncaught Error: Class "Locale" not found in C:\xampp\htdocs\proyectopanaderia\system\HTTP\IncomingRequest.php:498
+Stack trace:
+#0 C:\xampp\htdocs\proyectopanaderia\system\HTTP\IncomingRequest.php(227): CodeIgniter\HTTP\IncomingRequest->setLocale('es')
+#1 C:\xampp\htdocs\proyectopanaderia\system\HTTP\IncomingRequest.php(184): CodeIgniter\HTTP\IncomingRequest->detectLocale(Object(Config\App))
+#2 C:\xampp\htdocs\proyectopanaderia\system\Config\Services.php(563): CodeIgniter\HTTP\IncomingRequest->__construct(Object(Config\App), Object(CodeIgniter\HTTP\SiteURI), '', Object(CodeIgniter\HTTP\UserAgent))
+#3 C:\xampp\htdocs\proyectopanaderia\system\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#4 C:\xampp\htdocs\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(NULL, false)
+#5 C:\xampp\htdocs\proyectopanaderia\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#6 C:\xampp\htdocs\proyectopanaderia\system\Config\Services.php(519): CodeIgniter\Config\BaseService::getSharedInstance('request', NULL)
+#7 C:\xampp\htdocs\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request()
+#8 C:\xampp\htdocs\proyectopanaderia\system\Debug\Exceptions.php(135): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#9 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Error))
+#10 {main}
+  thrown
+【Previous Exception】
+Error
+Class "Locale" not found
+#0 C:\xampp\htdocs\proyectopanaderia\spark(88): CodeIgniter\CodeIgniter->initialize()
+#1 {main}
+in SYSTEMPATH\HTTP\IncomingRequest.php on line 498.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-05 19:47:06 --> Class "Locale" not found
+in SYSTEMPATH\CodeIgniter.php on line 214.
+ 1 ROOTPATH\spark(88): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2024-09-05 19:47:06 --> Uncaught Error: Class "Locale" not found in C:\xampp\htdocs\proyectopanaderia\system\HTTP\IncomingRequest.php:498
+Stack trace:
+#0 C:\xampp\htdocs\proyectopanaderia\system\HTTP\IncomingRequest.php(227): CodeIgniter\HTTP\IncomingRequest->setLocale('es')
+#1 C:\xampp\htdocs\proyectopanaderia\system\HTTP\IncomingRequest.php(184): CodeIgniter\HTTP\IncomingRequest->detectLocale(Object(Config\App))
+#2 C:\xampp\htdocs\proyectopanaderia\system\Config\Services.php(563): CodeIgniter\HTTP\IncomingRequest->__construct(Object(Config\App), Object(CodeIgniter\HTTP\SiteURI), '', Object(CodeIgniter\HTTP\UserAgent))
+#3 C:\xampp\htdocs\proyectopanaderia\system\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#4 C:\xampp\htdocs\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(NULL, false)
+#5 C:\xampp\htdocs\proyectopanaderia\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#6 C:\xampp\htdocs\proyectopanaderia\system\Config\Services.php(519): CodeIgniter\Config\BaseService::getSharedInstance('request', NULL)
+#7 C:\xampp\htdocs\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request()
+#8 C:\xampp\htdocs\proyectopanaderia\system\Debug\Exceptions.php(135): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#9 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Error))
+#10 {main}
+  thrown
+【Previous Exception】
+Error
+Class "Locale" not found
+#0 C:\xampp\htdocs\proyectopanaderia\spark(88): CodeIgniter\CodeIgniter->initialize()
+#1 {main}
+in SYSTEMPATH\HTTP\IncomingRequest.php on line 498.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-05 19:47:12 --> Class "Locale" not found
+in SYSTEMPATH\CodeIgniter.php on line 214.
+ 1 ROOTPATH\spark(88): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2024-09-05 19:47:12 --> Uncaught Error: Class "Locale" not found in C:\xampp\htdocs\proyectopanaderia\system\HTTP\IncomingRequest.php:498
+Stack trace:
+#0 C:\xampp\htdocs\proyectopanaderia\system\HTTP\IncomingRequest.php(227): CodeIgniter\HTTP\IncomingRequest->setLocale('es')
+#1 C:\xampp\htdocs\proyectopanaderia\system\HTTP\IncomingRequest.php(184): CodeIgniter\HTTP\IncomingRequest->detectLocale(Object(Config\App))
+#2 C:\xampp\htdocs\proyectopanaderia\system\Config\Services.php(563): CodeIgniter\HTTP\IncomingRequest->__construct(Object(Config\App), Object(CodeIgniter\HTTP\SiteURI), '', Object(CodeIgniter\HTTP\UserAgent))
+#3 C:\xampp\htdocs\proyectopanaderia\system\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#4 C:\xampp\htdocs\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(NULL, false)
+#5 C:\xampp\htdocs\proyectopanaderia\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#6 C:\xampp\htdocs\proyectopanaderia\system\Config\Services.php(519): CodeIgniter\Config\BaseService::getSharedInstance('request', NULL)
+#7 C:\xampp\htdocs\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request()
+#8 C:\xampp\htdocs\proyectopanaderia\system\Debug\Exceptions.php(135): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#9 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Error))
+#10 {main}
+  thrown
+【Previous Exception】
+Error
+Class "Locale" not found
+#0 C:\xampp\htdocs\proyectopanaderia\spark(88): CodeIgniter\CodeIgniter->initialize()
+#1 {main}
+in SYSTEMPATH\HTTP\IncomingRequest.php on line 498.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-05 19:47:21 --> Class "Locale" not found
+in SYSTEMPATH\CodeIgniter.php on line 214.
+ 1 ROOTPATH\spark(88): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2024-09-05 19:47:21 --> Uncaught Error: Class "Locale" not found in C:\xampp\htdocs\proyectopanaderia\system\HTTP\IncomingRequest.php:498
+Stack trace:
+#0 C:\xampp\htdocs\proyectopanaderia\system\HTTP\IncomingRequest.php(227): CodeIgniter\HTTP\IncomingRequest->setLocale('es')
+#1 C:\xampp\htdocs\proyectopanaderia\system\HTTP\IncomingRequest.php(184): CodeIgniter\HTTP\IncomingRequest->detectLocale(Object(Config\App))
+#2 C:\xampp\htdocs\proyectopanaderia\system\Config\Services.php(563): CodeIgniter\HTTP\IncomingRequest->__construct(Object(Config\App), Object(CodeIgniter\HTTP\SiteURI), '', Object(CodeIgniter\HTTP\UserAgent))
+#3 C:\xampp\htdocs\proyectopanaderia\system\Config\Services.php(523): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#4 C:\xampp\htdocs\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(NULL, false)
+#5 C:\xampp\htdocs\proyectopanaderia\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#6 C:\xampp\htdocs\proyectopanaderia\system\Config\Services.php(519): CodeIgniter\Config\BaseService::getSharedInstance('request', NULL)
+#7 C:\xampp\htdocs\proyectopanaderia\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request()
+#8 C:\xampp\htdocs\proyectopanaderia\system\Debug\Exceptions.php(135): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#9 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Error))
+#10 {main}
+  thrown
+【Previous Exception】
+Error
+Class "Locale" not found
+#0 C:\xampp\htdocs\proyectopanaderia\spark(88): CodeIgniter\CodeIgniter->initialize()
+#1 {main}
+in SYSTEMPATH\HTTP\IncomingRequest.php on line 498.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2024-09-05 17:54:00 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\proyectopanaderia\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\proyectopanaderia\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), 'panaderia_model...', 3306, '', 0)
+#1 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\settings\src\Handlers\DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\settings\src\Handlers\DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate(NULL)
+#6 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\settings\src\Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has('Config\\Auth', 'sessionConfig', NULL)
+#7 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\settings\src\Helpers\setting_helper.php(25): CodeIgniter\Settings\Settings->get('Auth.sessionCon...')
+#8 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\shield\src\Authentication\Authenticators\Session.php(685): setting('Auth.sessionCon...')
+#9 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\shield\src\Authentication\Authenticators\Session.php(703): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+#10 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\shield\src\Authentication\Authenticators\Session.php(390): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey('id')
+#11 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\shield\src\Authentication\Authenticators\Session.php(374): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+#12 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\shield\src\Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+#13 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\shield\src\Collectors\Auth.php(76): CodeIgniter\Shield\Auth->__call('loggedIn', Array)
+#14 C:\xampp\htdocs\proyectopanaderia\system\Debug\Toolbar\Collectors\BaseCollector.php(226): CodeIgniter\Shield\Collectors\Auth->display()
+#15 C:\xampp\htdocs\proyectopanaderia\system\Debug\Toolbar.php(93): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+#16 C:\xampp\htdocs\proyectopanaderia\system\Debug\Toolbar.php(372): CodeIgniter\Debug\Toolbar->run(1725558839.9219, 0.0726, Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+#17 C:\xampp\htdocs\proyectopanaderia\system\Filters\DebugToolbar.php(40): CodeIgniter\Debug\Toolbar->prepare(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+#18 C:\xampp\htdocs\proyectopanaderia\system\Filters\Filters.php(206): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#19 C:\xampp\htdocs\proyectopanaderia\system\CodeIgniter.php(512): CodeIgniter\Filters\Filters->run('', 'after')
+#20 C:\xampp\htdocs\proyectopanaderia\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#21 C:\xampp\htdocs\proyectopanaderia\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#22 C:\xampp\htdocs\proyectopanaderia\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#23 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\proyectopanaderia\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\settings\src\Handlers\DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\settings\src\Handlers\DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate(NULL)
+#5 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\settings\src\Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has('Config\\Auth', 'sessionConfig', NULL)
+#6 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\settings\src\Helpers\setting_helper.php(25): CodeIgniter\Settings\Settings->get('Auth.sessionCon...')
+#7 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\shield\src\Authentication\Authenticators\Session.php(685): setting('Auth.sessionCon...')
+#8 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\shield\src\Authentication\Authenticators\Session.php(703): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+#9 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\shield\src\Authentication\Authenticators\Session.php(390): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey('id')
+#10 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\shield\src\Authentication\Authenticators\Session.php(374): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+#11 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\shield\src\Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+#12 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\shield\src\Collectors\Auth.php(76): CodeIgniter\Shield\Auth->__call('loggedIn', Array)
+#13 C:\xampp\htdocs\proyectopanaderia\system\Debug\Toolbar\Collectors\BaseCollector.php(226): CodeIgniter\Shield\Collectors\Auth->display()
+#14 C:\xampp\htdocs\proyectopanaderia\system\Debug\Toolbar.php(93): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+#15 C:\xampp\htdocs\proyectopanaderia\system\Debug\Toolbar.php(372): CodeIgniter\Debug\Toolbar->run(1725558839.9219, 0.0726, Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+#16 C:\xampp\htdocs\proyectopanaderia\system\Filters\DebugToolbar.php(40): CodeIgniter\Debug\Toolbar->prepare(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+#17 C:\xampp\htdocs\proyectopanaderia\system\Filters\Filters.php(206): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#18 C:\xampp\htdocs\proyectopanaderia\system\CodeIgniter.php(512): CodeIgniter\Filters\Filters->run('', 'after')
+#19 C:\xampp\htdocs\proyectopanaderia\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#20 C:\xampp\htdocs\proyectopanaderia\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#21 C:\xampp\htdocs\proyectopanaderia\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#22 {main}
+CRITICAL - 2024-09-05 17:54:00 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `settings`
+WHERE `context` IS NULL', [], false)
+ 3 VENDORPATH\codeigniter4\settings\src\Handlers\DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 4 VENDORPATH\codeigniter4\settings\src\Handlers\DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate(null)
+ 5 VENDORPATH\codeigniter4\settings\src\Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has('Config\\Auth', 'sessionConfig', null)
+ 6 VENDORPATH\codeigniter4\settings\src\Helpers\setting_helper.php(25): CodeIgniter\Settings\Settings->get('Auth.sessionConfig')
+ 7 VENDORPATH\codeigniter4\shield\src\Authentication\Authenticators\Session.php(685): setting('Auth.sessionConfig')
+ 8 VENDORPATH\codeigniter4\shield\src\Authentication\Authenticators\Session.php(703): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+ 9 VENDORPATH\codeigniter4\shield\src\Authentication\Authenticators\Session.php(390): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey('id')
+10 VENDORPATH\codeigniter4\shield\src\Authentication\Authenticators\Session.php(374): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+11 VENDORPATH\codeigniter4\shield\src\Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+12 VENDORPATH\codeigniter4\shield\src\Collectors\Auth.php(76): CodeIgniter\Shield\Auth->__call('loggedIn', [])
+13 SYSTEMPATH\Debug\Toolbar\Collectors\BaseCollector.php(226): CodeIgniter\Shield\Collectors\Auth->display()
+14 SYSTEMPATH\Debug\Toolbar.php(93): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+15 SYSTEMPATH\Debug\Toolbar.php(372): CodeIgniter\Debug\Toolbar->run(1725558839.921904, 0.0726, Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+16 SYSTEMPATH\Filters\DebugToolbar.php(40): CodeIgniter\Debug\Toolbar->prepare(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+17 SYSTEMPATH\Filters\Filters.php(206): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+18 SYSTEMPATH\CodeIgniter.php(512): CodeIgniter\Filters\Filters->run('', 'after')
+19 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+20 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+21 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia\\public\\index.php')
+ERROR - 2024-09-05 20:16:32 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\proyectopanaderia\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\proyectopanaderia\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), 'basepanav2', 3306, '', 0)
+#1 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(1409): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(1428): CodeIgniter\Database\BaseConnection->listTables()
+#5 C:\xampp\htdocs\proyectopanaderia\system\Database\MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 C:\xampp\htdocs\proyectopanaderia\system\Database\MigrationRunner.php(168): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 C:\xampp\htdocs\proyectopanaderia\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\proyectopanaderia\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\proyectopanaderia\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\proyectopanaderia\spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\proyectopanaderia\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(1409): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(1428): CodeIgniter\Database\BaseConnection->listTables()
+#4 C:\xampp\htdocs\proyectopanaderia\system\Database\MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 C:\xampp\htdocs\proyectopanaderia\system\Database\MigrationRunner.php(168): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 C:\xampp\htdocs\proyectopanaderia\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 C:\xampp\htdocs\proyectopanaderia\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 C:\xampp\htdocs\proyectopanaderia\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 C:\xampp\htdocs\proyectopanaderia\spark(102): CodeIgniter\CLI\Console->run()
+#10 {main}
+ERROR - 2024-09-05 20:16:55 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\proyectopanaderia\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\proyectopanaderia\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), 'basepanav2', 3306, '', 0)
+#1 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(1409): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(1428): CodeIgniter\Database\BaseConnection->listTables()
+#5 C:\xampp\htdocs\proyectopanaderia\system\Database\MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 C:\xampp\htdocs\proyectopanaderia\system\Database\MigrationRunner.php(648): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 C:\xampp\htdocs\proyectopanaderia\system\Commands\Database\MigrateStatus.php(112): CodeIgniter\Database\MigrationRunner->getHistory('')
+#8 C:\xampp\htdocs\proyectopanaderia\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\MigrateStatus->run(Array)
+#9 C:\xampp\htdocs\proyectopanaderia\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate:status', Array)
+#10 C:\xampp\htdocs\proyectopanaderia\spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\proyectopanaderia\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(1409): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(1428): CodeIgniter\Database\BaseConnection->listTables()
+#4 C:\xampp\htdocs\proyectopanaderia\system\Database\MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 C:\xampp\htdocs\proyectopanaderia\system\Database\MigrationRunner.php(648): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 C:\xampp\htdocs\proyectopanaderia\system\Commands\Database\MigrateStatus.php(112): CodeIgniter\Database\MigrationRunner->getHistory('')
+#7 C:\xampp\htdocs\proyectopanaderia\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\MigrateStatus->run(Array)
+#8 C:\xampp\htdocs\proyectopanaderia\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate:status', Array)
+#9 C:\xampp\htdocs\proyectopanaderia\spark(102): CodeIgniter\CLI\Console->run()
+#10 {main}
+CRITICAL - 2024-09-05 20:16:55 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseConnection.php(1409): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FROM `basepanav2`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(1428): CodeIgniter\Database\BaseConnection->listTables()
+ 4 SYSTEMPATH\Database\MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+ 5 SYSTEMPATH\Database\MigrationRunner.php(648): CodeIgniter\Database\MigrationRunner->ensureTable()
+ 6 SYSTEMPATH\Commands\Database\MigrateStatus.php(112): CodeIgniter\Database\MigrationRunner->getHistory('')
+ 7 SYSTEMPATH\CLI\Commands.php(65): CodeIgniter\Commands\Database\MigrateStatus->run([])
+ 8 SYSTEMPATH\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate:status', [])
+ 9 ROOTPATH\spark(102): CodeIgniter\CLI\Console->run()
+INFO - 2024-09-05 20:19:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 20:19:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 20:19:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 20:20:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 20:22:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 20:22:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 21:33:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 21:33:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 21:34:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 21:39:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 21:39:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 21:39:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 21:39:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 21:40:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 21:40:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 21:40:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 21:40:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 21:40:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 21:40:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 21:40:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 21:40:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 21:41:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 21:41:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 21:41:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 21:41:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 21:41:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-05 21:41:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

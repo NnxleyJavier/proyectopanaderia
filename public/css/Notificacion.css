@@ -1,0 +1,66 @@
+/* Estilos generales */
+
+
+.navbar {
+    background-color: #0a0a0a71;
+    color: #0000003b;
+    padding: 10px 20px;
+}
+
+.contenedor {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    background-color: #00000057;
+    padding: 20px;
+    border-radius: 1px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: auto; /* Centrar horizontalmente */
+    margin-top: 8%; /* Espacio adicional arriba */
+}
+
+.barra-superior {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.barra-superior img {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+
+h1 {
+    margin: 0;
+    color: #ffffff;
+    text-align: center; /* Alineación del texto */
+}
+
+.notificacion {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.icono-calendario img,
+.icono-mensaje img, 
+    .barra-superior img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #ffffffb9;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.texto-notificacion p {
+    margin: 0;
+    font-size: 18px;
+    color: #ffffff;
+}
