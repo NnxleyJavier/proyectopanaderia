@@ -33,6 +33,8 @@ $routes->get('/Produccion_Deseada','Home::Produccion_Deseada');
 $routes->get('/Produccion_Deseada_admin','Home::Vista_Produccion_deseada');
 $routes->get('/Vista_Produccion_Real','Home::Vista_Produccion_Real');
 $routes->get('/Vista_Produccion_Registrado','Home::Vista_Produccion_Registrado');
+$routes->get('/Vista_Confirmacion_Usuario','Home::Vista_Confirmacion_Usuario');
+
 
 $routes->post('/MandarProducto_Gasto', 'Home::MandarProducto_Gasto');
 $routes->post('/MandarProducto','Home::MandarProducto');
@@ -41,6 +43,8 @@ $routes->post('/MandarCorroboracion','Home::MandarCorroboracion');
 $routes->post('/MandarProduccionDeseada','Home::MandarProduccionDeseada');
 $routes->post('/MandarProduccion','Home::Registro_de_produccion_de_hoy');
 $routes->post('/AgregarDistribucion','Home::AgregarDistribucion');
+
+$routes->post('/Registrar_mercancia_sucursal','Home::Registrar_mercancia_sucursal');
 service('auth')->routes($routes);
 
 

@@ -22,11 +22,39 @@ class SalidaMercancia extends Model
 
 public function Buscartotales($fecha){
 
-    return $this->select('Nombre_Producto,Cantidad_Salida')
-		->join('productos', 'productos.idProductos = salida_mercancia.Productos_idProductos','INNER')
-        -> where('Tabla_Produccion_Fecha_idTabla_Produccion', $fecha)
-		->findAll();
-    
+  // Validar que $fecha no sea nula o inválida
+    if (empty($fecha)) {
+       echo "No existe la fecha";
+    }
+
+    // Realizar la consulta
+    $resultados = $this
+        ->select('productos.Nombre_Producto, salida_mercancia.Cantidad_Salida , Sucursales_idSucursales')
+        ->join('productos', 'productos.idProductos = salida_mercancia.Productos_idProductos', 'INNER')
+        ->where('Tabla_Produccion_Fecha_idTabla_Produccion', $fecha)
+        ->findAll();
+
+    // Devolver un arreglo vacío si no hay resultados
+    return !empty($resultados) ? $resultados : [];
 }
+
+public function Buscartotalesconsucursal($fecha,$Sucursal){
+
+    // Validar que $fecha no sea nula o inválida
+      if (empty($fecha)) {
+         echo "No existe la fecha No se ha generado Produccion en el dia de hoy";
+      }
+  
+      // Realizar la consulta
+      $resultados = $this
+          ->select('idSalida_Mercancia,productos.Nombre_Producto, salida_mercancia.Cantidad_Salida , Sucursales_idSucursales')
+          ->join('productos', 'productos.idProductos = salida_mercancia.Productos_idProductos', 'INNER')
+          ->where('Tabla_Produccion_Fecha_idTabla_Produccion', $fecha)
+          ->where('Sucursales_idSucursales', $Sucursal) // Segunda condición
+          ->findAll();
+  
+      // Devolver un arreglo vacío si no hay resultados
+      return !empty($resultados) ? $resultados : [];
+  }
 
 }

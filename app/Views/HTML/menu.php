@@ -31,6 +31,12 @@
         <li class="nav-item">
           <a class="nav-link" href="/Vista_Produccion_Real">realiza registro de produccion real</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/Vista_Produccion_Registrado">realiza registro de Distribucion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/Vista_Confirmacion_Usuario">Confirmar distrubucion Usuarios</a>
+        </li>
       </ul>
     </div>
   </nav>

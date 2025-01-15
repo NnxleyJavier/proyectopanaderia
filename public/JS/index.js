@@ -91,6 +91,8 @@ $(".Llegada").click(function() {
 
 
 
+
+
 function ajaxgeneral(formulario, controlador,csrfName,csrfHash) {
 //alert(formulario.serialize());
 	$.ajax({

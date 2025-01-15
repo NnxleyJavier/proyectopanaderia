@@ -34,15 +34,20 @@ class Productos extends Model{
 		return $query;
 		
 	}
-
-	public function BuscarCantidadUso($productos){
-		return $this->select('idAlmacen,Nombre_Producto,Cantidad_uso,Cantidad_Existente,Nombre_Materia,Cantidad_medida')
-		->join('productos_has_almacen', 'productos_has_almacen.Productos_idProductos = productos.idProductos','INNER')
-		->join('almacen', 'almacen.idAlmacen  = productos_has_almacen.Almacen_idAlmacen','INNER')
-		->join('referencias_almacen', 'referencias_almacen.idReferencias_Almacen = almacen.Referencias_Almacen_idReferencias_Almacen','left')
-		-> where('Nombre_Producto', $productos)
-		->findAll();
-		
+	
+	public function BuscarCantidadUso($productos) {
+		$resultados = $this->select('idAlmacen, Nombre_Producto, Cantidad_uso, Cantidad_Existente, Nombre_Materia, Cantidad_medida')
+			->join('productos_has_almacen', 'productos_has_almacen.Productos_idProductos = productos.idProductos', 'INNER')
+			->join('almacen', 'almacen.idAlmacen = productos_has_almacen.Almacen_idAlmacen', 'INNER')
+			->join('referencias_almacen', 'referencias_almacen.idReferencias_Almacen = almacen.Referencias_Almacen_idReferencias_Almacen', 'LEFT')
+			->where('Nombre_Producto', $productos)
+			->findAll();
+	
+		if (empty($resultados)) {
+			return false;
+		}
+	
+		return $resultados;
 	}
 
 	public function Buscar_productos_id($id){

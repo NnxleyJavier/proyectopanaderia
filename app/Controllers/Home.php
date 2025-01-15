@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\Almacen;
 use App\Models\Incremento_almacen;
 use App\Models\Corroborar;
+use App\Models\Empleados;
 use App\Models\Productos;
 use App\Models\productos_has_almacen;
 use App\Models\Produccion_Deseada;
@@ -13,6 +14,9 @@ use App\Models\SalidaMercancia;
 use App\Models\TablaProduccionFecha;
 use App\Models\TablaProduccionFechaHasProductos;
 use App\Models\TablaSucursales;
+use App\Models\MercanciaSucursal;
+
+use CodeIgniter\Shield\Models\UserModel;
 
 class Home extends BaseController
 {
@@ -315,7 +319,7 @@ class Home extends BaseController
 		// 100 va a ser variable
 		$multiplicacion = ($CantidadUso[1]['Cantidad_uso']) * 100;
 		$restaalmacen = ($CantidadUso[1]['Cantidad_Existente'] * $CantidadUso[1]['Cantidad_medida']) - ($multiplicacion);
-		echo ($CantidadUso[0]['idAlmacen']);
+//		echo ($CantidadUso[0]['idAlmacen']);
 
 		$vistaProduccionDeseada =
 			view('html/Cabecera') .
@@ -327,6 +331,7 @@ class Home extends BaseController
 	}
 
 	//corregir el insert con los nombres por eso hay problemas
+	// corregir problema de que si no existe la cantidad de gasto mandar un error y no registrar nada ;
 	public function Registro_de_produccion_de_hoy()
 	{
 
@@ -411,7 +416,10 @@ class Home extends BaseController
 		//print_r($indices);
 		d($this->ObtenerDistribucionHoy());
 		d($this->ObtenerProduccionHoy($this->fecha()));
-		echo $this->validarDistribucion();
+	//	echo $this->validarDistribucion();
+	$idusuario = $this->ObtenerId_User();
+	echo $idusuario;
+
 		$Vista_Produccion_Registrado =
 			view('html/Cabecera') .
 			view('html/menu') .
@@ -429,29 +437,69 @@ class Home extends BaseController
 // siguiendo la logica que si la produccion es 100 no podemos distribuir mas que eso
 	public function AgregarDistribucion()
 	{
-		$modelSalidaMercancia = new SalidaMercancia();
-		$tablasProduccionHoy =  $this->ObtenerProduccionHoy($this->fecha());
-		$tablasDistribucionHoy =$this->ObtenerDistribucionHoy() ;
-		$modelProducto = new Productos();
+		$modelSalidaMercancia = new SalidaMercancia(); // AGREGO EL OBJETO PARA DESPUES GUARDAR EN LA BD
+		$tablasProduccionHoy =  $this->ObtenerProduccionHoy($this->fecha()); // OBTENGO LA PRODUCCION DEL DIA DE HOY PARA COMPARAR
+		$tablasDistribucionHoy =$this->ObtenerDistribucionHoy() ;	// OBTENGO LA DISTRIBUCION QUE SE HA HECHO EL DIA DE HOY SI NO TIENE NADA DEVUELVE EL PURO ARREGLO
+		$modelProducto = new Productos(); // AGREGO EL OBJETO PARA DESPUES GUARDAR EN LA BD
 
-		$producto = $modelProducto->Buscar_productos_id($this->validarDistribucion()['Productos_idProductos']);
-		$CantidadProducto = $this->validarDistribucion()['Cantidad_Salida'];
-		if(isset($CantidadProduccionHoyProducto[$producto['Nombre_Producto']])){
-		$CantidadProduccionHoyProducto = $tablasProduccionHoy[$producto['Nombre_Producto']];
-		$CantidadDistribucionProducto = $tablasDistribucionHoy[$producto['Nombre_Producto']];
+		$producto = $modelProducto->Buscar_productos_id($this->validarDistribucion()['Productos_idProductos']); //BUSCO EL PRODUCTO MEDIANTE EL ID ME DEVUELVE EL NOMBRE	
+		$CantidadProducto = $this->validarDistribucion()['Cantidad_Salida'];      // OBTENGO DEL FORMULARIO LA CANTIDAD QUE SE VA A RESTAR O LA CANTIDAD A DISTRIBUIR 
+		//var_dump( $producto);
 
-		$SumaDePostConCantidadDistribucion = $CantidadDistribucionProducto + $CantidadProducto;
+		if(isset($producto['Nombre_Producto'])){  // PRIMERO VALIDO SI EL PRODUCTO SELECCIONADO EN REALIDAD EXISTE EN LA BUSQUEDA
+
+			//SI PASA ESA CONDICIONAL, EXISTE OTRA POR SI EN LA TABLA EXISTE EL NOMBRE O ALGUN REGISTRO DE NOMBRE EN LA CONSULTA 
+			if (!empty($tablasDistribucionHoy[$producto['Nombre_Producto']])) {
+
+
+				$CantidadProduccionHoyProducto = $tablasProduccionHoy[$producto['Nombre_Producto']];
+				$CantidadDistribucionProducto = $tablasDistribucionHoy[$producto['Nombre_Producto']];
 		
-			if($SumaDePostConCantidadDistribucion<=$CantidadProduccionHoyProducto){
-				echo ("registrar");
-		}else{
-			echo ("excede alguna cantidad");
+				$SumaDePostConCantidadDistribucion = $CantidadDistribucionProducto + $CantidadProducto;
+				
+		// AQUI SE HACE OTRA CONDICIONAL POR SI SE PASA DEL NUMERO DE PRODUCCION CON EL NUMERO DE DISTRIBUCION SI, NO PUES SE REGISTRA, SI SE PASA PUES NO
+					if($CantidadProduccionHoyProducto>=$SumaDePostConCantidadDistribucion){
+						$modelSalidaMercancia->insert($this->validarDistribucion());
+						echo ("registrar");
+
+					}else{
+						echo ("excede alguna cantidad en la produccion ");
+					
+					}
+
+
+
+
+				echo "El Producto si tiene Registro";
+			} else {
+
+
+				$CantidadProduccionHoyProducto = $tablasProduccionHoy[$producto['Nombre_Producto']];
+				$CantidadDistribucionProducto = 0;
+		
+				$SumaDePostConCantidadDistribucion = $CantidadDistribucionProducto + $CantidadProducto;
+				
+		
+					if($CantidadProduccionHoyProducto>=$SumaDePostConCantidadDistribucion){
+						$modelSalidaMercancia->insert($this->validarDistribucion());
+						echo ("registrar");
+
+					}else{
+						echo ("excede alguna cantidad");
+					
+					}
+		
+
+				echo "esta vacio el registro aun, primer registro ";
+			}
 			
-		}
-		}else{
-			echo ("Producto sin registro de Elaboración");
+			
+
 		
-		}
+		}else{
+		echo ("Producto sin registro de Elaboración");
+		
+	}
 		//$modelSalidaMercancia->insert($this->validarDistribucion());
 		
 	}
@@ -484,6 +532,38 @@ class Home extends BaseController
 			return $validarformalmacen;
 		} else {
 			echo "  ERROR EN EL CONTROLADOR POR LOS DATOS";
+			return false;
+		}
+	}
+
+	
+	private function validarDistribucionUsuario()
+	{
+		if ($this->request->getPost()) {
+			$id = $this->request->getPost("id");
+			$producto = $this->request->getPost("producto");
+			$cantidad = $this->request->getPost("cantidad");
+			$nota = $this->request->getPost("nota");
+			$seleccionado = $this->request->getPost("seleccionado");
+		}
+	
+		if (
+			isset($id) && !empty($id) &&
+			isset($producto) && !empty($producto) &&
+			isset($cantidad) && !empty($cantidad) &&
+			isset($nota) &&
+			isset($seleccionado)
+		) {
+			$validarDistribucion = [
+				"Salida_Mercancia_idSalida_Mercancia" => $id,
+				//"Nombre_Producto" => $producto,
+			//	"Cantidad_Salida" => $cantidad,
+				"Nota" => $nota,
+				"Confirmacion_Salida" => filter_var($seleccionado, FILTER_VALIDATE_BOOLEAN)
+			];
+	
+			return $validarDistribucion;
+		} else {
 			return false;
 		}
 	}
@@ -706,7 +786,7 @@ class Home extends BaseController
 		// Mostrar los totales
 		return $totales;
 	}
-
+// obtener tambien a que sucursal se fue 
 	private function ObtenerDistribucionHoy(){
 		$modelSalidaMercancia = new SalidaMercancia();
 
@@ -730,4 +810,131 @@ class Home extends BaseController
 		
 		return $totales;
 	}
+
+
+	private function ObtenerDistribucionHoyporsucursal($sucursal){
+		$modelSalidaMercancia = new SalidaMercancia();
+
+		$ConsultaDistribucion = $modelSalidaMercancia->Buscartotalesconsucursal($this->FechaidExistente(),$sucursal);
+
+		//d($ConsultaDistribucion);
+		// Arreglo donde se guardarán las sumas por producto
+		$totales = [];
+
+		foreach ($ConsultaDistribucion as $producto) {
+			$nombre = $producto['Nombre_Producto'];
+			$cantidad = (int) $producto['Cantidad_Salida']; // Convertir la cantidad a entero
+
+			// Verificar si el producto ya existe en el arreglo de totales
+			if (isset($totales[$nombre])) {
+				$totales[$nombre] += $cantidad; // Sumar la cantidad si el producto ya existe
+			} else {
+				$totales[$nombre] = $cantidad; // Si no existe, inicializarlo con la cantidad actual
+			}
+		}
+		
+		return $totales;
+	}
+
+	private function ObtenerDistribucionHoyporsucursalconid($sucursal){
+		$modelSalidaMercancia = new SalidaMercancia();
+
+		$ConsultaDistribucion = $modelSalidaMercancia->Buscartotalesconsucursal($this->FechaidExistente(),$sucursal);
+		// consulta de la base de datos de la tabla Salida de mercancia por fecha y por sucursal, para obtener los idSalida_Mercancia
+
+		//d($ConsultaDistribucion);
+			
+		return $ConsultaDistribucion;
+	}
+
+
+	private function ObtenerId_User(){
+		$user = new UserModel();
+		$userData = $user->find(auth()->id());
+		$find = $userData;
+		return $find->id;
+
+	}
+
+
+
+	public function Vista_Confirmacion_Usuario(){
+		
+		$TablaMercanciaSucursal = new MercanciaSucursal();
+		$Empleado = new Empleados();
+		
+		$idUser= $this->ObtenerId_User(); // obtengo el id User de la Sesion
+
+		$ConsultaUsuario = $Empleado->BuscarNombre($idUser); // obtenemos el nombre de la sucursal y del usuario
+
+		//var_dump($ConsultaUsuario);
+		
+		$NombredeSucursaldeUsuario = $ConsultaUsuario['idSucursales']; // esta variable describe a que sucursal pertenece el usuario logeado
+
+		d($this->ObtenerDistribucionHoyporsucursal($NombredeSucursaldeUsuario)); 
+		// obtenemos la cantidad de distribucion por Sucursal y fecha actual solo obtenemos los datos de nombre del producto 
+		//y la cantidad que se hizo para esa sucursal en suma o en total
+		
+
+
+		d($this->ObtenerDistribucionHoyporsucursalconid($NombredeSucursaldeUsuario));
+		$arraydistribucion = $this->ObtenerDistribucionHoyporsucursalconid($NombredeSucursaldeUsuario);
+		// este arreglo me da toda la tabla de distribuciones por fecha actual y por Usuario dependiendo de que sucursal este el usuario logeado 
+		// la diferencia a la de arriba es que aqui no lo suma, y te entrega los registros por separado por si el area de distribucion hizo mas de un registro de distrubucion 
+		// osea que 100 conchas se mandaron a x => sucursal, y hace un segundo registro con el mismo producto y la misma sucursal, se generarian 2 ids y aqui lo muestra los 2 por separado, sin suma uno de 100 y el otro de lo que hayan registrado.
+	
+		
+		
+		d($TablaMercanciaSucursal->FuncionBusqueda($this->FechaidExistente(),$NombredeSucursaldeUsuario));
+		$arrayconfirmados = $TablaMercanciaSucursal->FuncionBusqueda($this->FechaidExistente(),$NombredeSucursaldeUsuario);
+
+		// aqui consulto de la tabla mercancia_sucursal la que registra las confirmaciones ya hechas, se guia de la fecha actual
+		// cosnsidero que debe de tener igual un filtro de sucursal, por usuario, por que de otra forma me va a devolver todos los inserts
+
+
+		//array_column: Extrae los valores de idSalida_Mercancia de arrayconfirmados y los almacena en $idsToRemove.
+		//array_filter: Recorre cada elemento de arraydistribucion y verifica si su idSalida_Mercancia no está en $idsToRemove. Si no está, se conserva el elemento.
+		//array_values: Reindexa el array resultante para mantener índices consecutivos.
+		//Resultado: Devuelve un array limpio con los elementos filtrados
+		// Validar estructura
+		if (is_array($arraydistribucion) && is_array($arrayconfirmados)) {
+
+			// Extraer los IDs de arrayB para comparar
+    		$idsToRemove = array_column($arrayconfirmados, "idSalida_Mercancia");
+			// Filtrar arrayA para excluir elementos que estén en arrayB
+    		$arrayFiltered = array_filter($arraydistribucion, function($item) use ($idsToRemove) {
+        	return isset($item["idSalida_Mercancia"]) && !in_array($item["idSalida_Mercancia"], $idsToRemove);
+    });
+		// Reindexar el arreglo filtrado
+    	$arrayFiltered = array_values($arrayFiltered);
+    	d($arrayFiltered);
+
+} else {
+    echo "Error: uno de los datos no es un arreglo válido.";
+}
+
+	
+$vistaConfirmacion =
+			view('html/Cabecera') .
+			view('html/menu') .
+			view('html/Confirmacion', array('DataDistribucion' => $arrayFiltered));
+
+		return $vistaConfirmacion;
+	}
+
+
+
+	public function Registrar_mercancia_sucursal(){
+
+		$TablaMercanciaSucursal = new MercanciaSucursal();
+
+		var_dump($this->validarDistribucionUsuario());
+		$formtabla = $this->validarDistribucionUsuario();
+
+		$TablaMercanciaSucursal->insert($formtabla);
+
+
+	}
+
+
 }
