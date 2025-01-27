@@ -43,8 +43,8 @@ public function UltimaFecha($FechaSistem){
 
 public function ConsultarPorduccionRegistrada($fecha){
     return $this->select('Cantidad_Realizada,Nombre_Producto,Fecha_de_Produccion')
-		->join('Tabla_Produccion_Fecha_has_Produccion_Productos', 'Tabla_Produccion_Fecha_has_Produccion_Productos.Tabla_Produccion_idTabla_Produccion_Fecha = tabla_produccion_fecha.idTabla_Produccion','INNER')
-		->join('produccion_productos', 'produccion_productos.idProduccion_Productos = Tabla_Produccion_Fecha_has_Produccion_Productos.Produccion_Productos_idProduccion_Productos','INNER')
+		->join('tabla_produccion_fecha_has_produccion_productos', 'tabla_produccion_fecha_has_produccion_productos.Tabla_Produccion_idTabla_Produccion_Fecha = tabla_produccion_fecha.idTabla_Produccion','INNER')
+		->join('produccion_productos', 'produccion_productos.idProduccion_Productos = tabla_produccion_fecha_has_produccion_productos.Produccion_Productos_idProduccion_Productos','INNER')
 		->join('productos', 'productos.idProductos = produccion_productos.Productos_idProductos','INNER')
 		-> where('Fecha_de_Produccion', $fecha)
 		->findAll();

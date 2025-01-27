@@ -129,7 +129,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `panaderia_modelo_v2`.`Tabla_Produccion_Fecha_has_Produccion_Productos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `panaderia_modelo_v2`.`Tabla_Produccion_Fecha_has_Produccion_Productos` (
+CREATE TABLE IF NOT EXISTS `panaderia_modelo_v2`.`tabla_produccion_fecha_has_produccion_productos` (
   `Tabla_Produccion_idTabla_Produccion_Fecha` INT NOT NULL,
   `Produccion_Productos_idProduccion_Productos` INT NOT NULL,
   PRIMARY KEY (`Tabla_Produccion_idTabla_Produccion_Fecha`, `Produccion_Productos_idProduccion_Productos`),

@@ -15,7 +15,8 @@ use App\Models\TablaProduccionFecha;
 use App\Models\TablaProduccionFechaHasProductos;
 use App\Models\TablaSucursales;
 use App\Models\MercanciaSucursal;
-
+use App\Models\MermasModel;
+use App\Models\PedidosModel;
 use CodeIgniter\Shield\Models\UserModel;
 
 class Home extends BaseController
@@ -249,10 +250,36 @@ class Home extends BaseController
 	public function Produccion_Deseada()
 	{
 
+		// aqui voy a agregar un area de pedidos para que el usuario pueda hacer pedidos de pan
+		// y se pueda llevar un control de los pedidos que se han hecho esto le va a restar a la produccion deseada
+		$fecha = $this->fecha();
+		$ConsultarPedidos = new PedidosModel();
 		$lista_productos = new Productos();
+		$ListaMermas = new MermasModel();
+
+		$IdUltimaFecha = $ListaMermas->BuscarNumeroMasAlto();
+
+		$ListaMermasActuales = $ListaMermas->BuscarMermasActuales($IdUltimaFecha['tabla_produccion_fecha_idTabla_Produccion']);
+
+		d($ListaMermasActuales);
+
+
+		$Pedidoshoy = $ConsultarPedidos->BuscarPedidoshoy($fecha);
+
 		$productos = $lista_productos->Buscarlista();
+
+
 		d($productos);
 
+		d($Pedidoshoy);
+
+		
+		$PedidosTotal = $this->SumadeValoresporProductos($Pedidoshoy);
+		
+		
+		d($PedidosTotal);
+
+		
 		$model_Produccion_Deseada = new Produccion_Deseada();
 
 
@@ -269,21 +296,76 @@ class Home extends BaseController
 		}
 
 		d($resultados);
+		/**
+		 * Puedes comparar dos arreglos.
+		 * El principal $resultados compara idProductos con el arreglo $ListaMermasActuales.
+		 * Compara productos_idProductos y resta de $resultados Cantidad_requerida con Conteo_Merma de $ListaMermasActuales.
+		 * puedes comparar dos arreglos el principal $resultados compara idProductos con el arreglo $ListaMermasActuales 
+		 * compara productos_idProductos y resta de  $resultados  Cantidad_requerida  con Conteo_Merma de $ListaMermasActuales
+		 */
+		
+		foreach ($resultados as &$resultado) {
+			foreach ($ListaMermasActuales as $merma) {
+				if ($resultado['idProductos'] == $merma['productos_idProductos']) {
+					$resultado['Cantidad_requerida'] -= $merma['Conteo_Merma'];
+				}
+			}
+		}
+
+
 
 		$vistaProduto =
 			view('html/Cabecera') .
 			view('html/menu') .
-			view('html/ProduccionDeseada', array('datos' => $resultados));
+			view('html/ProduccionDeseada', array('datos' => $resultados,'Fecha' => $fecha,'ConsultaPedidos' => $PedidosTotal));
 
 
 		return $vistaProduto;
 	}
 
 
+	/**
+	 * Suma las cantidades requeridas de productos en los pedidos de hoy.
+	 *
+	 * @param array $Pedidoshoy Un arreglo de pedidos, donde cada pedido es un arreglo asociativo que contiene 'Nombre_Producto' y 'Cantidad_requerida'.
+	 * @return array Un arreglo asociativo donde las claves son los nombres de los productos y los valores son las cantidades totales requeridas de cada producto.
+	 */
+	private function SumadeValoresporProductos($Pedidoshoy){
+		try {
+			$SumadePedidoshoy = [];
+
+			if (empty($Pedidoshoy)) {
+				throw new \Exception("No hay pedidos para hoy.");
+			}
+
+			foreach ($Pedidoshoy as $pedido) {
+				$nombreProducto = $pedido['Nombre_Producto'];
+				$cantidad = $pedido['Cantidad_requerida'];
+
+				if (isset($SumadePedidoshoy[$nombreProducto])) {
+					$SumadePedidoshoy[$nombreProducto] += $cantidad;
+				} else {
+					$SumadePedidoshoy[$nombreProducto] = $cantidad;
+				}
+			}
+
+			return $SumadePedidoshoy;
+		} catch (\Exception $e) {
+			return false;
+		}
+	}
+
+
+
 	// vista para introducir la produccion deseada con base a los sobrantes 
 
 	public function Vista_Produccion_deseada()
 	{
+
+		
+
+	
+
 
 
 		$datos_Productos = new Productos();
@@ -292,11 +374,12 @@ class Home extends BaseController
 		//	$count= $datos_almacen->resultID->num_rows;
 
 		d($select_Productos);
+	
 
 		$vistaProduccionDeseada =
 			view('html/Cabecera') .
 			view('html/menu') .
-			view('html/Vistaproducciondeseada', array('Productos' => $select_Productos));
+			view('html/Vistaproducciondeseada', array('Productos' => $select_Productos));//,'ConsultaPedidos' => ));
 
 		return $vistaProduccionDeseada;
 	}
@@ -848,7 +931,7 @@ class Home extends BaseController
 	}
 
 
-	private function ObtenerId_User(){
+	public function ObtenerId_User(){
 		$user = new UserModel();
 		$userData = $user->find(auth()->id());
 		$find = $userData;

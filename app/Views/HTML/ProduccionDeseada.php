@@ -2,21 +2,55 @@
 <link rel="stylesheet" href="css/Notificacion.css">
 
 <body>
-    <div class="contenedor">
+<h1 class="container-fluid d-flex justify-content-center align-items-center"><?php echo $Fecha ?></h1>
+<div class="contenedor">
         <div class="barra-superior">
             <img src="Recursos/campana.png" alt="Icono de campana">
             <h1>Notificación</h1>
         </div>
-        <div class="contenedor-central">
+       
             <div class="notificacion">
                 <div class="icono-calendario">
                     <img src="Recursos/calendario.png" alt="Icono de calendario">
                 </div>
                 <div class="texto-notificacion">
-                    <p><strong> Mas Actual </strong></p>
+                    <p><strong> Pedidos </strong></p>
                 </div>
             </div>
             
+            <div class="notificacion">
+                <div class="icono-pedido d-flex justify-content-center align-items-center">
+                    <img src="Recursos/pedido.png" alt="Icono de pedido" class="img-fluid" style="max-width: 10vh;">
+                </div>
+                <div class="texto-notificacion">
+                    <?php
+                    if (empty($ConsultaPedidos)) {
+                        echo "<p>Sin pedidos</p>";
+                    } else {
+                        foreach ($ConsultaPedidos as $nombre => $cantidad) {
+                            echo "<p>Producto: <strong>{$nombre}</strong></p>";
+                            echo "<p>Cantidad: <strong>{$cantidad}</strong></p>";
+                            echo "<br>";
+                        }
+                    }
+                    ?>
+                </div>
+                </div>
+           
+
+
+
+            <div class="notificacion">
+                <div class="icono-calendario">
+                    <img src="Recursos/calendario.png" alt="Icono de calendario">
+                </div>
+                <div class="texto-notificacion">
+                    <p><strong> Produccion Deseada </strong></p>
+                </div>
+            </div>
+
+
+
             <div class="notificacion">
                 <div class="icono-mensaje">
                    
@@ -27,7 +61,7 @@
                    
 					foreach ( $datos as $row )
 					{?>
-                        <p>FECHA : <strong><?php echo $row['Fecha_Registro'] ?></strong></p>
+                        <p>FECHA DE REGISTRO: <strong><?php echo $row['Fecha_Registro'] ?></strong></p>
                         <p>PRODUCTO : <strong><?php echo $row['Nombre_Producto'] ?></strong></p>
 						<p> Cantidad solicitada: <b> <?php echo $row ['Cantidad_requerida'];?></b> </p>
                         <br>

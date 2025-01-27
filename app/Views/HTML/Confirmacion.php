@@ -2,7 +2,7 @@
 
 <body>
 
-<div class="container-fluid d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+<div class="container-fluid d-flex justify-content-center align-items-center" style="min-height: 50vh;">
 	<div class="row">
 
 
@@ -23,7 +23,7 @@
                             <th>Seleccionar</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody>a
                         <?php if (!empty($DataDistribucion)) { 
                             foreach ($DataDistribucion as $item) { ?>
                                 <tr class="fila">
@@ -49,8 +49,7 @@
             </div>
 
 							<br><br>
-							<div class="clearfix"></div>
-							<button type="submit" class="btn btn btn-primary btn-lg btn-responsive" id="registrar_Confirmacion"> <span class="glyphicon glyphicon-floppy-saved"></span> Confirmar Cantidad</button>
+					
 					
 
 					</div>

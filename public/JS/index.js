@@ -71,6 +71,33 @@ $(function inicio() {
 		alert(datosFormulario.serialize());
 		ajaxgeneral(datosFormulario,"AgregarDistribucion",csrfName,csrfHash);
 	});
+	
+	$(".Formulario_Pedidos").submit(function(event) {
+
+		event.preventDefault();
+		var csrfName = $('.txt_csrfname').attr('name'); // CSRF Token name
+		var csrfHash = $('.txt_csrfname').val(); // CSRF hash
+		var datosFormulario = $(this);
+	
+		alert(datosFormulario.serialize());
+		ajaxgeneral(datosFormulario,"AgregarPedidos",csrfName,csrfHash);
+	});
+
+
+
+
+		
+	$(".Formulario_Mermas").submit(function(event) {
+
+		event.preventDefault();
+		var csrfName = $('.txt_csrfname').attr('name'); // CSRF Token name
+		var csrfHash = $('.txt_csrfname').val(); // CSRF hash
+		var datosFormulario = $(this);
+	
+		alert(datosFormulario.serialize());
+		ajaxgeneral(datosFormulario,"AgregarMermas",csrfName,csrfHash);
+	});
+
 
 
 

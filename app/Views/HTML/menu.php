@@ -37,6 +37,12 @@
         <li class="nav-item">
           <a class="nav-link" href="/Vista_Confirmacion_Usuario">Confirmar distrubucion Usuarios</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/Pedidos">Registra un Pedido</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/mermas">Registra un Sobrantes Mermas</a>
+        </li>
       </ul>
     </div>
   </nav>
