@@ -63,5 +63,13 @@ class Pedidos extends BaseController
 		}
 	}
 
+	public function notify()
+    {
+        return $this->response->setJSON([
+            'title' => 'Hola!',
+            'message' => 'Este es un mensaje de notificación.',
+        ]);
+    }
+
 
 }

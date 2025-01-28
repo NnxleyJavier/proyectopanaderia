@@ -20,13 +20,15 @@ if (is_file(SYSTEMPATH . 'Config/Routes.php')) {
  *
  *
  */
+
 service('auth')->routes($routes);
 
 service('auth')->routes($routes, ['except' => ['register']]);
+
 $routes->post('/user-login', 'Api\AuthController::userLogin');
  
 $routes->get('/','Home::index');
-$routes->get('/paginaprincipal', 'Home::paginaprincipal',['filter'=>'PermissionFilter:superadmin.vista']);
+$routes->get('/paginaprincipal', 'Home::paginaprincipal',['filter'=>'PermissionFilter:user.access']);
 $routes->get('/Corroborar', 'Home::Corroborar',['filter'=>'PermissionFilter:user.access']);
 $routes->get('/producto','Home::Producto',['filter'=>'PermissionFilter:user.access']);
 $routes->get('/Uso_Materia_Prima','Home::Uso_Materia_Prima',['filter'=>'PermissionFilter:user.access']);
@@ -35,7 +37,7 @@ $routes->get('/Produccion_Deseada_admin','Home::Vista_Produccion_deseada',['filt
 $routes->get('/Vista_Produccion_Real','Home::Vista_Produccion_Real',['filter'=>'PermissionFilter:user.access']);
 $routes->get('/Vista_Produccion_Registrado','Home::Vista_Produccion_Registrado',['filter'=>'PermissionFilter:user.access']);
 $routes->get('/Vista_Confirmacion_Usuario','Home::Vista_Confirmacion_Usuario',['filter'=>'PermissionFilter:user.access']);
-$routes->get('/Pedidos', 'Pedidos::index');
+$routes->get('/Pedidos', 'Pedidos::index',['filter'=>'PermissionFilter:user.access']);
 $routes->get('/mermas', 'Mermas::index',['filter'=>'PermissionFilter:user.access']);
 
 
@@ -50,8 +52,8 @@ $routes->post('/AgregarPedidos', 'Pedidos::AgregarPedidos');
 $routes->post('/AgregarMermas', 'Mermas::AgregarMermas');
 
 $routes->post('/Registrar_mercancia_sucursal','Home::Registrar_mercancia_sucursal');
-service('auth')->routes($routes);
 
+service('auth')->routes($routes);
 
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';

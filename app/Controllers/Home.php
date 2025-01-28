@@ -18,7 +18,7 @@ use App\Models\MercanciaSucursal;
 use App\Models\MermasModel;
 use App\Models\PedidosModel;
 use CodeIgniter\Shield\Models\UserModel;
-
+//RAMA LOCAL
 class Home extends BaseController
 {
 	private function fecha()
@@ -31,7 +31,13 @@ class Home extends BaseController
 	public function index(): string
 	{
 
-		return view('welcome_message');
+		$vistaBienvenido =
+		view('html/CabeceraBienvenida') .
+		view('html/menu') .
+		view('html/Bienvenido');
+
+
+	return $vistaBienvenido;
 	}
 	// vista: en esta vista se registra la llegada de material para incrementar en la tabla de almacen 
 	public function paginaprincipal()

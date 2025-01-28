@@ -94,6 +94,7 @@ class AuthGroups extends ShieldAuthGroups
             'admin.*',
             'users.*',
             'beta.*',
+            'superadmin.vista'
         ],
         'admin' => [
             'admin.access',
