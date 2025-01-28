@@ -262,32 +262,56 @@ class Home extends BaseController
 		$ConsultarPedidos = new PedidosModel();
 		$lista_productos = new Productos();
 		$ListaMermas = new MermasModel();
+		$model_Produccion_Deseada = new Produccion_Deseada();
 
 		$IdUltimaFecha = $ListaMermas->BuscarNumeroMasAlto();
 
-		$ListaMermasActuales = $ListaMermas->BuscarMermasActuales($IdUltimaFecha['tabla_produccion_fecha_idTabla_Produccion']);
+		$productos = $lista_productos->Buscarlista();
+		d($productos);
+		$Pedidoshoy = $ConsultarPedidos->BuscarPedidoshoy($fecha);
+		d($Pedidoshoy);
+		$PedidosTotal = $this->SumadeValoresporProductos($Pedidoshoy);
+		d($PedidosTotal);
+		
 
+		$iteraciones = count($productos);
+		//necesito una funcion que mas adelante se va a hacer con las mermas de las demas sucursales
+		for ($i = 0; $i < $iteraciones; $i++) {
+			$result = $model_Produccion_Deseada->BuscarProductosDeseados($productos[$i]);
+			if($result == null ){
+
+			}else{
+				$resultados[] = $result;
+			}
+			
+		}
+
+		d($resultados);
+
+
+		if ($IdUltimaFecha == false) {
+			echo ("no hay mermas");
+
+
+		$vistaProduto =
+		view('html/Cabecera') .
+		view('html/menu') .
+		view('html/ProduccionDeseada', array('datos' => $resultados,'Fecha' => $fecha,'ConsultaPedidos' => $PedidosTotal));
+
+
+		return $vistaProduto;
+
+
+			
+		}else{
+
+			echo ("si hay mermas");
+		$ListaMermasActuales = $ListaMermas->BuscarMermasActuales($IdUltimaFecha['tabla_produccion_fecha_idTabla_Produccion']);
 		d($ListaMermasActuales);
 
-
-		$Pedidoshoy = $ConsultarPedidos->BuscarPedidoshoy($fecha);
-
-		$productos = $lista_productos->Buscarlista();
-
-
-		d($productos);
-
-		d($Pedidoshoy);
-
 		
-		$PedidosTotal = $this->SumadeValoresporProductos($Pedidoshoy);
-		
-		
-		d($PedidosTotal);
 
-		
 		$model_Produccion_Deseada = new Produccion_Deseada();
-
 
 		$iteraciones = count($productos);
 		//necesito una funcion que mas adelante se va a hacer con las mermas de las demas sucursales
@@ -319,14 +343,22 @@ class Home extends BaseController
 		}
 
 
-
 		$vistaProduto =
-			view('html/Cabecera') .
-			view('html/menu') .
-			view('html/ProduccionDeseada', array('datos' => $resultados,'Fecha' => $fecha,'ConsultaPedidos' => $PedidosTotal));
+		view('html/Cabecera') .
+		view('html/menu') .
+		view('html/ProduccionDeseada', array('datos' => $resultados,'Fecha' => $fecha,'ConsultaPedidos' => $PedidosTotal));
 
 
-		return $vistaProduto;
+	return $vistaProduto;
+
+		}
+		
+
+		
+
+
+
+		
 	}
 
 

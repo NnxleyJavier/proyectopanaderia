@@ -31,7 +31,18 @@ class MermasModel extends Model
     {
         $query = $this->query("SELECT MAX(tabla_produccion_fecha_idTabla_Produccion) as tabla_produccion_fecha_idTabla_Produccion FROM mermas");
         $query = $this->first();
-        return $query;
+        
+        if ($query) {
+    
+            return $query;
+        
+            }
+             else {
+               
+                 
+                return false; // Retorna false si no hay pedidos
+            }
+
     }
 
     public function BuscarMermasActuales($id)
