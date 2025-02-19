@@ -30,19 +30,22 @@ public function UltimaFecha($FechaSistem){
 
     if ($resultado) {
 
-    return $resultado;
+
+    return $resultado["idTabla_Produccion"];
 
     }
-     else {
-        $this->insert(['Fecha_de_Produccion' => $FechaSistem]);
-          $ultimoID = $this->insertID(); // Obtiene el último ID de inserción
-        return $ultimoID; // Retorna el ID
+    else {
+       $this->insert(['Fecha_de_Produccion' => $FechaSistem]);
+
+       $ultimoID = (int) $this->getInsertID(); // Obtiene el último ID de inserción y lo convierte a int
+       
+       return $ultimoID; // Retorna el ID
     }
 } 
 
 
 public function ConsultarPorduccionRegistrada($fecha){
-    return $this->select('Cantidad_Realizada,Nombre_Producto,Fecha_de_Produccion')
+    return $this->select('Cantidad_Realizada,Nombre_Producto,Fecha_de_Produccion,Categoria')
 		->join('tabla_produccion_fecha_has_produccion_productos', 'tabla_produccion_fecha_has_produccion_productos.Tabla_Produccion_idTabla_Produccion_Fecha = tabla_produccion_fecha.idTabla_Produccion','INNER')
 		->join('produccion_productos', 'produccion_productos.idProduccion_Productos = tabla_produccion_fecha_has_produccion_productos.Produccion_Productos_idProduccion_Productos','INNER')
 		->join('productos', 'productos.idProductos = produccion_productos.Productos_idProductos','INNER')

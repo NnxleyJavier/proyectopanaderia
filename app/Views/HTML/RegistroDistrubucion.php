@@ -1,6 +1,7 @@
-
+<link rel="stylesheet" href="CSS/Adaptable.css">
 <body>
 
+<div class="form-container">
 <div class="container-fluid d-flex justify-content-center align-items-center" style="min-height: 40vh;">
 	<div class="row">
 
@@ -19,7 +20,7 @@
 					<?php
 					foreach ( $Productos as $row )
 					{?>
-						<option value="<?php echo $row ['idProductos'];?>"><?php echo $row ['Nombre_Producto'];?> </option>
+						<option value="<?php echo $row ?>"><?php echo $row ?> </option>
 						<?php
 					}
 
@@ -50,7 +51,9 @@
 
 			<br><br>
 			<div class="clearfix"></div>
-			<button type="submit" class="btn btn btn-primary btn-lg btn-responsive" id="MandarDistribucion"> <span class="glyphicon glyphicon-floppy-saved"></span> Mandar a Distribucion</button>
+            <div class="d-flex justify-content-center">
+			<button type="submit" class="btn btn btn-primary btn-lg btn-responsive" id="MandarDistribucion"> <span class="glyphicon glyphicon-floppy-saved"></span> Mandar a Sucursal </button>
+            </div>
 		</form>
 
 	</div>
@@ -84,10 +87,10 @@
                 </tbody>
             </table>
         </div>
+      </div>
     </div>
+
 </div>
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

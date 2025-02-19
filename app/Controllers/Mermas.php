@@ -28,7 +28,7 @@ class Mermas extends BaseController
 
         $vistaMermas =
             view('html/Cabecera') .
-            view('html/menu') .
+            view('html/menuvendedoras') .
             view('html/MermasVista',array('Productos' => $select_Productos));
         return $vistaMermas;
     }

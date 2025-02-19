@@ -6,12 +6,14 @@
 	<title>Panaderia Aurorita</title>
 	<script src="JS/jquery-3.3.1.min.js"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<style>html{background-image: url('Recursos/zyro-image.png');
-		background-repeat: no-repeat;
-		background-size: auto;
-		min-height: 100%;
-		background-position: 50% center;
+<style>
 
+	html{
+		background-image: url('Recursos/zyro-image.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		min-height: 100%;
+		background-position: center;
 	}
 	body,.card{
 

@@ -26,7 +26,7 @@ class Produccion_Deseada extends Model{
 	public function BuscarProductosDeseados($productos){
 		return $this->select('*')
 		->join('productos', 'productos.idProductos = produccion_deseada.Productos_idProductos','left')
-		-> where('Nombre_Producto', $productos)
+		-> where('productos.Nombre_Producto', $productos)
 		->orderBy('Fecha_Registro', 'DESC')
 		->first();
 	

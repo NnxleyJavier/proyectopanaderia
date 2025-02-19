@@ -1,7 +1,34 @@
 
+
+<div class="container mt-3">
+	<form class="form-inline d-flex justify-content-center">
+		<input class="form-control mr-sm-2" type="search" placeholder="Buscar producto" aria-label="Buscar" id="searchInput" onkeyup="searchProduct()">
+		<button class="btn btn-outline-warning my-2 my-sm-0" type="button" onclick="searchProduct()">Buscar</button>
+	</form>
+</div>
+
+<script>
+function searchProduct() {
+	var input, filter, cards, cardContainer, title, i;
+	input = document.getElementById("searchInput");
+	filter = input.value.toUpperCase();
+	cardContainer = document.getElementsByClassName("row")[0];
+	cards = cardContainer.getElementsByClassName("col-md-4");
+	for (i = 0; i < cards.length; i++) {
+		title = cards[i].getElementsByClassName("card-title")[0];
+		if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+			cards[i].style.display = "";
+		} else {
+			cards[i].style.display = "none";
+		}
+	}
+}
+</script>
+
 <body>
 <div class="container-fluid d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-	<div class="row">
+<div class="row col-md-12">
+
 		<?php
 		foreach ($datos as $row){
 			?>

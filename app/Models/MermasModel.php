@@ -29,19 +29,14 @@ class MermasModel extends Model
 
     public function BuscarNumeroMasAlto()
     {
-        $query = $this->query("SELECT MAX(tabla_produccion_fecha_idTabla_Produccion) as tabla_produccion_fecha_idTabla_Produccion FROM mermas");
-        $query = $this->first();
-        
-        if ($query) {
-    
-            return $query;
-        
-            }
-             else {
-               
-                 
-                return false; // Retorna false si no hay pedidos
-            }
+        $query = $this->query("SELECT MAX(tabla_produccion_fecha_idTabla_Produccion) as max_id FROM mermas");
+        $result = $query->getRowArray();
+
+        if ($result) {
+            return $result['max_id'];
+        } else {
+            return false; // Retorna false si NO hay resultados
+        }
 
     }
 

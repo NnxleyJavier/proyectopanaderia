@@ -94,7 +94,8 @@ class AuthGroups extends ShieldAuthGroups
             'admin.*',
             'users.*',
             'beta.*',
-            'superadmin.vista'
+            'superadmin.vista',
+
         ],
         'admin' => [
             'admin.access',
@@ -102,6 +103,10 @@ class AuthGroups extends ShieldAuthGroups
             'users.edit',
             'users.delete',
             'beta.access',
+            'ventas.admin',
+            'ventas.*',
+            'distribucion.*',
+            'user.access'
         ],
         'developer' => [
 			'admin.index',
@@ -115,8 +120,12 @@ class AuthGroups extends ShieldAuthGroups
 			'user.access',
 			'user.index'
 		],
-        'beta' => [
-            'beta.access',
+        'ventas' => [
+            'ventas.access',
+            'ventas.admin',
+        ],
+        'distribucion' => [
+            'distribucion.access',
         ],
     ];
 }

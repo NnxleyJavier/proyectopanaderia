@@ -1,14 +1,16 @@
 
+<link rel="stylesheet" href="CSS/Adaptable.css">
 <body>
-<h1 class="container-fluid d-flex justify-content-center align-items-center"><?php echo $Fecha ?></h1>
-<div class="container-fluid d-flex justify-content-center align-items-center" style="min-height: 50vh;">
+<div class="form-container">
+    <div class="container-fluid">
 
 	<div class="row">
-		
+
 
 
 		<form role="form" class="Formulario_produccion" id="Formulario_produccion" name="Formulario_produccion" method="POST">
-			<h1>Añade tu produccion de Hoy</h1>
+            <h4 class="container-fluid d-flex justify-content-center align-items-center"><?php echo $Fecha ?></h4>
+			<h3>Añade tu produccion de hoy</h3>
 
 
 			<input type="hidden" class="txt_csrfname" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
@@ -35,27 +37,29 @@
 			</div>
 
 
-			<br><br>
+			<br>
 			<div class="clearfix"></div>
-			<button type="submit" class="btn btn btn-primary btn-lg btn-responsive" id="registrar_produccion_deseada"> <span class="glyphicon glyphicon-floppy-saved"></span> registrar produccion real de hoy</button>
+			<div class="d-flex justify-content-center">
+			    <button type="submit" class="btn btn btn-primary btn-lg btn-responsive" id="registrar_produccion_deseada"> <span class="glyphicon glyphicon-floppy-saved"></span> Registrar</button>
+			</div>
 		</form>
-		
+
 
 	</div>
 
-	
+
 
 
 
 </div>
 
-
+    <br>
 <div class="container-fluid d-flex justify-content-center align-items-center" style=" padding: 5px; min-height: 10vh;">
     <div class="row">
         <!-- Tabla de totales por producto -->
         <div class="col-md-12" style="background-color: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-            <h2 style="text-align: center; color: #333;">Total de registro de produccion de hoy</h2>
-            
+            <h4 style="text-align: center; color: #333;">Total de registro de produccion de hoy</h4>
+
             <table class="table table-bordered" style="border-collapse: collapse; width: 100%; background-color: #ffffff;">
                 <thead class="table-light">
                     <tr >
@@ -64,7 +68,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php 
+                    <?php
 
                     // Recorremos cada producto y mostramos la fila correspondiente
                     foreach ($Consulta as $producto => $cantidad_total) { ?>

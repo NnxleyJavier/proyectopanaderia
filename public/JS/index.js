@@ -97,6 +97,29 @@ $(function inicio() {
 		alert(datosFormulario.serialize());
 		ajaxgeneral(datosFormulario,"AgregarMermas",csrfName,csrfHash);
 	});
+	// agregar al server
+	$(".Formulario_Utileria").submit(function(event) {
+
+		event.preventDefault();
+		var csrfName = $('.txt_csrfname').attr('name'); // CSRF Token name
+		var csrfHash = $('.txt_csrfname').val(); // CSRF hash
+		var datosFormulario = $(this);
+	
+		alert(datosFormulario.serialize());
+		ajaxgeneral(datosFormulario,"AgregarPedidosLimpieza",csrfName,csrfHash);
+	});
+
+	$(".Formulario_Valor_Predetermindado").submit(function(event) {
+		event.preventDefault();
+		var csrfName = $('.txt_csrfname').attr('name'); // CSRF Token name
+		var csrfHash = $('.txt_csrfname').val(); // CSRF hash
+		var datosFormulario = $(this);
+
+		alert(datosFormulario.serialize());
+		ajaxgeneral(datosFormulario,"CambiarValorPredeterminado",csrfName,csrfHash);
+
+
+	});
 
 
 

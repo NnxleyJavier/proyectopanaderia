@@ -42,6 +42,15 @@ class Almacen extends Model{
 		$query = $this->first();
 		return $query;
 	}
+	
+	public function Buscar_almacen_Cantidad_medida($Id_Busqueda){
+		$this->select('Cantidad_medida');
+		$this->join('referencias_almacen', 'referencias_almacen.idReferencias_Almacen = almacen.Referencias_Almacen_idReferencias_Almacen','left');
+		$this->where('idAlmacen',$Id_Busqueda);
+		$query = $this->first();
+		return $query;
+	}
+
 
 	public function Buscar_Almacen_especifico(){
 		$this->select('idAlmacen,Nombre_Materia');
