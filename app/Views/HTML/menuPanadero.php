@@ -18,7 +18,9 @@
                 <a class="nav-link" href="/Vista_Produccion_Real">realiza registro de produccion real</a>  <!-- seccion para Produccion -->
             </li>
 
-s
+            <li class="nav-item">
+                <a class="nav-link" href="/Eliminarpanadero">elimina</a>  <!-- seccion para Produccion -->
+            </li>
 
 
 
