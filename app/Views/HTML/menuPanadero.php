@@ -22,7 +22,7 @@
                 <a class="nav-link" href="/Eliminarpanadero">elimina</a>  <!-- seccion para Produccion -->
             </li>
 
-
+            <button type="submit" class="btn btn btn-success btn-lg btn-responsive" id="cerrarsesion"> <span class="glyphicon glyphicon glyphicon-chevron-left"></span> cerrar sesión </button>
 
 
 

@@ -163,3 +163,8 @@ function ajaxgeneral(formulario, controlador,csrfName,csrfHash) {
 	});
 
 }
+
+$("#cerrarsesion").click(function(){
+    location.href = base_url+"logout";
+    //window.location.replace(base_url+"index.php/Welcome/primera");
+  });

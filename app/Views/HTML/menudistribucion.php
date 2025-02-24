@@ -16,7 +16,7 @@
             </li>
 
 
-
+            <button type="submit" class="btn btn btn-success btn-lg btn-responsive" id="cerrarsesion"> <span class="glyphicon glyphicon glyphicon-chevron-left"></span> cerrar sesión </button>
 
 
         </ul>

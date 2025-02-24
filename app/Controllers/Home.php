@@ -31,10 +31,41 @@ class Home extends BaseController
     public function index(): string
     {
 
-        $vistaBienvenido =
-            view('html/CabeceraBienvenida') .
-            view('html/menu') .
-            view('html/Bienvenido');
+        switch (true) {
+            case auth()->user()->inGroup('admin'):
+            $vistaBienvenido =
+                view('html/CabeceraBienvenida') .
+                view('html/menu') .
+                view('html/Bienvenido');
+            break;
+            case auth()->user()->inGroup('user'):
+            $vistaBienvenido =
+                view('html/CabeceraBienvenida') .
+                view('html/menuPanadero') .
+                view('html/Bienvenido');
+            break;
+            case auth()->user()->inGroup('ventas'):
+            $vistaBienvenido =
+                view('html/CabeceraBienvenida') .
+                view('html/menuvendedoras') .
+                view('html/Bienvenido');
+            break;
+            case auth()->user()->inGroup('distribucion'):
+            $vistaBienvenido =
+                view('html/CabeceraBienvenida') .
+                view('html/menudistribucion') .
+                view('html/Bienvenido');
+            break;
+            default:
+            $vistaBienvenido =
+                view('html/CabeceraBienvenida') .
+                view('html/menu') .
+                view('html/Bienvenido');
+            break;
+        }
+
+
+       
 
 
         return $vistaBienvenido;
@@ -287,7 +318,8 @@ class Home extends BaseController
 
         $IdUltimaFecha = $ListaMermas->BuscarNumeroMasAlto();
 
-
+        $IdUltimaFecha = (int)$ListaMermas->BuscarNumeroMasAlto();
+        
         d($IdUltimaFecha);
         $productos = $lista_productos->Buscarlista();
         d($productos);

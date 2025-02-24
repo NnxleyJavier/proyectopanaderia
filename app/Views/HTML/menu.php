@@ -5,9 +5,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
+
         <li class="nav-item active">
           <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
+ 
+ 
+      
+
+
         <li class="nav-item">
           <a class="nav-link" href="/paginaprincipal">Pagina Registro Almacen</a>   <!-- seccion para Administrador -->
         </li>
@@ -58,7 +64,7 @@
           <a class="nav-link" href="/PedidosdeMaterial">Pedidos de Material Varios</a>  <!-- seccion para Venta -->
         </li>
 
-
+        <button type="submit" class="btn btn btn-success btn-lg btn-responsive" id="cerrarsesion"> <span class="glyphicon glyphicon glyphicon-chevron-left"></span> cerrar sesión </button>
 
       </ul>
     </div>

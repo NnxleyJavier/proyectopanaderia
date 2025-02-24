@@ -86,17 +86,17 @@
         }
 
     </style>
-
+   <link rel="stylesheet" href="CSS/Adaptable.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eliminar Registro de Producción</title>
-    <link rel="stylesheet" href="CSS/Adaptable.css">
+ 
 </head>
 <body>
    <div class="container-fluid">
     <div class="row">
         <h2>Eliminacion de registros Panadero </h2>
-        <?php //var_dump($DataDistribucion)  ?>
+       
         <div class="table-responsive mt-4">
             <table class="table table-bordered bg-success text-white">
                 <thead>
@@ -131,6 +131,8 @@
         <br><br>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="JS/index.js"></script>
 <script src="JS/confirmaciones.js"></script>
 </body>

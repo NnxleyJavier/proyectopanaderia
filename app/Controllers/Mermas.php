@@ -23,7 +23,12 @@ class Mermas extends BaseController
 
 		$ArregloFechaSiExiste = $this->ObtenerFecha($this->fecha());
 
-		echo $ArregloFechaSiExiste['idTabla_Produccion'];
+		try {
+			$idTablaProduccion = $ArregloFechaSiExiste['idTabla_Produccion'];
+			echo $idTablaProduccion;
+		} catch (\Exception $e) {
+			echo "No existen mermas aún.";
+		}
 
 
         $vistaMermas =

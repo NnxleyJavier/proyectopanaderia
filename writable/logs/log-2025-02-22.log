@@ -1,0 +1,135 @@
+INFO - 2025-02-22 14:38:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 14:38:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 14:38:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 14:38:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 14:38:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 14:38:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 14:39:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 14:39:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 14:39:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 14:39:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-02-22 08:39:55 --> mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\proyectopanaderia\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyectopanaderia\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `idProdu...', 0)
+#1 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `idProdu...')
+#2 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `idProdu...')
+#3 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `idProdu...', Array, false)
+#4 C:\xampp\htdocs\proyectopanaderia\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectopanaderia\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectopanaderia\app\Models\Productos.php(27): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectopanaderia\app\Controllers\Home.php(452): App\Models\Productos->Buscar_productos()
+#8 C:\xampp\htdocs\proyectopanaderia\system\CodeIgniter.php(915): App\Controllers\Home->Vista_Produccion_Real()
+#9 C:\xampp\htdocs\proyectopanaderia\system\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\xampp\htdocs\proyectopanaderia\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyectopanaderia\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\proyectopanaderia\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-22 08:39:55 --> MySQL server has gone away
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `idProductos`, `Nombre_Producto`
+FROM `productos`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Productos.php(27): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Home.php(452): App\Models\Productos->Buscar_productos()
+ 6 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->Vista_Produccion_Real()
+ 7 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia\\public\\index.php')
+ERROR - 2025-02-22 14:40:08 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\proyectopanaderia\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\proyectopanaderia\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'basepanav3', 3306, '', 0)
+#1 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\settings\src\Handlers\DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\settings\src\Handlers\DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate(NULL)
+#6 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\settings\src\Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has('Config\\Auth', 'sessionConfig', NULL)
+#7 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\settings\src\Helpers\setting_helper.php(25): CodeIgniter\Settings\Settings->get('Auth.sessionCon...')
+#8 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\shield\src\Authentication\Authenticators\Session.php(685): setting('Auth.sessionCon...')
+#9 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\shield\src\Authentication\Authenticators\Session.php(703): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+#10 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\shield\src\Authentication\Authenticators\Session.php(390): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey('id')
+#11 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\shield\src\Authentication\Authenticators\Session.php(374): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+#12 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\shield\src\Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+#13 C:\xampp\htdocs\proyectopanaderia\app\Filters\PermissionFilter.php(46): CodeIgniter\Shield\Auth->__call('loggedIn', Array)
+#14 C:\xampp\htdocs\proyectopanaderia\system\Filters\Filters.php(180): App\Filters\PermissionFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), Array)
+#15 C:\xampp\htdocs\proyectopanaderia\system\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('Vista_Produccio...', 'before')
+#16 C:\xampp\htdocs\proyectopanaderia\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#17 C:\xampp\htdocs\proyectopanaderia\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#18 C:\xampp\htdocs\proyectopanaderia\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#19 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\proyectopanaderia\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\proyectopanaderia\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\settings\src\Handlers\DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\settings\src\Handlers\DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate(NULL)
+#5 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\settings\src\Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has('Config\\Auth', 'sessionConfig', NULL)
+#6 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\settings\src\Helpers\setting_helper.php(25): CodeIgniter\Settings\Settings->get('Auth.sessionCon...')
+#7 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\shield\src\Authentication\Authenticators\Session.php(685): setting('Auth.sessionCon...')
+#8 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\shield\src\Authentication\Authenticators\Session.php(703): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+#9 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\shield\src\Authentication\Authenticators\Session.php(390): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey('id')
+#10 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\shield\src\Authentication\Authenticators\Session.php(374): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+#11 C:\xampp\htdocs\proyectopanaderia\vendor\codeigniter4\shield\src\Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+#12 C:\xampp\htdocs\proyectopanaderia\app\Filters\PermissionFilter.php(46): CodeIgniter\Shield\Auth->__call('loggedIn', Array)
+#13 C:\xampp\htdocs\proyectopanaderia\system\Filters\Filters.php(180): App\Filters\PermissionFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), Array)
+#14 C:\xampp\htdocs\proyectopanaderia\system\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('Vista_Produccio...', 'before')
+#15 C:\xampp\htdocs\proyectopanaderia\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#16 C:\xampp\htdocs\proyectopanaderia\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#17 C:\xampp\htdocs\proyectopanaderia\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#18 {main}
+CRITICAL - 2025-02-22 14:40:08 --> Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `settings`
+WHERE `context` IS NULL', [], false)
+ 3 VENDORPATH\codeigniter4\settings\src\Handlers\DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 4 VENDORPATH\codeigniter4\settings\src\Handlers\DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate(null)
+ 5 VENDORPATH\codeigniter4\settings\src\Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has('Config\\Auth', 'sessionConfig', null)
+ 6 VENDORPATH\codeigniter4\settings\src\Helpers\setting_helper.php(25): CodeIgniter\Settings\Settings->get('Auth.sessionConfig')
+ 7 VENDORPATH\codeigniter4\shield\src\Authentication\Authenticators\Session.php(685): setting('Auth.sessionConfig')
+ 8 VENDORPATH\codeigniter4\shield\src\Authentication\Authenticators\Session.php(703): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+ 9 VENDORPATH\codeigniter4\shield\src\Authentication\Authenticators\Session.php(390): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey('id')
+10 VENDORPATH\codeigniter4\shield\src\Authentication\Authenticators\Session.php(374): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+11 VENDORPATH\codeigniter4\shield\src\Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+12 APPPATH\Filters\PermissionFilter.php(46): CodeIgniter\Shield\Auth->__call('loggedIn', [])
+13 SYSTEMPATH\Filters\Filters.php(180): App\Filters\PermissionFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+14 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('Vista_Produccion_Real', 'before')
+15 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+16 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia\\public\\index.php')
+INFO - 2025-02-22 14:40:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 14:40:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 08:40:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 14:40:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 14:42:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 14:42:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 14:42:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 14:42:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 15:09:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 15:09:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 09:09:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 15:09:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 09:13:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 15:13:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 09:16:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 15:16:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 15:17:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 15:17:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 15:55:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 15:55:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 15:55:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 15:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 15:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 15:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 15:55:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 15:55:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 15:55:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 15:56:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 15:56:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-22 15:56:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

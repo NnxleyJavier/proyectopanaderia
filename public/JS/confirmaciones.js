@@ -64,12 +64,16 @@ $(function inicio() {
     $(document).on('click', '.Eliminar_Registro', function() {
         const row = $(this).closest('tr');
         const idCelda = row.find('td:nth-child(1)').text().trim();
-        console.log(idCelda);
-        alert("ID de la celda: " + idCelda);
+        const nombre = row.find('td:nth-child(2)').text().trim();
+        const cantidad = row.find('td:nth-child(3)').text().trim();
+        console.log(idCelda, nombre, cantidad);
+        alert("ID de la celda: " + idCelda + ", Nombre: " + nombre + ", Cantidad: " + cantidad);
 
-
-
-        const data = { idCelda: parseInt(idCelda) };
+        const data = { 
+            idCelda: parseInt(idCelda),
+            nombre: nombre,
+            cantidad: parseInt(cantidad)
+        };
 
         $.ajax({
             url: base_url + 'SeleccionarYEliminarPanadero',
@@ -86,7 +90,11 @@ $(function inicio() {
 
 
 
-
+    $("#cerrarsesion").click(function(){
+        location.href = base_url+"logout";
+        //window.location.replace(base_url+"index.php/Welcome/primera");
+      });
+    
 
     
     
