@@ -1,66 +1,94 @@
-/* Estilos generales */
+ /* Fondo general para que coincida con el tema */
+    body {
+        background-color: #121212;
+    }
 
+    /* Contenedor principal sin altura fija para permitir scroll en móviles */
+    .dashboard-container {
+        padding-bottom: 80px; /* Espacio para que el final no quede pegado */
+    }
 
-.navbar {
-    background-color: #0a0a0a71;
-    color: #0000003b;
-    padding: 10px 20px;
-}
+    /* Estilo de las Tarjetas */
+    .card-aurorita {
+        background-color: #1e1e1e;
+        border: 1px solid #333;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
 
-.contenedor {
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    max-width: 100%;
-    background-color: #00000057;
-    padding: 20px;
-    border-radius: 1px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin: auto; /* Centrar horizontalmente */
-    margin-top: 8%; /* Espacio adicional arriba */
-}
+    /* Cabecera de las tarjetas */
+    .card-header-custom {
+        background-color: #252525;
+        border-bottom: 1px solid #333;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-.barra-superior {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
+    /* Texto de fecha gigante */
+    .fecha-header {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ffc107; /* Amarillo */
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: center;
+        margin: 20px 0;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
 
-.barra-superior img {
-    width: 30px;
-    height: auto;
-    margin-right: 10px;
-}
+    /* Estilos para la sección de Pedidos (Acordeón) */
+    .btn-accordion {
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+        width: 100%;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    }
+    .btn-accordion:hover {
+        color: #ffc107;
+        text-decoration: none;
+    }
+    .btn-accordion i {
+        font-size: 1.2rem;
+    }
 
-h1 {
-    margin: 0;
-    color: #ffffff;
-    text-align: center; /* Alineación del texto */
-}
+    /* Lista de productos limpia */
+    .product-list-item {
+        background-color: transparent;
+        border-bottom: 1px solid #333;
+        padding: 12px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .product-list-item:last-child {
+        border-bottom: none;
+    }
+    
+    .cantidad-badge {
+        font-size: 1.1rem;
+        padding: 5px 12px;
+        border-radius: 8px;
+        font-weight: bold;
+    }
 
-.notificacion {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.icono-calendario img,
-.icono-mensaje img, 
-    .barra-superior img {
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    background-color: #ffffffb9;
-    padding: 10px;
-    margin-right: 20px;
-}
-
-.texto-notificacion p {
-    margin: 0;
-    font-size: 18px;
-    color: #ffffff;
-}
+    /* Iconos circulares */
+    .icon-circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+    }
+    .bg-icon-orders { background-color: rgba(23, 162, 184, 0.2); color: #17a2b8; }
+    .bg-icon-production { background-color: rgba(40, 167, 69, 0.2); color: #28a745; }
+    .bg-icon-notifications { background-color: rgba(255, 193, 7, 0.2); color: #ffc107; }

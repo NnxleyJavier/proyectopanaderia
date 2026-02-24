@@ -1,0 +1,259 @@
+INFO - 2025-09-09 16:39:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:39:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:39:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:39:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:39:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:39:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:39:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:39:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:39:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:39:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:40:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:40:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:40:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:40:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:40:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:40:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 10:40:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:40:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:40:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:41:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:41:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:44:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:44:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:45:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:45:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:45:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:45:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 10:46:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:46:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:46:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:50:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-09 10:50:08 --> mysqli_sql_exception: Unknown column 'produccion_productos.Valor_produccion' in 'field list' in C:\xampp\htdocs\proyectopanaderia-server\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyectopanaderia-server\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\proyectopanaderia-server\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\proyectopanaderia-server\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\proyectopanaderia-server\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\proyectopanaderia-server\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectopanaderia-server\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectopanaderia-server\app\Models\TablaProduccionFechaHasProductos.php(82): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectopanaderia-server\app\Controllers\Home.php(1397): App\Models\TablaProduccionFechaHasProductos->obtenerProductosPorProduccion('18')
+#8 C:\xampp\htdocs\proyectopanaderia-server\system\CodeIgniter.php(915): App\Controllers\Home->GenerarReporteProduccion()
+#9 C:\xampp\htdocs\proyectopanaderia-server\system\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\xampp\htdocs\proyectopanaderia-server\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyectopanaderia-server\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\proyectopanaderia-server\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-09-09 10:50:08 --> Unknown column 'produccion_productos.Valor_produccion' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`idProductos`, `productos`.`Nombre_Producto`, `produccion_productos`.`Valor_produccion`
+FROM `tabla_produccion_fecha_has_produccion_productos`
+INNER JOIN `produccion_productos` ON `produccion_productos`.`idProduccion_Productos` = `tabla_produccion_fecha_has_produccion_productos`.`Produccion_Productos_idProduccion_Productos`
+INNER JOIN `productos` ON `productos`.`idProductos` = `produccion_productos`.`Productos_idProductos`
+WHERE `Tabla_Produccion_idTabla_Produccion_Fecha` = :Tabla_Produccion_idTabla_Produccion_Fecha:', [...], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\TablaProduccionFechaHasProductos.php(82): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Home.php(1397): App\Models\TablaProduccionFechaHasProductos->obtenerProductosPorProduccion('18')
+ 6 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->GenerarReporteProduccion()
+ 7 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+INFO - 2025-09-09 16:50:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-09 10:50:09 --> mysqli_sql_exception: Unknown column 'produccion_productos.Valor_produccion' in 'field list' in C:\xampp\htdocs\proyectopanaderia-server\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyectopanaderia-server\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\proyectopanaderia-server\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\proyectopanaderia-server\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\proyectopanaderia-server\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\proyectopanaderia-server\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectopanaderia-server\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectopanaderia-server\app\Models\TablaProduccionFechaHasProductos.php(82): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectopanaderia-server\app\Controllers\Home.php(1397): App\Models\TablaProduccionFechaHasProductos->obtenerProductosPorProduccion('18')
+#8 C:\xampp\htdocs\proyectopanaderia-server\system\CodeIgniter.php(915): App\Controllers\Home->GenerarReporteProduccion()
+#9 C:\xampp\htdocs\proyectopanaderia-server\system\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\xampp\htdocs\proyectopanaderia-server\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyectopanaderia-server\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\proyectopanaderia-server\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-09-09 10:50:09 --> Unknown column 'produccion_productos.Valor_produccion' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`idProductos`, `productos`.`Nombre_Producto`, `produccion_productos`.`Valor_produccion`
+FROM `tabla_produccion_fecha_has_produccion_productos`
+INNER JOIN `produccion_productos` ON `produccion_productos`.`idProduccion_Productos` = `tabla_produccion_fecha_has_produccion_productos`.`Produccion_Productos_idProduccion_Productos`
+INNER JOIN `productos` ON `productos`.`idProductos` = `produccion_productos`.`Productos_idProductos`
+WHERE `Tabla_Produccion_idTabla_Produccion_Fecha` = :Tabla_Produccion_idTabla_Produccion_Fecha:', [...], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\TablaProduccionFechaHasProductos.php(82): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Home.php(1397): App\Models\TablaProduccionFechaHasProductos->obtenerProductosPorProduccion('18')
+ 6 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->GenerarReporteProduccion()
+ 7 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+INFO - 2025-09-09 16:50:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:50:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:50:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:50:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-09 10:50:13 --> mysqli_sql_exception: Unknown column 'produccion_productos.Valor_produccion' in 'field list' in C:\xampp\htdocs\proyectopanaderia-server\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyectopanaderia-server\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\proyectopanaderia-server\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\proyectopanaderia-server\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\proyectopanaderia-server\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\proyectopanaderia-server\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectopanaderia-server\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectopanaderia-server\app\Models\TablaProduccionFechaHasProductos.php(82): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectopanaderia-server\app\Controllers\Home.php(1397): App\Models\TablaProduccionFechaHasProductos->obtenerProductosPorProduccion('18')
+#8 C:\xampp\htdocs\proyectopanaderia-server\system\CodeIgniter.php(915): App\Controllers\Home->GenerarReporteProduccion()
+#9 C:\xampp\htdocs\proyectopanaderia-server\system\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\xampp\htdocs\proyectopanaderia-server\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyectopanaderia-server\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\proyectopanaderia-server\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-09-09 10:50:13 --> Unknown column 'produccion_productos.Valor_produccion' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`idProductos`, `productos`.`Nombre_Producto`, `produccion_productos`.`Valor_produccion`
+FROM `tabla_produccion_fecha_has_produccion_productos`
+INNER JOIN `produccion_productos` ON `produccion_productos`.`idProduccion_Productos` = `tabla_produccion_fecha_has_produccion_productos`.`Produccion_Productos_idProduccion_Productos`
+INNER JOIN `productos` ON `productos`.`idProductos` = `produccion_productos`.`Productos_idProductos`
+WHERE `Tabla_Produccion_idTabla_Produccion_Fecha` = :Tabla_Produccion_idTabla_Produccion_Fecha:', [...], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\TablaProduccionFechaHasProductos.php(82): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Home.php(1397): App\Models\TablaProduccionFechaHasProductos->obtenerProductosPorProduccion('18')
+ 6 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->GenerarReporteProduccion()
+ 7 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+INFO - 2025-09-09 16:51:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:51:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:51:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:51:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:54:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-09 10:54:40 --> mysqli_sql_exception: Unknown column 'produccion_productos.Valor_produccion' in 'field list' in C:\xampp\htdocs\proyectopanaderia-server\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyectopanaderia-server\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `producc...', 0)
+#1 C:\xampp\htdocs\proyectopanaderia-server\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `producc...')
+#2 C:\xampp\htdocs\proyectopanaderia-server\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `producc...')
+#3 C:\xampp\htdocs\proyectopanaderia-server\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `producc...', Array, false)
+#4 C:\xampp\htdocs\proyectopanaderia-server\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectopanaderia-server\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectopanaderia-server\app\Models\TablaProduccionFechaHasProductos.php(82): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectopanaderia-server\app\Controllers\Home.php(1397): App\Models\TablaProduccionFechaHasProductos->obtenerProductosPorProduccion('18')
+#8 C:\xampp\htdocs\proyectopanaderia-server\system\CodeIgniter.php(915): App\Controllers\Home->GenerarReporteProduccion()
+#9 C:\xampp\htdocs\proyectopanaderia-server\system\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\xampp\htdocs\proyectopanaderia-server\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyectopanaderia-server\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\proyectopanaderia-server\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-09-09 10:54:40 --> Unknown column 'produccion_productos.Valor_produccion' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `produccion_productos`.`idProduccion_Productos`, `produccion_productos`.`Cantidad_Realizada`, `productos`.`Nombre_Producto`, `productos`.`idProductos`, `produccion_productos`.`Valor_produccion`
+FROM `tabla_produccion_fecha_has_produccion_productos`
+INNER JOIN `produccion_productos` ON `produccion_productos`.`idProduccion_Productos` = `tabla_produccion_fecha_has_produccion_productos`.`Produccion_Productos_idProduccion_Productos`
+INNER JOIN `productos` ON `productos`.`idProductos` = `produccion_productos`.`Productos_idProductos`
+WHERE `Tabla_Produccion_idTabla_Produccion_Fecha` = :Tabla_Produccion_idTabla_Produccion_Fecha:', [...], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\TablaProduccionFechaHasProductos.php(82): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Home.php(1397): App\Models\TablaProduccionFechaHasProductos->obtenerProductosPorProduccion('18')
+ 6 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->GenerarReporteProduccion()
+ 7 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+INFO - 2025-09-09 16:54:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:54:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:57:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:57:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:59:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 16:59:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:01:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:01:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:03:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:03:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:03:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:03:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:07:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 11:07:24 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Home.php on line 1430.
+ 1 APPPATH\Controllers\Home.php(1388): App\Controllers\Home->contarSemanasActuales([...])
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->GenerarReporteProduccion()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+WARNING - 2025-09-09 11:07:24 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Home.php on line 1430.
+ 1 APPPATH\Controllers\Home.php(1388): App\Controllers\Home->contarSemanasActuales([...])
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->GenerarReporteProduccion()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+INFO - 2025-09-09 17:07:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:07:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-09 11:07:39 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Home.php on line 1430.
+ 1 APPPATH\Controllers\Home.php(1388): App\Controllers\Home->contarSemanasActuales([...])
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->GenerarReporteProduccion()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+WARNING - 2025-09-09 11:07:39 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Home.php on line 1430.
+ 1 APPPATH\Controllers\Home.php(1388): App\Controllers\Home->contarSemanasActuales([...])
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->GenerarReporteProduccion()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+INFO - 2025-09-09 17:07:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:08:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:08:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:08:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:08:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:12:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:12:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 11:23:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-09 11:23:52 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 538.
+ 1 APPPATH\Controllers\Home.php(538): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->Registro_de_produccion_de_hoy()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+INFO - 2025-09-09 17:23:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:23:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 11:24:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-09 11:24:04 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 538.
+ 1 APPPATH\Controllers\Home.php(538): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->Registro_de_produccion_de_hoy()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+INFO - 2025-09-09 17:24:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:24:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 11:24:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-09 11:24:16 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 538.
+ 1 APPPATH\Controllers\Home.php(538): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->Registro_de_produccion_de_hoy()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+INFO - 2025-09-09 17:24:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:24:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 11:27:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:27:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:27:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:27:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:27:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:58:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-09 17:59:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
