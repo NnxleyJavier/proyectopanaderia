@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fa7c6bf8-9c47-4909-8024-3b20601bfb77" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Views/HTML/EliminarRegistroProduccion.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/EliminarRegistroProduccion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/proyectopanaderia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/proyectopanaderia.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Config/Auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config/Auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Config/AuthGroups.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config/AuthGroups.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Config/Routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config/Routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Almacen.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Almacen.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Productos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Productos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/SalidaMercancia.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/SalidaMercancia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/TablaProduccionFecha.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/TablaProduccionFecha.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/TablaProduccionFechaHasProductos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/TablaProduccionFechaHasProductos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Views/HTML/Cabecera.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/HTML/Cabecera.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Views/HTML/Cantidades.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/HTML/Cantidades.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Views/HTML/Confirmacion.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/HTML/Confirmacion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Views/HTML/Corroborar.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/HTML/Corroborar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Views/HTML/ProduccionDeseada.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/HTML/ProduccionDeseada.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Views/HTML/Productos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/HTML/Productos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Views/HTML/RegistroDistrubucion.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/HTML/RegistroDistrubucion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Views/HTML/Vistaproduccion.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/HTML/Vistaproduccion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Views/HTML/Vistaproducciondeseada.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/HTML/Vistaproducciondeseada.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Views/HTML/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/HTML/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Views/HTML/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/HTML/menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basedatos.sql" beforeDir="false" afterPath="$PROJECT_DIR$/basedatos.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/app/Config/Auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/app/Config/Auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/app/Config/AuthGroups.php" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/app/Config/AuthGroups.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/app/Config/Routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/app/Config/Routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/app/Controllers/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/app/Controllers/Home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/app/Models/Almacen.php" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/app/Models/Almacen.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/app/Models/Productos.php" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/app/Models/Productos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/app/Models/SalidaMercancia.php" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/app/Models/SalidaMercancia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/app/Models/TablaProduccionFecha.php" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/app/Models/TablaProduccionFecha.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/app/Models/TablaProduccionFechaHasProductos.php" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/app/Models/TablaProduccionFechaHasProductos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/Cabecera.php" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/Cabecera.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/Cantidades.php" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/Cantidades.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/Confirmacion.php" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/Confirmacion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/Corroborar.php" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/Corroborar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/ProduccionDeseada.php" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/ProduccionDeseada.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/Productos.php" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/Productos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/RegistroDistrubucion.php" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/RegistroDistrubucion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/Vistaproduccion.php" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/Vistaproduccion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/Vistaproducciondeseada.php" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/Vistaproducciondeseada.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/app/Views/HTML/menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/basedatos.sql" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/basedatos.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/public/JS/ayuda.js" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/public/JS/ayuda.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/public/JS/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/public/JS/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/public/JS/jquery-3.3.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/public/JS/jquery-3.3.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/public/Recursos/zyro-image.png" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/public/Recursos/zyro-image.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/debugbar/debugbar_1736907799.955168.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/debugbar/debugbar_1736907839.919187.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/debugbar/debugbar_1736908530.785859.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/debugbar/debugbar_1736908635.195071.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/debugbar/debugbar_1736908810.690310.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/debugbar/debugbar_1736908825.605975.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/debugbar/debugbar_1736915075.916806.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/debugbar/debugbar_1736915149.479039.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/debugbar/debugbar_1736915154.892525.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/debugbar/debugbar_1736915157.472757.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/debugbar/debugbar_1736915163.183158.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/debugbar/debugbar_1736915165.415977.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/debugbar/debugbar_1736915201.973424.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/debugbar/debugbar_1736915204.209888.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/debugbar/debugbar_1736915219.527506.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/debugbar/debugbar_1736915236.019913.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/debugbar/debugbar_1736915239.406506.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/debugbar/debugbar_1736916896.190682.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/debugbar/debugbar_1736918134.784251.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/debugbar/debugbar_1736918173.416976.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/logs/log-2025-01-14.log" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/writable/logs/log-2025-01-14.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/logs/log-2025-01-15.log" beforeDir="false" afterPath="$PROJECT_DIR$/proyectopanaderia-server/writable/logs/log-2025-01-15.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_session11j3mpqlf4s4lc9dorrd3b2jbpiidpba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_session126urmfvqhjmidvadgafhq6u3n9eke1r" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_session1t4h6u785sl6djlvcophf1cssm175t9b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_session21ksb8aeu13tu4ipam5n2qsv3biarjbv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_session281etbp89jb282b5uiqhknlukvqho5e6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_session2itt7uk0jgvkh83idf6l8cgcasep0gmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_session3fejdjf1neekpom9agm38t27v97v0uet" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_session3pg20ov1gjffgtt29loiv8fhq6hk3bol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_session5h69trpjtpu67psbua3n0lprkj6eve3g" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_session7hshhvovtsb3r10nh3danl8kmn1j5quo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_session9h7ed1ber2uo3b9n6jokrh843a6uh868" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionada47ljmshderpj3jd5r0ejtfcfd8q4j" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionafse4asf5q241cq6tj8hkr2au0hh63k5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionb0i60hs0pt8le0kqvqfa8k5jmuchm6tv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionb7ksf2rj3ruiuo6ak07mjs9mlraukqhm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionbda2tfreabn2amum6p15b833mksqdrka" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionc2uc9n35pgre5glnridqsl93tgqnvaiv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessioncg5ts7hdj2suap1e4mfdlr6fnj8rgd3c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessiond1vsms996dapqpgn0tm5pp3r0tpuhn7r" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessiondtrvut0a3qng4594bh9v6oa9r74imlhc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionea8hiu02gf4mk1jrg2e3a1dra80b8dcj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionf9spib9etsv5m3nmgvsfv1h4hv746fbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionfc8cmm75omkjdct1m8m5cbdp4o7lcsbe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionggkt0th8kppa54nt23uk5ljpgrtisvti" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessiongh4r1kfmtv062pbcncp0qgup2l30qjqm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessiongmc3c3ekirurns52kacl17s1vvvdv5r6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionhm0u0649jfs4csmegu8afghhckhqf2lq" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionhv2sgs4eudpip2tjto0uqec8hj74e29k" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessioni1suth8v043af6hb241bv0t55jnold6e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionj5me6pb79bvj70arf7kqchffhrqa5od2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionjncl3ukj0pl739bgkd94453f5j3ldsd5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionk7jvm6qmtvo7b52qkjio8klin8rqfqoi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionlbhmkud29empm2kv5bn98k97mm4bhit1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionmagn3e4uj4gtg027nuo4ntb7urb5hjk8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionmi3p5qlfta5mj2k2hbhr8mt9n9dqo4dh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionmrllqmqo70qtvssg3tfdce2d89tetc7j" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionn7ajsf6dqeum80v9tcactg8mommh9lia" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionndctfn2llfq85mav1khfh9smdk860e90" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionnk1nv2ag1gn0dd5mb7gmd18ia6mjnc6j" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionnkv4dg3jlvgvn94uviivnr7m46trsqn1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionnsnd4sapl8cs4nrqokosfb57rgogeles" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionocn8hqgeq92olt7s47km492ecc89di5d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionpdns9cfladjqehitoe404ihtlerobfm3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionpnnjiq6qhiumaj7fr1626op55700r8m8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionqc1ptk6lqb66nqpcrpsl5jfk7fa09d1a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionqfke3557s096v37tfp60gah4oolo7jot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionrrkq6s7vph9k85f0b1pn02os7l52sjfm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessions7df7kbu74fi62u4mqit91ovb84q16he" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionskqccmc6udrpl4e5e83messled4lp3dc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionuh3ro5j5lkto9am5vqodgcgrcbmil534" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionv2nmo8e5rmu375ec6vlfva5musgb907s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionv8tjmc0isqbj3tb35scehnprf76f3kac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionvcfat8g4m1r0ea75t2seddc7s69ello9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyectopanaderia-server/writable/session/ci_sessionvfds233s1gsaatr5t6f5mmcuobbe2n0n" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/JS/ayuda.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/JS/ayuda.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/JS/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/JS/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/JS/jquery-3.3.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/JS/jquery-3.3.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Recursos/zyro-image.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/Recursos/zyro-image.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1736907799.955168.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1736907839.919187.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1736908530.785859.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1736908635.195071.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1736908810.690310.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1736908825.605975.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1736915075.916806.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1736915149.479039.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1736915154.892525.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1736915157.472757.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1736915163.183158.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1736915165.415977.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1736915201.973424.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1736915204.209888.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1736915219.527506.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1736915236.019913.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1736915239.406506.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1736916896.190682.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1736918134.784251.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/debugbar/debugbar_1736918173.416976.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/logs/log-2025-01-14.log" beforeDir="false" afterPath="$PROJECT_DIR$/writable/logs/log-2025-01-14.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/logs/log-2025-01-15.log" beforeDir="false" afterPath="$PROJECT_DIR$/writable/logs/log-2025-01-15.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_session11j3mpqlf4s4lc9dorrd3b2jbpiidpba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_session126urmfvqhjmidvadgafhq6u3n9eke1r" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_session1t4h6u785sl6djlvcophf1cssm175t9b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_session21ksb8aeu13tu4ipam5n2qsv3biarjbv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_session281etbp89jb282b5uiqhknlukvqho5e6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_session2itt7uk0jgvkh83idf6l8cgcasep0gmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_session3fejdjf1neekpom9agm38t27v97v0uet" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_session3pg20ov1gjffgtt29loiv8fhq6hk3bol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_session5h69trpjtpu67psbua3n0lprkj6eve3g" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_session7hshhvovtsb3r10nh3danl8kmn1j5quo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_session9h7ed1ber2uo3b9n6jokrh843a6uh868" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionada47ljmshderpj3jd5r0ejtfcfd8q4j" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionafse4asf5q241cq6tj8hkr2au0hh63k5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionb0i60hs0pt8le0kqvqfa8k5jmuchm6tv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionb7ksf2rj3ruiuo6ak07mjs9mlraukqhm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionbda2tfreabn2amum6p15b833mksqdrka" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionc2uc9n35pgre5glnridqsl93tgqnvaiv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessioncg5ts7hdj2suap1e4mfdlr6fnj8rgd3c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessiond1vsms996dapqpgn0tm5pp3r0tpuhn7r" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessiondtrvut0a3qng4594bh9v6oa9r74imlhc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionea8hiu02gf4mk1jrg2e3a1dra80b8dcj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionf9spib9etsv5m3nmgvsfv1h4hv746fbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionfc8cmm75omkjdct1m8m5cbdp4o7lcsbe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionggkt0th8kppa54nt23uk5ljpgrtisvti" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessiongh4r1kfmtv062pbcncp0qgup2l30qjqm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessiongmc3c3ekirurns52kacl17s1vvvdv5r6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionhm0u0649jfs4csmegu8afghhckhqf2lq" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionhv2sgs4eudpip2tjto0uqec8hj74e29k" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessioni1suth8v043af6hb241bv0t55jnold6e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionj5me6pb79bvj70arf7kqchffhrqa5od2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionjncl3ukj0pl739bgkd94453f5j3ldsd5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionk7jvm6qmtvo7b52qkjio8klin8rqfqoi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionlbhmkud29empm2kv5bn98k97mm4bhit1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionmagn3e4uj4gtg027nuo4ntb7urb5hjk8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionmi3p5qlfta5mj2k2hbhr8mt9n9dqo4dh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionmrllqmqo70qtvssg3tfdce2d89tetc7j" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionn7ajsf6dqeum80v9tcactg8mommh9lia" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionndctfn2llfq85mav1khfh9smdk860e90" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionnk1nv2ag1gn0dd5mb7gmd18ia6mjnc6j" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionnkv4dg3jlvgvn94uviivnr7m46trsqn1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionnsnd4sapl8cs4nrqokosfb57rgogeles" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionocn8hqgeq92olt7s47km492ecc89di5d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionpdns9cfladjqehitoe404ihtlerobfm3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionpnnjiq6qhiumaj7fr1626op55700r8m8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionqc1ptk6lqb66nqpcrpsl5jfk7fa09d1a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionqfke3557s096v37tfp60gah4oolo7jot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionrrkq6s7vph9k85f0b1pn02os7l52sjfm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessions7df7kbu74fi62u4mqit91ovb84q16he" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionskqccmc6udrpl4e5e83messled4lp3dc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionuh3ro5j5lkto9am5vqodgcgrcbmil534" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionv2nmo8e5rmu375ec6vlfva5musgb907s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionv8tjmc0isqbj3tb35scehnprf76f3kac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionvcfat8g4m1r0ea75t2seddc7s69ello9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writable/session/ci_sessionvfds233s1gsaatr5t6f5mmcuobbe2n0n" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerConfigs">
+    <option name="configs">
+      <option value="$PROJECT_DIR$/proyectopanaderia-server/composer.json" />
+    </option>
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\xampp\php\php.exe">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/vendor/kint-php/kint" />
+      <path value="$PROJECT_DIR$/vendor/mikey179/vfsstream" />
+      <path value="$PROJECT_DIR$/vendor/nexusphp/cs-config" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/codeigniter/coding-standard" />
+      <path value="$PROJECT_DIR$/vendor/codeigniter4/shield" />
+      <path value="$PROJECT_DIR$/vendor/codeigniter4/settings" />
+      <path value="$PROJECT_DIR$/vendor/friendsofphp/php-cs-fixer" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/predis/predis" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-escaper" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/kint-php/kint" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/mikey179/vfsstream" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/nexusphp/cs-config" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/codeigniter/coding-standard" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/codeigniter4/settings" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/codeigniter4/shield" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/friendsofphp/php-cs-fixer" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/composer" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/predis/predis" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/laminas/laminas-escaper" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/proyectopanaderia-server/vendor/symfony/polyfill-ctype" />
+    </include_path>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2UoKJgIKY45C39Ra1wOMWcFPpjh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/proyectopanaderia-server&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MTConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\proyectopanaderia\app\Filters" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\proyectopanaderia-server\app\Views\html" />
+      <recent name="C:\xampp\htdocs\proyectopanaderia\public\Recursos" />
+      <recent name="C:\xampp\htdocs\proyectopanaderia\app\Views" />
+      <recent name="C:\xampp\htdocs\proyectopanaderia\public" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.phpunit.xml.dist">
+    <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+    <configuration name="proyectopanaderia-server" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner configuration_file="$PROJECT_DIR$/proyectopanaderia-server/phpunit.xml.dist" scope="XML" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14808.18" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fa7c6bf8-9c47-4909-8024-3b20601bfb77" name="Changes" comment="" />
+      <created>1693600422341</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1693600422341</updated>
+      <workItem from="1693600424167" duration="2736000" />
+      <workItem from="1693604004529" duration="42000" />
+      <workItem from="1693843560544" duration="15201000" />
+      <workItem from="1693930579445" duration="9395000" />
+      <workItem from="1693945959716" duration="18736000" />
+      <workItem from="1694100732802" duration="5369000" />
+      <workItem from="1694208886826" duration="1060000" />
+      <workItem from="1694282480321" duration="13592000" />
+      <workItem from="1694536938753" duration="2674000" />
+      <workItem from="1694727063887" duration="58000" />
+      <workItem from="1694793062652" duration="6000" />
+      <workItem from="1694800595324" duration="9000" />
+      <workItem from="1698696829766" duration="12000" />
+      <workItem from="1695401970226" duration="9409000" />
+      <workItem from="1716484822125" duration="1081000" />
+      <workItem from="1716490949933" duration="945000" />
+      <workItem from="1716491917994" duration="54000" />
+      <workItem from="1716493692835" duration="2423000" />
+      <workItem from="1718127787765" duration="500000" />
+      <workItem from="1718392038656" duration="2008000" />
+      <workItem from="1718643093068" duration="2242000" />
+      <workItem from="1718647950004" duration="3869000" />
+      <workItem from="1718729004559" duration="1227000" />
+      <workItem from="1718732176819" duration="6190000" />
+      <workItem from="1718815976071" duration="6585000" />
+      <workItem from="1719266773283" duration="1141000" />
+      <workItem from="1720547030881" duration="11000" />
+      <workItem from="1720718997333" duration="3000" />
+      <workItem from="1720719018039" duration="892000" />
+      <workItem from="1720719928258" duration="17000" />
+      <workItem from="1720720015962" duration="29000" />
+      <workItem from="1734526858979" duration="62000" />
+      <workItem from="1734526937519" duration="556000" />
+      <workItem from="1739986952701" duration="2423000" />
+      <workItem from="1740073941947" duration="7000" />
+      <workItem from="1740106005836" duration="127000" />
+      <workItem from="1740235702439" duration="456000" />
+      <workItem from="1740236739102" duration="1091000" />
+      <workItem from="1740237892459" duration="12000" />
+      <workItem from="1740239897833" duration="92000" />
+      <workItem from="1740407300391" duration="994000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/servidor" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
