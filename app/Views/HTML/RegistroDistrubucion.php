@@ -1,4 +1,4 @@
-<!-- <link rel="stylesheet" href="../css/Adaptable.css"> -->> 
+<!-- <link rel="stylesheet" href="../css/Adaptable.css"> -->
 <body>
 
 <div class="form-container">
@@ -14,17 +14,22 @@
 			<input type="hidden" class="txt_csrfname" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
 
 			<div class="form-group">
-				<label for="Nombre_Producto">Nombre_Producto</label>
+				<label for="Nombre_Producto">Nombre de Producto</label>
 				<select  class="form-control" name="Nombre_Producto" id="Nombre_Producto" required="">
 					<option value="sin_dato" selected>Nombre de Producto</option>
-					<?php
-					foreach ( $Productos as $row )
-					{?>
-						<option value="<?php echo $row ?>"><?php echo $row ?> </option>
-						<?php
-					}
+                    
+    <?php foreach ($CategoriasConStockReal as $item): ?>
 
-					?>
+        <option value="<?= $item['Categoria'] ?>"
+            <?= $item['StockReal'] <= 0 ? 'disabled' : '' ?>>
+
+            <?= $item['Categoria'] ?>
+            (Disponible: <?= $item['StockReal'] ?>)
+
+        </option>
+
+    <?php endforeach; ?>
+
 				</select>
 			</div>
             <div class="form-group">
@@ -61,6 +66,77 @@
 
 
 
+
+</div>
+
+
+
+
+<div class="container-fluid py-4 d-flex justify-content-center">
+    <div class="col-lg-11">
+
+        <div class="card shadow-sm border-0" style="border-radius:15px;">
+
+            <!-- Header -->
+            <div class="card-header bg-white border-bottom">
+                <h5 class="fw-bold text-dark mb-0">
+                    <i class="fas fa-truck text-primary me-2"></i>
+                    DISTRIBUCIÓN GENERAL
+                </h5>
+            </div>
+
+            <!-- Body -->
+            <div class="card-body bg-white p-0">
+
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle text-center mb-0">
+
+                        <thead style="background-color:#f8f9fa;">
+                            <tr class="text-uppercase text-muted small">
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Sucursal</th>
+                                <th>Categoría</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <?php foreach ($ConsultaDistribucion as $fila): ?>
+                                <tr>
+
+                                    <td class="fw-semibold text-dark">
+                                        <?= ucfirst($fila['Nombre_Producto']); ?>
+                                    </td>
+
+                                    <td class="fw-bold text-primary">
+                                        <?= number_format($fila['Cantidad_Salida'], 0, '.', ','); ?>
+                                    </td>
+
+                                    <td class="text-dark">
+                                        <?= ucfirst($fila['NombreSucursal']); ?>
+                                    </td>
+
+                                    <td>
+                                        <span class="badge bg-light text-dark border">
+                                            <?= $fila['Categoria']; ?>
+                                        </span>
+                                    </td>
+
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
 <div class="container-fluid d-flex justify-content-center align-items-center" style=" padding: 5px; min-height: 10vh;">
     <div class="row">
         <!-- Tabla de totales por producto -->
@@ -86,11 +162,11 @@
                     <?php } ?>
                 </tbody>
             </table>
+            
         </div>
       </div>
     </div>
 
-</div>
 
 
 <div class="container-fluid mt-4">

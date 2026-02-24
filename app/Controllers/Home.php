@@ -1010,13 +1010,13 @@ class Home extends BaseController
     }
 
 
-// obtener tambien a que sucursal se fue
+// YA SE OBTIENE DE QUE SUCURSAL SALE SOLO CHECAR QUE HAY UNA FUNCION IGUAL PERO CON DIFERENTE NOMBRE CHECAR
     private function ObtenerDistribucionHoy(){
         $modelSalidaMercancia = new SalidaMercancia();
 
         $ConsultaDistribucion = $modelSalidaMercancia->Buscartotales($this->FechaidExistente());
 
-        //d($ConsultaDistribucion);
+        d($ConsultaDistribucion);
         // Arreglo donde se guardarán las sumas por producto
         $totales = [];
 
@@ -1215,15 +1215,54 @@ class Home extends BaseController
         // Despues puedo ocupar este bloque para solo obtener los productos registrados
         //$indices = array_keys($$this->ObtenerProduccionHoy($this->fecha()));
         //print_r($indices);
-        //	d($this->ObtenerDistribucionHoy());
+        	//d($this->ObtenerDistribucionHoy());
    // 1. OBTENER LOS DATOS EN VARIABLES (Ya no usamos d())
          $datosProduccionHoy = $this->ObtenerProduccionHoy($this->fecha());
-         $datosMermasHoy = $this->ObtenerMermasHoyCategoria();
-       //  d($datosProduccionHoy);
+         $datosProduccionHoyPorCategoria = $this->ObtenerProduccionHoyCategoria($this->fecha()); //obtiene produccion por categoria
+         $datosMermasHoy = $this->ObtenerMermasHoyCategoria(); //OBTIENE MERMAS
+         $distHoyCat = $this->ObtenerDistribucionHoyCategoria();
+
+         //d($datosProduccionHoy);
         // d($datosMermasHoy);
         //	echo $this->validarDistribucion();
-       
+  
+       //  d($datosProduccionHoyPorCategoria);
         //echo $idusuario;
+        $modelSalidaMercancia = new SalidaMercancia();
+
+        $ConsultaDistribucion = $modelSalidaMercancia->Buscartotales($this->FechaidExistente());
+        
+       
+ // ESTE PEDAZO DE CODIGO REALIZA LA SUMA DE Disponible Real = Producción + Mermas - Ya Distribuido
+ // DE TODAS FORMAS TENEMOS VALIDACION DE QUE NO SE PASE 
+$CategoriasConStockReal = [];
+
+foreach ($select_Productos as $categoria) {
+
+    $categoriaKey = strtoupper(trim($categoria));
+
+    $produccion = $datosProduccionHoyPorCategoria[$categoriaKey] ?? 0;
+    $mermas     = $datosMermasHoy[$categoriaKey] ?? 0;
+    $distribuido= $distHoyCat[$categoriaKey] ?? 0;
+
+    // NIVEL PRO
+    $stockReal = ($produccion + $mermas) - $distribuido;
+
+    if ($stockReal < 0) {
+        $stockReal = 0;
+    }
+
+    $CategoriasConStockReal[] = [
+        'Categoria' => $categoria,
+        'StockReal' => $stockReal
+    ];
+}
+
+
+
+     //d( $CategoriasConStockReal);
+
+
 
         $Vista_Produccion_Registrado =
             view('html/Cabecera') .
@@ -1233,11 +1272,19 @@ class Home extends BaseController
                 'Sucursales' => $select_Sucursales,
                 'Distribucion' => $this->ObtenerDistribucionHoy(),
             'ProduccionHoy'  => $datosProduccionHoy, // <--- Nueva variable
-            'MermasHoy'      => $datosMermasHoy      // <--- Nueva variable
+            'MermasHoy'      => $datosMermasHoy,     // <--- Nueva variable
+            'ProduccionHoyPorCategoria' => $datosProduccionHoyPorCategoria, // <--- mas Nueva variable 
+            'CategoriasConStockReal' => $CategoriasConStockReal,// <--- vARIABLE CON LOS DATOS YA RESATDOS 
+            'ConsultaDistribucion' => $ConsultaDistribucion,
+
+            
            ));
 
         return $Vista_Produccion_Registrado;
     }
+
+
+
 
 
     public function Vista_CantidadPredeterminada()

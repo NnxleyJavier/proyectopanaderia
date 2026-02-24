@@ -29,8 +29,9 @@ public function Buscartotales($fecha){
 
     // Realizar la consulta
     $resultados = $this
-        ->select('productos.Nombre_Producto, salida_mercancia.Cantidad_Salida , Sucursales_idSucursales, productos.Categoria')
+        ->select('productos.Nombre_Producto, salida_mercancia.Cantidad_Salida , NombreSucursal, productos.Categoria')
         ->join('productos', 'productos.idProductos = salida_mercancia.Productos_idProductos', 'INNER')
+        ->join('sucursales', 'sucursales.idSucursales = salida_mercancia.Sucursales_idSucursales', 'INNER')
         ->where('Tabla_Produccion_Fecha_idTabla_Produccion', $fecha)
         ->findAll();
 
