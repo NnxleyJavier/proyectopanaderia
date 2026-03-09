@@ -44,7 +44,7 @@ class Home extends BaseController
 
         // Validación extra: Si tiene ID pero NO se encontraron datos del empleado
         if (!$ConsultaUsuario) {
-             return redirect()->to('/index.php/login');
+             return redirect()->to('/login');
         }
 
         $nombreUsuario = $ConsultaUsuario['Nombre']; // Extraer solo el nombre
@@ -1204,65 +1204,80 @@ class Home extends BaseController
     {
         $datos_Productos = new Productos();
         $datos_Sucursales = new TablaSucursales();
-        // $select_Productos = $datos_Productos->Buscar_productos();
+        
         $select_Productos = $datos_Productos->Buscar_productosyCategorias();
+
         $select_Productos = array_map(function($producto) {
             return $producto['Categoria'] ?? $producto['Nombre_Producto'];
         }, $select_Productos);
+
         $select_Productos = array_unique($select_Productos);
+        
         $select_Sucursales = $datos_Sucursales->Buscar_Sucursales();
         $idusuario = $this->ObtenerId_User();
-        // Despues puedo ocupar este bloque para solo obtener los productos registrados
-        //$indices = array_keys($$this->ObtenerProduccionHoy($this->fecha()));
-        //print_r($indices);
-        	//d($this->ObtenerDistribucionHoy());
-   // 1. OBTENER LOS DATOS EN VARIABLES (Ya no usamos d())
-         $datosProduccionHoy = $this->ObtenerProduccionHoy($this->fecha());
-         $datosProduccionHoyPorCategoria = $this->ObtenerProduccionHoyCategoria($this->fecha()); //obtiene produccion por categoria
-         $datosMermasHoy = $this->ObtenerMermasHoyCategoria(); //OBTIENE MERMAS
-         $distHoyCat = $this->ObtenerDistribucionHoyCategoria();
 
-         //d($datosProduccionHoy);
-        // d($datosMermasHoy);
-        //	echo $this->validarDistribucion();
-  
-       //  d($datosProduccionHoyPorCategoria);
-        //echo $idusuario;
+        // 1. OBTENER LOS DATOS EN VARIABLES
+        $datosProduccionHoy = $this->ObtenerProduccionHoy($this->fecha());
+        $datosProduccionHoyPorCategoria = $this->ObtenerProduccionHoyCategoria($this->fecha());
+        $datosMermasHoy = $this->ObtenerMermasHoyCategoria(); 
+        $distHoyCat = $this->ObtenerDistribucionHoyCategoria();
+        
         $modelSalidaMercancia = new SalidaMercancia();
-
         $ConsultaDistribucion = $modelSalidaMercancia->Buscartotales($this->FechaidExistente());
         
-       
- // ESTE PEDAZO DE CODIGO REALIZA LA SUMA DE Disponible Real = Producción + Mermas - Ya Distribuido
- // DE TODAS FORMAS TENEMOS VALIDACION DE QUE NO SE PASE 
-$CategoriasConStockReal = [];
+        $distribucionProductos = $this->ObtenerDistribucionHoy();
 
-foreach ($select_Productos as $categoria) {
+        // 🌟 LA MAGIA (NIVEL DIOS): Creamos una función segura para normalizar
+        // Esto soluciona el problema con acentos, la "ñ" y los espacios ocultos
+        $normalizarLlaves = function($arreglo) {
+            $nuevoArreglo = [];
+            if (is_array($arreglo)) {
+                foreach ($arreglo as $key => $value) {
+                    // mb_strtoupper convierte a mayúsculas respetando el UTF-8 (acentos y ñ)
+                    $llaveLimpia = mb_strtoupper(trim($key), 'UTF-8');
+                    $nuevoArreglo[$llaveLimpia] = $value;
+                }
+            }
+            return $nuevoArreglo;
+        };
 
-    $categoriaKey = strtoupper(trim($categoria));
+        // Aplicamos la normalización segura a todos nuestros arreglos
+        $datosProduccionHoy = $normalizarLlaves($datosProduccionHoy);
+        $datosProduccionHoyPorCategoria = $normalizarLlaves($datosProduccionHoyPorCategoria);
+        $datosMermasHoy = $normalizarLlaves($datosMermasHoy);
+        $distHoyCat = $normalizarLlaves($distHoyCat);
+        $distribucionProductos = $normalizarLlaves($distribucionProductos);
 
-    $produccion = $datosProduccionHoyPorCategoria[$categoriaKey] ?? 0;
-    $mermas     = $datosMermasHoy[$categoriaKey] ?? 0;
-    $distribuido= $distHoyCat[$categoriaKey] ?? 0;
+        // ESTE PEDAZO DE CODIGO REALIZA LA SUMA DE Disponible Real
+        $CategoriasConStockReal = [];
 
-    // NIVEL PRO
-    $stockReal = ($produccion + $mermas) - $distribuido;
+        foreach ($select_Productos as $item) { 
+            // También normalizamos la búsqueda de forma segura
+            $itemKey = mb_strtoupper(trim($item), 'UTF-8');
 
-    if ($stockReal < 0) {
-        $stockReal = 0;
-    }
+            // 2. PRODUCCIÓN
+            $produccion = $datosProduccionHoyPorCategoria[$itemKey] ?? ($datosProduccionHoy[$itemKey] ?? 0);
 
-    $CategoriasConStockReal[] = [
-        'Categoria' => $categoria,
-        'StockReal' => $stockReal
-    ];
-}
+            // 3. MERMAS
+            $mermas = $datosMermasHoy[$itemKey] ?? 0;
 
+            // 4. DISTRIBUCIÓN
+            $distribuido = $distHoyCat[$itemKey] ?? ($distribucionProductos[$itemKey] ?? 0);
 
+            // NIVEL PRO: Cálculo del stock
+            $stockReal = ($produccion + $mermas) - $distribuido;
 
-     //d( $CategoriasConStockReal);
+            if ($stockReal < 0) {
+                $stockReal = 0;
+            }
 
+            $CategoriasConStockReal[] = [
+                'Categoria' => $item, // Conserva el nombre original intacto
+                'StockReal' => $stockReal
+            ];
+        }
 
+        // var_dump($CategoriasConStockReal); // <-- Descomenta para confirmar los datos
 
         $Vista_Produccion_Registrado =
             view('html/Cabecera') .
@@ -1271,18 +1286,15 @@ foreach ($select_Productos as $categoria) {
                 'Productos' => $select_Productos, 
                 'Sucursales' => $select_Sucursales,
                 'Distribucion' => $this->ObtenerDistribucionHoy(),
-            'ProduccionHoy'  => $datosProduccionHoy, // <--- Nueva variable
-            'MermasHoy'      => $datosMermasHoy,     // <--- Nueva variable
-            'ProduccionHoyPorCategoria' => $datosProduccionHoyPorCategoria, // <--- mas Nueva variable 
-            'CategoriasConStockReal' => $CategoriasConStockReal,// <--- vARIABLE CON LOS DATOS YA RESATDOS 
-            'ConsultaDistribucion' => $ConsultaDistribucion,
-
-            
-           ));
+                'ProduccionHoy'  => $datosProduccionHoy, 
+                'MermasHoy'      => $datosMermasHoy,     
+                'ProduccionHoyPorCategoria' => $datosProduccionHoyPorCategoria, 
+                'CategoriasConStockReal' => $CategoriasConStockReal, 
+                'ConsultaDistribucion' => $ConsultaDistribucion,
+            ));
 
         return $Vista_Produccion_Registrado;
     }
-
 
 
 
@@ -1568,4 +1580,29 @@ private function ObtenerMermasHoyCategoria()
                view('html/error');
     }
 
+public function Dasboard()
+    {
+        // Configuramos la zona horaria y obtenemos la fecha actual
+        date_default_timezone_set('America/Mexico_City');
+        $fechaHoy = date("Y-m-d");
+
+        // 1. Obtenemos el ID de la producción de hoy.
+        // Tu función UltimaFecha() garantiza que siempre devuelva el ID numérico (creándolo si no existe).
+        $idTablaProduccion = $this->FechaidExistente();
+
+        // 2. Instanciamos el modelo de salidas
+        $salidaModel = new SalidaMercancia();
+
+        // 3. Preparamos los datos para la vista
+        $data = [
+            'fechaHoy' => $fechaHoy,
+            'reporteDiario' => $salidaModel->ReporteDiarioDashboard($idTablaProduccion),
+            // 'reporteSemanal' => $salidaModel->ReporteSemanalDashboard(...) // Listo para cuando lo actives
+        ];
+
+        // 4. Retornamos las vistas
+        return view('html/Cabecera') .
+               view('html/menu') .
+               view('html/VistaReportes', $data);
+    }
 }

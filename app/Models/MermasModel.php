@@ -17,7 +17,8 @@ class MermasModel extends Model
         'Conteo_Merma',
         'productos_idProductos',
         'tabla_produccion_fecha_idTabla_Produccion',
-        'users_id'
+        'users_id',
+        'Sucursales_idSucursales'
     ];
 
     // Dates

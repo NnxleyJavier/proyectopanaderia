@@ -35,67 +35,67 @@
     }
 </style>
 
-<div class="container py-5">
+<div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6">
-            
-            <div class="text-center mb-4">
-                <h2 class="font-weight-bold text-white display-5">
-                    <i class="fas fa-trash-alt text-danger mr-2"></i>Registro de Mermas
+        <div class="col-md-8">
+            <div class="card p-4 shadow-lg" style="border-radius: 15px;">
+                <h2 class="text-warning text-center mb-4">
+                    <i class="fas fa-trash-alt"></i> Registro de Mermas
                 </h2>
-                <p class="text-white">Reporte de sobrantes o producto dañado</p>
-            </div>
-
-            <div class="card card-aurorita rounded-lg">
-                <div class="card-body p-4 p-md-5">
-                    
+                
+             
                     <form role="form" class="Formulario_Mermas" id="Formulario_Mermas" name="Formulario_Mermas" method="POST">
+                    
+                    <div class="form-group">
+                        <label class="text-white font-weight-bold"><i class="fas fa-store"></i> Sucursal</label>
+                        <input type="text" class="form-control form-control-lg text-white" style="background-color: rgba(255,255,255,0.1); border: 1px solid #6c757d;" value="<?= isset($nombreSucursal) ? $nombreSucursal : 'Sucursal no detectada' ?>" readonly>
                         
-                        <div class="form-group mb-4">
-                            <label for="Nombre_Producto" class="label-style font-weight-bold">
-                                <i class="fas fa-bread-slice mr-2 text-warning"></i>Producto
-                            </label>
-                            <select class="form-control form-control-lg form-control-dark" 
-                                    name="Nombre_Producto" 
-                                    id="Nombre_Producto" 
-                                    required>
-                                <option value="sin_dato" selected disabled>-- Selecciona el Producto --</option>
-                                <?php foreach ($Productos as $row) { ?>
-                                    <option value="<?php echo $row['idProductos']; ?>">
-                                        <?php echo $row['Nombre_Producto']; ?>
-                                    </option>
-                                <?php } ?>
-                            </select>
-                        </div>
+                        <input type="hidden" name="Sucursales_idSucursales" value="<?= isset($idSucursal) ? $idSucursal : '' ?>" required>
+                    </div>
 
-                        <div class="form-group mb-4">
-                            <label for="Conteo_Merma" class="label-style font-weight-bold">
-                                <i class="fas fa-sort-numeric-down mr-2 text-info"></i>Cantidad (Piezas)
-                            </label>
-                            <input type="number" 
-                                   class="form-control form-control-lg form-control-dark" 
-                                   id="Conteo_Merma" 
-                                   name="Conteo_Merma" 
-                                   placeholder="0"
-                                   min="1"
-                                   required>
-                        </div>
+                    <div class="form-group mt-3">
+                        <label class="text-white font-weight-bold"><i class="fas fa-bread-slice"></i> Producto Mermado</label>
+                        <select name="Nombre_Producto" class="form-control form-control-lg" required>
+                            <option value="sin_dato">Selecciona un producto...</option>
+                            <?php if(isset($Productos) && !empty($Productos)): ?>
+                                <?php foreach($Productos as $prod): ?>
+                                    <option value="<?= $prod['idProductos'] ?>"><?= $prod['Nombre_Producto'] ?></option>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </select>
+                    </div>
 
-                        <div class="mt-5">
-                            <button type="submit" 
-                                    class="btn btn-danger btn-lg btn-block shadow font-weight-bold" 
-                                    id="MandarRegistroMermas">
-                                <i class="fas fa-save mr-2"></i> Registrar Merma
-                            </button>
-                        </div>
+                    <div class="form-group mt-3">
+                        <label class="text-white font-weight-bold"><i class="fas fa-sort-numeric-down"></i> Cantidad (Piezas)</label>
+                        <input type="number" name="Conteo_Merma" class="form-control form-control-lg" min="1" placeholder="Ej. 3" required>
+                    </div>
 
-                    </form>
-                </div>
+                    <div class="form-group mt-5 text-center">
+                        <button type="submit" class="btn btn-warning btn-lg px-5 font-weight-bold">
+                            <i class="fas fa-save"></i> Registrar Merma
+                        </button>
+                        <a href="/public/index.php" class="btn btn-outline-light btn-lg ml-2">
+                            <i class="fas fa-times"></i> Cancelar
+                        </a>
+                    </div>
+
+                </form>
             </div>
-
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('select[name="Nombre_Producto"]').change(function() {
+            if ($(this).val() !== "" && $(this).val() !== "sin_dato") {
+                $(this).css('border-color', '#28a745');
+            } else {
+                $(this).css('border-color', '#dc3545');
+            }
+        });
+    });
+</script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>

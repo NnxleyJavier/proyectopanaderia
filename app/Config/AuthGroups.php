@@ -92,8 +92,10 @@ class AuthGroups extends ShieldAuthGroups
     public array $matrix = [
         'superadmin' => [
             'admin.*',
-            'users.*',
+            'user.*',
             'beta.*',
+            'ventas.*',
+            'distribucion.*',
             'superadmin.vista',
 
         ],

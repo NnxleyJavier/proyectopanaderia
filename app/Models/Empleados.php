@@ -24,7 +24,7 @@ class Empleados extends Model
     public function BuscarNombre($idUser){
 
         $resultado = $this->select('Nombre,NombreSucursal,idSucursales')
-        ->join('sucursales', 'sucursales.Empleados_idEmpleados = empleados.users_id','left')
+        ->join('sucursales', 'sucursales.Empleados_idEmpleados = empleados.idEmpleados','left') //Cambie id_user por idEmpleados
     ->where('users_id', $idUser)
     ->first();
     return $resultado;

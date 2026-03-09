@@ -23,7 +23,7 @@ if (is_file(SYSTEMPATH . 'Config/Routes.php')) {
 
 service('auth')->routes($routes);
 
-service('auth')->routes($routes, ['except' => ['register']]);
+
 
 $routes->post('/user-login', 'Api\AuthController::userLogin');
 
@@ -78,7 +78,8 @@ $routes->get('/mermas', 'Mermas::index',['filter'=>'PermissionFilter:distribucio
 
 
 
-
+// Seccion de Reportes SuperAdmin
+$routes->get('/VistaReportes', 'Home::Dasboard');
 
 
 $routes->post('/MandarProducto_Gasto', 'Home::MandarProducto_Gasto');
@@ -102,9 +103,4 @@ $routes->get('/Error_401', 'Home::Error_401');
 
 
 
-service('auth')->routes($routes);
-
-if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
-    require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
-}
  

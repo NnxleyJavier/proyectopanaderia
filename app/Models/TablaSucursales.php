@@ -26,6 +26,13 @@ class TablaSucursales extends Model
 		$query = $this->findAll();
 		return $query;
 	}
-
+public function ObtenerSucursalPorUsuario($idUsuario)
+    {
+        // Ajusta 'idSucursales' y 'NombreSucursal' según tus columnas exactas si varían
+        return $this->select('sucursales.idSucursales, sucursales.NombreSucursal')
+                    ->join('empleados', 'empleados.idEmpleados = sucursales.Empleados_idEmpleados', 'INNER')
+                    ->where('empleados.users_id', $idUsuario)
+                    ->first(); // first() nos devuelve un solo arreglo asociativo
+    }
 
 }
