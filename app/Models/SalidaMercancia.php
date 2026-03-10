@@ -73,17 +73,25 @@ public function ReporteDiarioDashboard($idTablaProduccion)
         $resultados = $this
             ->select('
                 productos.Nombre_Producto, 
+                productos.Categoria,
                 productos.Valor_Venta,
                 salida_mercancia.Cantidad_Salida, 
                 sucursales.NombreSucursal, 
                 mercancia_sucursal.Confirmacion_Salida, 
                 mercancia_sucursal.Nota,
                 (
-                    SELECT SUM(Conteo_Merma) 
-                    FROM mermas 
-                    WHERE mermas.productos_idProductos = salida_mercancia.Productos_idProductos 
-                    AND mermas.tabla_produccion_fecha_idTabla_Produccion = salida_mercancia.Tabla_Produccion_Fecha_idTabla_Produccion
-                    AND mermas.Sucursales_idSucursales = salida_mercancia.Sucursales_idSucursales /* <--- ¡LÍNEA DESCOMENTADA! */
+                    SELECT SUM(m.Conteo_Merma) 
+                    FROM mermas m
+                    LEFT JOIN productos p_merma ON p_merma.idProductos = m.productos_idProductos
+                    WHERE m.tabla_produccion_fecha_idTabla_Produccion = salida_mercancia.Tabla_Produccion_Fecha_idTabla_Produccion
+                    AND m.Sucursales_idSucursales = salida_mercancia.Sucursales_idSucursales
+                    AND (
+                        /* CONDICIÓN 1: Si el producto tiene categoría, suma todas las mermas de esa misma categoría */
+                        (productos.Categoria != "" AND productos.Categoria IS NOT NULL AND p_merma.Categoria = productos.Categoria)
+                        OR 
+                        /* CONDICIÓN 2: Si el producto NO tiene categoría, suma solo las mermas de su ID exacto */
+                        ((productos.Categoria = "" OR productos.Categoria IS NULL) AND m.productos_idProductos = salida_mercancia.Productos_idProductos)
+                    )
                 ) as Total_Merma
             ')
             ->join('productos', 'productos.idProductos = salida_mercancia.Productos_idProductos', 'INNER')

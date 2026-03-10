@@ -1582,25 +1582,33 @@ private function ObtenerMermasHoyCategoria()
 
 public function Dasboard()
     {
-        // Configuramos la zona horaria y obtenemos la fecha actual
-        date_default_timezone_set('America/Mexico_City');
-        $fechaHoy = date("Y-m-d");
+     date_default_timezone_set('America/Mexico_City');
+        
+        // 1. Recibimos la fecha del formulario. Si no hay, usamos la de hoy.
+        $fechaSeleccionada = $this->request->getPost('fecha_reporte');
+        if (empty($fechaSeleccionada)) {
+            $fechaSeleccionada = date("Y-m-d");
+        }
 
-        // 1. Obtenemos el ID de la producción de hoy.
-        // Tu función UltimaFecha() garantiza que siempre devuelva el ID numérico (creándolo si no existe).
-        $idTablaProduccion = $this->FechaidExistente();
+        // 2. Buscamos si existe un ID de producción para esa fecha elegida
+        // Usamos tu modelo que ya tiene la función obtenerFecha()
+        $modeloFechas = new TablaProduccionFecha();
+        $registroFecha = $modeloFechas->obtenerFecha($fechaSeleccionada);
+        
+        // Extraemos el ID. Si no hay registro ese día, lo dejamos como null
+        $idTablaProduccion = null;
+        if ($registroFecha && isset($registroFecha['idTabla_Produccion'])) {
+            $idTablaProduccion = $registroFecha['idTabla_Produccion'];
+        }
 
-        // 2. Instanciamos el modelo de salidas
+        // 3. Consultamos el modelo
         $salidaModel = new SalidaMercancia();
 
-        // 3. Preparamos los datos para la vista
         $data = [
-            'fechaHoy' => $fechaHoy,
+            'fechaHoy' => $fechaSeleccionada, // Mandamos la fecha elegida a la vista
             'reporteDiario' => $salidaModel->ReporteDiarioDashboard($idTablaProduccion),
-            // 'reporteSemanal' => $salidaModel->ReporteSemanalDashboard(...) // Listo para cuando lo actives
         ];
 
-        // 4. Retornamos las vistas
         return view('html/Cabecera') .
                view('html/menu') .
                view('html/VistaReportes', $data);

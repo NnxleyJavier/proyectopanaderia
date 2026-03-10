@@ -80,6 +80,7 @@ $routes->get('/mermas', 'Mermas::index',['filter'=>'PermissionFilter:distribucio
 
 // Seccion de Reportes SuperAdmin
 $routes->get('/VistaReportes', 'Home::Dasboard');
+$routes->post('/Dasboard', 'Home::Dasboard');
 
 
 $routes->post('/MandarProducto_Gasto', 'Home::MandarProducto_Gasto');
