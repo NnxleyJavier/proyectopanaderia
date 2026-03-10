@@ -71,6 +71,8 @@ $routes->get('/Vista_CantidadPredeterminada','Home::Vista_CantidadPredeterminada
 $routes->post('/CambiarValorPredeterminado','Home::CambiarValorPredeterminado',['filter'=>'PermissionFilter:distribucion.access']);
 $routes->post('/AgregarDistribucion','Home::AgregarDistribucion',['filter'=>'PermissionFilter:distribucion.access']);
 $routes->get('/Consultamermas','Pedidos::Consultamermas',['filter'=>'PermissionFilter:distribucion.access']);//
+$routes->get('/VistaEliminarDistribucion','Home::VistaEliminarDistribucion',['filter'=>'PermissionFilter:distribucion.access']);//
+$routes->post('/EliminarRegistroDistribucion', 'Home::EliminarRegistroDistribucion', ['filter' => 'PermissionFilter:distribucion.access']);
 
 
 $routes->get('/mermas', 'Mermas::index',['filter'=>'PermissionFilter:distribucion.mermas']);

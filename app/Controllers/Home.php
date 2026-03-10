@@ -1299,6 +1299,63 @@ class Home extends BaseController
 
 
 
+
+
+// --- NUEVAS FUNCIONES PARA ELIMINAR DISTRIBUCIÓN ---
+
+    public function VistaEliminarDistribucion()
+    {
+        date_default_timezone_set('America/Mexico_City');
+        $fechaHoy = date("Y-m-d");
+
+        // Obtenemos el ID de la producción de hoy
+        $modeloFechas = new TablaProduccionFecha();
+        $registroFecha = $modeloFechas->obtenerFecha($fechaHoy);
+        
+        $idTablaProduccion = null;
+        if ($registroFecha && isset($registroFecha['idTabla_Produccion'])) {
+            $idTablaProduccion = $registroFecha['idTabla_Produccion'];
+        }
+
+        // Traemos la lista de lo que se ha enviado hoy
+        $salidaModel = new SalidaMercancia();
+        $datosDistribucion = $salidaModel->ObtenerDistribucionParaEliminar($idTablaProduccion);
+
+        $data = [
+            'fechaHoy' => $fechaHoy,
+            'distribuciones' => $datosDistribucion
+        ];
+
+        return view('html/Cabecera') .
+               view('html/menudistribucion') .
+               view('html/VistaEliminarDistribucion', $data);
+    }
+
+public function EliminarRegistroDistribucion()
+    {
+        // Atrapamos el ID oculto que nos manda el formulario de la vista
+        $idSalida = $this->request->getPost('idSalida'); 
+        
+        if (!empty($idSalida)) {
+            $salidaModel = new SalidaMercancia();
+            $salidaModel->delete($idSalida);
+        }
+
+        // Redirigimos de vuelta a la vista para que la tabla se actualice
+        return redirect()->to('/VistaEliminarDistribucion'); 
+        // Nota: Ajusta '/Home/VistaEliminarDistribucion' si tienes una ruta personalizada para esa vista
+    }
+    
+
+
+
+
+
+
+
+
+
+
     public function Vista_CantidadPredeterminada()
     {
         $datos_Productos = new Productos();

@@ -28,6 +28,12 @@
                             </a>
                         </li>
 
+                           <li class="nav-item">
+                          <a class="dropdown-item text-danger" href="<?= base_url('/VistaEliminarDistribucion') ?>">
+                        <i class="fas fa-trash-alt"></i> Corregir Envíos de Hoy
+                            </a>
+                        </li>
+
         </ul>
 
         <form class="form-inline my-2 my-lg-0" id="cerrarsesion_form" action="<?= base_url('index.php/logout') ?>" method="get">

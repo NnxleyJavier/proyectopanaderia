@@ -60,6 +60,34 @@ public function Buscartotalesconsucursal($fecha,$Sucursal){
 
 
 
+public function ObtenerDistribucionParaEliminar($idTablaProduccion)
+    {
+        if (empty($idTablaProduccion)) {
+            return [];
+        }
+
+        return $this->select('
+                salida_mercancia.idSalida_Mercancia, 
+                productos.Nombre_Producto, 
+                salida_mercancia.Cantidad_Salida, 
+                sucursales.NombreSucursal,
+                mercancia_sucursal.Confirmacion_Salida
+            ')
+            ->join('productos', 'productos.idProductos = salida_mercancia.Productos_idProductos', 'INNER')
+            ->join('sucursales', 'sucursales.idSucursales = salida_mercancia.Sucursales_idSucursales', 'INNER')
+            ->join('mercancia_sucursal', 'mercancia_sucursal.Salida_Mercancia_idSalida_Mercancia = salida_mercancia.idSalida_Mercancia', 'LEFT')
+            ->where('salida_mercancia.Tabla_Produccion_Fecha_idTabla_Produccion', $idTablaProduccion)
+            ->orderBy('sucursales.NombreSucursal', 'ASC')
+            ->orderBy('salida_mercancia.idSalida_Mercancia', 'DESC')
+            ->findAll();
+    }
+
+
+
+
+
+
+
   
 
   // --- NUEVAS FUNCIONES PARA EL DASHBOARD DE REPORTES ---
