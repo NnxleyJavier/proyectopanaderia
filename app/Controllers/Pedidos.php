@@ -301,7 +301,7 @@ public function Consultamermas()
         $lista_productos = new Productos();
         $model_Produccion_Deseada = new Produccion_Deseada();
 
-        $productos = $lista_productos->Buscarlista();
+        $productos = $lista_productos->Buscarlistauno();
         $iteraciones = count($productos);
 
         // Tu logica actual de iteración

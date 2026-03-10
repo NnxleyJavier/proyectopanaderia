@@ -47,12 +47,20 @@ class Productos extends Model{
 		return $query;
 	}
 
-	public function Buscarlista(){
+public function Buscarlista(){
+        // Agregamos Categoria a la consulta
+        $this->select('Nombre_Producto, Categoria');
+        $query = $this->findAll();
+        return $query;
+    }
+	
+		public function BuscarlistaUno(){
 		$this->select('Nombre_Producto');
 		$query = $this->findAll();
 		return $query;
 		
 	}
+
 	
 	public function BuscarCantidadUso($productos) {
 		$resultados = $this->select('idAlmacen, Nombre_Producto, Cantidad_uso, Cantidad_Existente, Nombre_Materia, Cantidad_medida')

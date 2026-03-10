@@ -95,7 +95,7 @@
                                                         <?= $row['Nombre_Producto'] ?>
                                                     </span>
                                                     <small class="text-muted">
-                                                        <i class="far fa-clock mr-1"></i> Reg: <?= date('H:i', strtotime($row['Fecha_Registro'])) ?>
+                                                     
                                                     </small>
                                                 </div>
                                             </td>

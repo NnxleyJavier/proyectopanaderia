@@ -303,9 +303,8 @@ class Home extends BaseController
     // funcion para el panadero, para saber cuanto de pan va a hacer en el dia, esta funcion esta pensada
     // para que obtenga el valor de otra funcion de ventas y sobrantes para que se adecue el valor dependiendo de
     // de la produccion asignada y los sobrantes
-  public function Produccion_Deseada()
+public function Produccion_Deseada()
     {
-        // ... (Tu código previo de instancias y fecha sigue igual) ...
         $fecha = $this->fecha();
         $ConsultarPedidos = new PedidosModel();
         $lista_productos = new Productos();
@@ -318,72 +317,93 @@ class Home extends BaseController
         $Pedidoshoy = $ConsultarPedidos->BuscarPedidoshoy($fecha);
         $PedidosTotal = $this->SumadeValoresporProductos($Pedidoshoy);
 
-        // 2. Lógica de iteración (igual que tenías)
         $iteraciones = count($productos);
-        $resultados = []; // Inicializamos array para evitar errores si está vacío
+        $resultadosRaw = []; 
         
         for ($i = 0; $i < $iteraciones;) {
-            $result = $model_Produccion_Deseada->BuscarProductosDeseados($productos[$i]);
+            $nombreBusqueda = $productos[$i]['Nombre_Producto'];
+            $result = $model_Produccion_Deseada->BuscarProductosDeseados($nombreBusqueda);
+            
             if ($result == null) {
                 $i++;
             } else {
-                $resultados[] = $result;
+                $result['Categoria'] = $result['Categoria'] ?? $productos[$i]['Categoria'];
+                $result['Nombre_Producto'] = $result['Nombre_Producto'] ?? $productos[$i]['Nombre_Producto'];
+                $resultadosRaw[] = $result;
                 $i++;
             }
         }
 
         // -----------------------------------------------------------------------
-        // NUEVA LÓGICA DE VALIDACIÓN
+        // 2. CREAMOS EL "BANCO DE MERMAS" LLAMANDO A LA FUNCIÓN PRIVADA
         // -----------------------------------------------------------------------
-        
-        $mermasSonCero = true; // Asumimos que son cero hasta demostrar lo contrario
-        $ListaMermasActuales = [];
+        $mermasSonCero = true; 
+        $bancoMermas = [];
 
         if ($IdUltimaFecha) {
-            // Si hay un ID, traemos las mermas
             $ListaMermasActuales = $ListaMermas->BuscarMermasActuales($IdUltimaFecha);
             
-            // Sumamos todas las cantidades de 'Conteo_Merma'
-            $totalCantidad = array_sum(array_column($ListaMermasActuales, 'Conteo_Merma'));
-            
-            // Si la suma es mayor a 0, entonces SÍ hay mermas reales
-            if ($totalCantidad > 0) {
-                $mermasSonCero = false;
+            foreach ($ListaMermasActuales as $merma) {
+                $cantidad = (int)$merma['Conteo_Merma'];
+                if ($cantidad > 0) {
+                    $mermasSonCero = false;
+                    
+                    // ¡Aquí llamamos a tu función privada!
+                    $mapeo = $this->clasificarProducto($merma['Categoria'] ?? '', $merma['Nombre_Producto'] ?? '');
+                    $claveUnificada = $mapeo['nombre'];
+                    
+                    if (!isset($bancoMermas[$claveUnificada])) {
+                        $bancoMermas[$claveUnificada] = 0;
+                    }
+                    $bancoMermas[$claveUnificada] += $cantidad;
+                }
             }
         }
 
         // -----------------------------------------------------------------------
-        // DECISIÓN: Entramos aquí si NO hay ID o si las mermas suman 0
+        // 3. AGRUPAMOS LA PRODUCCIÓN Y RESTAMOS EL BANCO DE MERMAS
         // -----------------------------------------------------------------------
-        if ($IdUltimaFecha == false || $mermasSonCero == true) {
-            
-            echo("no hay mermas (o están en 0)");
-            
-            // No hacemos restas, pasamos $resultados tal cual
+        $produccionFinal = [];
 
-        } else {
-            // -------------------------------------------------------------------
-            // LÓGICA DE RESTA (Solo si hay mermas reales)
-            // -------------------------------------------------------------------
-            echo("si hay mermas");
+        foreach ($resultadosRaw as $prod) {
+            // ¡Aquí volvemos a llamar a tu función privada!
+            $mapeo = $this->clasificarProducto($prod['Categoria'] ?? '', $prod['Nombre_Producto'] ?? '');
+            $claveUnificada = $mapeo['nombre'];
+            
+            if (!isset($produccionFinal[$claveUnificada])) {
+                $produccionFinal[$claveUnificada] = [
+                    'Nombre_Producto' => $claveUnificada,
+                    'Cantidad_requerida' => 0,
+                    'orden_original' => $mapeo['orden'] // Rescatamos el número de posición
+                ];
+            }
+            $produccionFinal[$claveUnificada]['Cantidad_requerida'] += (int)$prod['Cantidad_requerida'];
+        }
 
-            // Aquí hacemos la resta matemática que ya tenías
-            foreach ($resultados as &$resultado) {
-                foreach ($ListaMermasActuales as $merma) {
-                    if ($resultado['idProductos'] == $merma['productos_idProductos']) {
-                        // Validamos que exista la key para evitar errores
-                         $cantidadRestar = $merma['Conteo_Merma'] ?? 0;
-                         $resultado['Cantidad_requerida'] -= $cantidadRestar;
+        if (!$mermasSonCero) {
+            foreach ($produccionFinal as $clave => &$item) {
+                if (isset($bancoMermas[$clave])) {
+                    $item['Cantidad_requerida'] -= $bancoMermas[$clave];
+                    if ($item['Cantidad_requerida'] < 0) {
+                        $item['Cantidad_requerida'] = 0;
                     }
                 }
             }
         }
 
         // -----------------------------------------------------------------------
-        // RENDERIZADO DE VISTA (Unificado para no repetir código)
+        // 4. RESTAURAMOS EL ORDEN VISUAL ANTES DE ENVIAR A LA VISTA
         // -----------------------------------------------------------------------
-        
-        // Determinamos qué menú usar según el rol
+        $resultados = array_values($produccionFinal);
+
+        // Acomodamos basándonos en el número extraído de tu función privada
+        usort($resultados, function($a, $b) {
+            return $a['orden_original'] <=> $b['orden_original'];
+        });
+
+        // -----------------------------------------------------------------------
+        // 5. RENDERIZADO DE VISTA
+        // -----------------------------------------------------------------------
         $menuView = auth()->user()->inGroup('admin') ? 'html/menu' : 'html/menuPanadero';
 
         return view('html/Cabecera') .
@@ -395,6 +415,57 @@ class Home extends BaseController
                ));
     }
 
+
+
+    /**
+     * Función privada para agrupar, renombrar y ordenar los productos del panadero
+     */
+    private function clasificarProducto($categoria, $nombre)
+    {
+        $ordenPersonalizado = [
+            'CONCHAS'     => ['nombre' => 'CONCHAS', 'orden' => 1],
+            'MANTECA'     => ['nombre' => 'MANTECA', 'orden' => 2],
+            'TAPADOS'     => ['nombre' => 'TAPADOS', 'orden' => 3],
+            'REBANADAS'   => ['nombre' => 'REBANADAS', 'orden' => 4],
+            'CROASSANT'   => ['nombre' => 'CROASSANT', 'orden' => 5],
+            'GALLETAS'    => ['nombre' => 'GALLETAS', 'orden' => 6],
+            'PAN DE YEMA' => ['nombre' => 'PAN DE YEMA', 'orden' => 7],
+            'CACAHUATES'  => ['nombre' => 'CACAHUATES', 'orden' => 8],
+            'PANQUES'     => ['nombre' => 'PANQUES', 'orden' => 9],
+            'CUERNOS'     => ['nombre' => 'Cuernos', 'orden' => 10],
+            'BIGOTES'     => ['nombre' => 'Bigotes', 'orden' => 11],
+            'ROLES'       => ['nombre' => 'Roles', 'orden' => 12],
+            'CUERNOS RELLENOS JAMÓN' => ['nombre' => 'Cuernos Rellenos Jamón', 'orden' => 13],
+            'CUERNOS RELLENOS JAMON' => ['nombre' => 'Cuernos Rellenos Jamón', 'orden' => 13],
+            'RELLENOS'               => ['nombre' => 'Cuernos Rellenos Jamón', 'orden' => 13],
+            'BARQUILLOS'  => ['nombre' => 'Barquillos', 'orden' => 14],
+            'BANDERILLAS' => ['nombre' => 'BANDERILLAS', 'orden' => 15],
+            'PIZZA'       => ['nombre' => 'PIZZA', 'orden' => 16],
+            'DONAS GLASEADAS' => ['nombre' => 'Donas Glaseada', 'orden' => 17],
+            'DONAS GLASEADA'  => ['nombre' => 'Donas Glaseada', 'orden' => 17],
+            'DONAS AZUCAR'    => ['nombre' => 'Donas Azucar', 'orden' => 18],
+            'DONAS AZÚCAR'    => ['nombre' => 'Donas Azucar', 'orden' => 18],
+            'BOLILLOS' => ['nombre' => 'Bolillos Y Telera', 'orden' => 19],
+            'BOLILLOS Y Telera' => ['nombre' => 'Bolillos Y Telera', 'orden' => 19],
+            'OREJAS'    => ['nombre' => 'Orejas', 'orden' => 20],
+            'BESOS'     => ['nombre' => 'Besos', 'orden' => 21],
+            'NIDOS'     => ['nombre' => 'Nidos', 'orden' => 22],
+            'REGAÑADAS' => ['nombre' => 'Regañadas', 'orden' => 23],
+            'REGANADAS' => ['nombre' => 'Regañadas', 'orden' => 23]
+        ];
+
+        // Usamos la categoría si existe, si no, el nombre normal
+        $raw = !empty($categoria) ? trim($categoria) : trim($nombre);
+        $upperRaw = mb_strtoupper($raw, 'UTF-8'); // Convertimos a mayúsculas para comparar
+        
+        // Si está en nuestra lista, devolvemos el acomodo exacto
+        if (isset($ordenPersonalizado[$upperRaw])) {
+            return $ordenPersonalizado[$upperRaw];
+        }
+        
+        // Si es un producto nuevo que no está en la lista, lo mandamos al final (posición 99)
+        return ['nombre' => $raw, 'orden' => 99]; 
+    }
 
     /**
      * Suma las cantidades requeridas de productos en los pedidos de hoy.

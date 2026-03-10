@@ -26,6 +26,7 @@
                     <a class="dropdown-item" href="/Uso_Materia_Prima">Uso de Materia Prima</a>
                     <a class="dropdown-item" href="/Produccion_Deseada_admin">Actualizar Prod. Deseada</a>
                     <a class="dropdown-item" href="/PedidosdeMaterialConfirmacion">Envío de Utilería</a>
+                      <a class="dropdown-item" href="/VistaReportes">Consultar Reporte Ventas.</a>
                 </div>
             </li>
 
@@ -44,6 +45,7 @@
                     <div class="dropdown-divider"></div>
                     <h6 class="dropdown-header">Reportes</h6>
                     <a class="dropdown-item" href="/GenerarReporteProduccion">Generar Reporte Prod.</a>
+                  
                 </div>
             </li>
 
