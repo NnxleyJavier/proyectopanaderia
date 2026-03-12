@@ -298,22 +298,24 @@ public function Consultamermas()
         // Optimizacion: Casteo directo a int en una sola linea
         $IdUltimaFecha = (int)$ListaMermas->BuscarNumeroMasAlto();
 
-        $lista_productos = new Productos();
-        $model_Produccion_Deseada = new Produccion_Deseada();
+      //  $lista_productos = new Productos();
+       // $model_Produccion_Deseada = new Produccion_Deseada();
 
-        $productos = $lista_productos->Buscarlistauno();
-        $iteraciones = count($productos);
+       // $productos = $lista_productos->Buscarlistauno();
+       // $iteraciones = count($productos);
 
         // Tu logica actual de iteración
-        for ($i = 0; $i < $iteraciones;) {
-            $result = $model_Produccion_Deseada->BuscarProductosDeseados($productos[$i]);
-            if ($result == null) {
-                $i++;
-            } else {
-                $resultados[] = $result;
-                $i++;
-            }
-        }
+  //      for ($i = 0; $i < $iteraciones;) {
+  //          $result = $model_Produccion_Deseada->BuscarProductosDeseados($productos[$i]);
+  //          if ($result == null) {
+  //              $i++;
+  //          } else {
+  //              $resultados[] = $result;
+  //              $i++;
+  //          }
+  //      }
+
+//		var_dump($resultados);
 
         if ($IdUltimaFecha == false || $IdUltimaFecha == 0) {
             // Es recomendable retornar una vista vacía o un mensaje en lugar de solo echo

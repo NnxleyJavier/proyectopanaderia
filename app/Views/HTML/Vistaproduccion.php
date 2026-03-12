@@ -6,8 +6,8 @@
 
 
 		<form role="form" class="Formulario_produccion" id="Formulario_produccion" name="Formulario_produccion" method="POST">
-            <h4 class="container-fluid d-flex justify-content-center align-items-center"><?php echo $Fecha ?></h4>
-			<h3>Añade tu produccion de hoy</h3>
+			<h4 class="container-fluid d-flex justify-content-center align-items-center" style="color: white;"><?php echo $Fecha ?></h4>
+			<h3 style="color: white;">Añade tu produccion de hoy</h3>
 
 
 			<input type="hidden" class="txt_csrfname" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />

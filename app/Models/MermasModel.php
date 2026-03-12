@@ -48,6 +48,7 @@ class MermasModel extends Model
         ->join('users', 'users.id = mermas.users_id','left')
         ->join('productos', 'productos.idProductos = mermas.productos_idProductos','left')
         ->where('tabla_produccion_fecha_idTabla_Produccion', $id)
+        ->orderBy('username', 'ASC') // <--- Esta es la línea que los acomoda por usuaria
         ->findAll();
 
         return $query;

@@ -522,31 +522,164 @@ public function Produccion_Deseada()
         return $vistaProduccionDeseada;
     }
 
+/**
+     * Función privada EXCLUSIVA para el Panadero (Orden detallado por sabores)
+     */
+    private function clasificarProductoDetallado($nombre)
+    {
+        $ordenPanadero = [
+            'CONCHAS VAINILLA' => ['nombre' => 'Conchas Vainilla', 'orden' => 1],
+            'CONCHAS CHOCOLATE' => ['nombre' => 'Conchas Chocolate', 'orden' => 2],
+            'ROSCAS' => ['nombre' => 'Roscas', 'orden' => 3],
+            'HUESOS' => ['nombre' => 'Huesos', 'orden' => 4],
+            'PUROS' => ['nombre' => 'Puros', 'orden' => 5],
+            'GUSANOS' => ['nombre' => 'Gusanos', 'orden' => 6],
+            'TRENZAS' => ['nombre' => 'Trenzas', 'orden' => 7],
+            'ROSCAS RELLENAS' => ['nombre' => 'Roscas rellenas', 'orden' => 8],
+            'TAPADOS VAINILLA' => ['nombre' => 'Tapados Vainilla', 'orden' => 9],
+            'TAPADOS CHOCOLATE' => ['nombre' => 'Tapados Chocolate', 'orden' => 10],
+            'REBANADAS VAINILLA' => ['nombre' => 'Rebanadas Vainilla', 'orden' => 11],
+            'REBANADAS CHOCOLATE' => ['nombre' => 'Rebanadas Chocolate', 'orden' => 12],
+            'REBANADAS MANTEQUILLA' => ['nombre' => 'Rebanadas Mantequilla', 'orden' => 13],
+            'CROASSANT NUTELLA' => ['nombre' => 'Croassant Nutella', 'orden' => 14],
+            'CROASSANT MERMELADA DE ZARZAMORA' => ['nombre' => 'Croassant mermelada de zarzamora', 'orden' => 15],
+            'GALLETAS DE CHOCOLATE' => ['nombre' => 'Galletas de chocolate', 'orden' => 16],
+            'GALLETAS DE NUEZ' => ['nombre' => 'Galletas de Nuez', 'orden' => 17],
+            'YEMA AJONJOLI' => ['nombre' => 'Yema Ajonjoli', 'orden' => 18],
+            'YEMA CONCHA VAINILLA' => ['nombre' => 'Yema Concha Vainilla', 'orden' => 19],
+            'YEMA CONCHA CHOCOLATE' => ['nombre' => 'Yema Concha Chocolate', 'orden' => 20],
+            'YEMA PURO' => ['nombre' => 'Yema Puro', 'orden' => 21],
+            'CACAHUATES VAINILLA' => ['nombre' => 'Cacahuates Vainilla', 'orden' => 22],
+            'CACAHUATES CHOCOLATE' => ['nombre' => 'Cacahuates Chocolate', 'orden' => 23],
+            'PANQUES NUEZ' => ['nombre' => 'Panques Nuez', 'orden' => 24],
+            'PANQUES CHOCOLATE' => ['nombre' => 'Panques Chocolate', 'orden' => 25],
+            'CUERNOS' => ['nombre' => 'Cuernos', 'orden' => 26],
+            'BIGOTES' => ['nombre' => 'Bigotes', 'orden' => 27],
+            'ROLES' => ['nombre' => 'Roles', 'orden' => 28],
+            'CUERNOS RELLENOS JAMÓN' => ['nombre' => 'Cuernos Rellenos Jamón', 'orden' => 29],
+            'CUERNOS RELLENOS JAMON' => ['nombre' => 'Cuernos Rellenos Jamón', 'orden' => 29], // Sin acento
+            'RELLENOS' => ['nombre' => 'Cuernos Rellenos Jamón', 'orden' => 29], // Backup
+            'BARQUILLOS VAINILLA' => ['nombre' => 'Barquillos Vainilla', 'orden' => 30],
+            'BARQUILLOS CHOCOLATE' => ['nombre' => 'Barquillos Chocolate', 'orden' => 31],
+            'BARQUILLO LECHECILLA' => ['nombre' => 'Barquillo Lechecilla', 'orden' => 32],
+            'BANDERILLAS FRESA' => ['nombre' => 'Banderillas Fresa', 'orden' => 33],
+            'BANDERILLAS PIÑA' => ['nombre' => 'Banderillas Piña', 'orden' => 34],
+            'BANDERILLAS PINA' => ['nombre' => 'Banderillas Piña', 'orden' => 34], // Sin ñ
+            'REBANADA DE PIZZA PEPPERONI' => ['nombre' => 'Rebanada de Pizza Pepperoni', 'orden' => 35],
+            'REBANADA DE PIZZA HAWAIANA' => ['nombre' => 'Rebanada de Pizza Hawaiana', 'orden' => 36],
+            
+            // Backup por si acaso hacen donas (Para que no se desordene)
+            'DONAS GLASEADAS' => ['nombre' => 'Donas Glaseadas', 'orden' => 36.1],
+            'DONAS GLASEADA'  => ['nombre' => 'Donas Glaseadas', 'orden' => 36.1],
+            'DONAS AZUCAR'    => ['nombre' => 'Donas Azucar', 'orden' => 36.2],
+            'DONAS AZÚCAR'    => ['nombre' => 'Donas Azucar', 'orden' => 36.2],
+
+            // Bolillos fusionados
+            'BOLILLOS Y TELERA' => ['nombre' => 'Bolillos Y Telera', 'orden' => 37],
+            'BOLILLOS' => ['nombre' => 'Bolillos Y Telera', 'orden' => 37],
+            'BOLILLO'  => ['nombre' => 'Bolillos Y Telera', 'orden' => 37],
+            'TELERA'   => ['nombre' => 'Bolillos Y Telera', 'orden' => 37],
+            'TELERAS'  => ['nombre' => 'Bolillos Y Telera', 'orden' => 37],
+            
+            'OREJAS'    => ['nombre' => 'Orejas', 'orden' => 38],
+            'BESOS'     => ['nombre' => 'Besos', 'orden' => 39],
+            'NIDOS'     => ['nombre' => 'Nidos', 'orden' => 40],
+            'REGAÑADAS' => ['nombre' => 'Regañadas', 'orden' => 41],
+            'REGANADAS' => ['nombre' => 'Regañadas', 'orden' => 41]
+        ];
+
+        // Limpiamos y convertimos a mayúsculas para que siempre coincida
+        $raw = trim($nombre);
+        $upperRaw = mb_strtoupper($raw, 'UTF-8');
+        
+        if (isset($ordenPanadero[$upperRaw])) {
+            return $ordenPanadero[$upperRaw];
+        }
+        
+        // Si hay un producto nuevo que no está en la lista, lo manda al final (posición 99)
+        return ['nombre' => $raw, 'orden' => 99]; 
+    }
+
+
+
+
+
     // aqui voy a hacer una vista y una funcion para la paga del panadero y registar cuanto elabora realmente en la anterior era un supuesto ahora sera un numero real
     // aqui en esta funcion igual debe de descontar lo que ocupo en el almacen
-    public function Vista_Produccion_Real()
+  public function Vista_Produccion_Real()
     {
         $fecha = $this->fecha();
-
         $datos_Productos = new Productos();
 
-        $select_Productos = $datos_Productos->Buscar_productos();
+        // 1. Obtenemos los productos desde la BD
+        $select_Productos_raw = $datos_Productos->Buscar_productos();
 
-        $CantidadUso = $datos_Productos->BuscarCantidadUso("bolillo");
+        // -----------------------------------------------------------------------
+        // 2. ORDENAR Y UNIFICAR LA LISTA DE PRODUCTOS (Para el Select / Formulario)
+        // -----------------------------------------------------------------------
+        $ProductosPanadero = [];
+        
+        foreach ($select_Productos_raw as $prod) {
+            $nombreOriginal = $prod['Nombre_Producto'] ?? '';
+            
+            // Pasamos el nombre por tu diccionario detallado de 41 posiciones
+            $clasificacion = $this->clasificarProductoDetallado($nombreOriginal);
+            $nombreUnificado = $clasificacion['nombre'];
+            $orden = $clasificacion['orden'];
 
+            // Agrupamos para que no salgan duplicados (ej. Bolillos y Teleras)
+            if (!isset($ProductosPanadero[$nombreUnificado])) {
+                $ProductosPanadero[$nombreUnificado] = [
+                    'idProductos'     => $prod['idProductos'],
+                    'Nombre_Producto' => $nombreUnificado,
+                    'orden_original'  => $orden
+                ];
+            }
+        }
 
-        //d($CantidadUso);
-        //valor limpio de Cantidad_Uso
-        // 100 va a ser variable
-        //$multiplicacion = ($CantidadUso[1]['Cantidad_uso']) * 100;
-        //$restaalmacen = ($CantidadUso[1]['Cantidad_Existente'] * $CantidadUso[1]['Cantidad_medida']) - ($multiplicacion);
-        //echo ($CantidadUso[0]['idAlmacen']);
+        // Convertimos a una lista plana y ordenamos del 1 al 41
+        $ProductosPanadero = array_values($ProductosPanadero);
+        usort($ProductosPanadero, function($a, $b) {
+            return $a['orden_original'] <=> $b['orden_original'];
+        });
 
+        // -----------------------------------------------------------------------
+        // 3. ORDENAR Y UNIFICAR LA PRODUCCIÓN DE HOY (Lo que ya salió del horno)
+        // -----------------------------------------------------------------------
+        $consulta_raw = $this->ObtenerProduccionHoy($fecha);
+        $ConsultaUnificada = [];
+
+        if (is_array($consulta_raw)) {
+            foreach ($consulta_raw as $nombre => $cantidad) {
+                
+                // Pasamos el nombre del producto horneado por el diccionario
+                $clasificacion = $this->clasificarProductoDetallado($nombre);
+                $nombreUnificado = $clasificacion['nombre'];
+                
+                if (!isset($ConsultaUnificada[$nombreUnificado])) {
+                    $ConsultaUnificada[$nombreUnificado] = 0;
+                }
+                
+                // Sumamos las cantidades (Así "Bolillo 50" y "Telera 20" serán "Bolillos y Telera 70")
+                $ConsultaUnificada[$nombreUnificado] += (int)$cantidad;
+            }
+        }
+
+        // (Tus pruebas de código anteriores que tenías en la función)
+        // $CantidadUso = $datos_Productos->BuscarCantidadUso("bolillo");
+        // d($CantidadUso);
+
+        // -----------------------------------------------------------------------
+        // 4. MANDAR A LA VISTA
+        // -----------------------------------------------------------------------
         $vistaProduccionDeseada =
             view('html/Cabecera') .
             view('html/menuPanadero') .
-            view('html/Vistaproduccion', array('Productos' => $select_Productos,
-                'Fecha' => $fecha, 'Consulta' => $this->ObtenerProduccionHoy($fecha)));
+            view('html/Vistaproduccion', array(
+                'Productos' => $ProductosPanadero,   // Lista ordenada del 1 al 41
+                'Fecha'     => $fecha, 
+                'Consulta'  => $ConsultaUnificada    // Producción del día sumada y unificada
+            ));
 
         return $vistaProduccionDeseada;
     }
@@ -1190,7 +1323,6 @@ public function Produccion_Deseada()
 }
 
 
-    // AQUI TENGO UN PROBLEMA CON LOS ID DE LOS USUARIOS HAY QUE CHECAR CUAL ES DE CUAL //
     //AQUI LO QUE PREDOMINA ES LA TABLA DE SUCURSALES YA QUE ESA DETERMINA EL USUARIO AL QUE PERTENECE //
 
     public function Vista_Confirmacion_Usuario(){
@@ -1200,11 +1332,12 @@ public function Produccion_Deseada()
 
         $idUser= $this->ObtenerId_User(); // obtengo el id User de la Sesion
 
-        $ConsultaUsuario = $Empleado->BuscarNombre($idUser); // obtenemos el nombre de la sucursal y del usuario
+        // Obtenemos a qué sucursal pertenece el usuario logueado
+        $ConsultaUsuario = $Empleado->BuscarNombre($idUser); 
+        $NombredeSucursaldeUsuario = $ConsultaUsuario['idSucursales'];
 
         var_dump($ConsultaUsuario);
 
-        $NombredeSucursaldeUsuario = $ConsultaUsuario['idSucursales']; // esta variable describe a que sucursal pertenece el usuario logeado
 
         d($this->ObtenerDistribucionHoyporsucursal($NombredeSucursaldeUsuario));
         // obtenemos la cantidad de distribucion por Sucursal y fecha actual solo obtenemos los datos de nombre del producto
@@ -1226,33 +1359,45 @@ public function Produccion_Deseada()
         // aqui consulto de la tabla mercancia_sucursal la que registra las confirmaciones ya hechas, se guia de la fecha actual
         // cosnsidero que debe de tener igual un filtro de sucursal, por usuario, por que de otra forma me va a devolver todos los inserts
 
-
+// Creamos nuestras dos "bolsas"
+        $pendientes = [];
+        $verificados = [];
         //array_column: Extrae los valores de idSalida_Mercancia de arrayconfirmados y los almacena en $idsToRemove.
         //array_filter: Recorre cada elemento de arraydistribucion y verifica si su idSalida_Mercancia no está en $idsToRemove. Si no está, se conserva el elemento.
         //array_values: Reindexa el array resultante para mantener índices consecutivos.
         //Resultado: Devuelve un array limpio con los elementos filtrados
         // Validar estructura
-        if (is_array($arraydistribucion) && is_array($arrayconfirmados)) {
 
-            // Extraer los IDs de arrayB para comparar
-            $idsToRemove = array_column($arrayconfirmados, "idSalida_Mercancia");
-            // Filtrar arrayA para excluir elementos que estén en arrayB
-            $arrayFiltered = array_filter($arraydistribucion, function($item) use ($idsToRemove) {
-                return isset($item["idSalida_Mercancia"]) && !in_array($item["idSalida_Mercancia"], $idsToRemove);
-            });
-            // Reindexar el arreglo filtrado
-            $arrayFiltered = array_values($arrayFiltered);
-            d($arrayFiltered);
+
+      if (is_array($arraydistribucion) && is_array($arrayconfirmados)) {
+        // Extraer los IDs de los que YA están confirmados
+            // NOTA: Verifica que la columna en tu tabla mercancia_sucursal se llame exactamente idSalida_Mercancia. 
+            // Si tiene otro nombre (ej. Salida_Mercancia_idSalida_Mercancia), cámbialo aquí.
+            $idsConfirmados = array_column($arrayconfirmados, "idSalida_Mercancia"); 
+            
+            // Recorremos toda la distribución para separarla
+            foreach ($arraydistribucion as $item) {
+                if (isset($item["idSalida_Mercancia"]) && in_array($item["idSalida_Mercancia"], $idsConfirmados)) {
+                    // Si el ID ya está en la lista de confirmados, lo guardamos en verificados
+                    $verificados[] = $item;
+                } else {
+                    // Si no está confirmado, se queda en pendientes
+                    $pendientes[] = $item;
+                }
+            }
 
         } else {
-            echo "Error: uno de los datos no es un arreglo válido.";
+            // Si no hay confirmados aún, todo se va a pendientes
+            $pendientes = is_array($arraydistribucion) ? $arraydistribucion : [];
         }
-
 
         $vistaConfirmacion =
             view('html/Cabecera') .
             view('html/menuvendedoras') .
-            view('html/Confirmacion', array('DataDistribucion' => $arrayFiltered));
+            view('html/Confirmacion', array(
+                'DataDistribucion' => $pendientes,   // Enviamos los que faltan
+                'DataVerificados'  => $verificados   // Enviamos los que ya están listos
+            ));
 
         return $vistaConfirmacion;
     }
