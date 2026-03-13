@@ -27,6 +27,9 @@
                     <a class="dropdown-item" href="<?= base_url('/Vista_Produccion_Real') ?>">
                         Registro Producción Real
                     </a>
+                      <a class="dropdown-item" href="<?= base_url('/VistaReportePanadero') ?>">
+                        Reporte de Pagos
+                    </a>
                 </div>
             </li>
 

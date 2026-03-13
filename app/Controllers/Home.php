@@ -1679,7 +1679,24 @@ public function EliminarRegistroDistribucion()
 
 
 
+public function VistaReportePanadero()
+    {
+        $idUser = $this->ObtenerId_User(); 
+        
+        // ¡Magia! Llamamos directamente a la función privada para obtener el array limpio
+        $Pagopanadero = $this->calcularDatosPago($idUser); 
+        
+        $Empleado = new Empleados();
+        $ConsultaUsuario = $Empleado->BuscarNombre($idUser); 
+        $nombreUsuario = $ConsultaUsuario['Nombre']; 
+        
+        $vistaProduccionDeseada =
+            view('html/Cabecera') .
+            view('html/menuPanadero'). 
+            view('html/VistaCobroPanadero', array('PagoPanadero' => $Pagopanadero, 'DataNombre' => $nombreUsuario));
 
+        return $vistaProduccionDeseada;
+    }
 
 
 
@@ -1709,51 +1726,58 @@ public function EliminarRegistroDistribucion()
             view('html/GenerarReportePagoPanadero', array('DataNombre' => $nombreUsuario,'Panaderos' => $select_Panaderos));//,'ConsultaPedidos' => ));
 
         return $vistaProduccionDeseada;
-
-
-
-
-        
+      
 
         }
 
 
-public function ConsultarPagoPanadero()
-{
-    if ($this->request->getPost()) {
-        $idPanadero = $this->request->getPost("Panadero");
+public function ConsultarPagoPanadero($idPanadero = null)
+    {
+        if ($this->request->getPost()) {
+            $idPanadero = $this->request->getPost("Panadero");
+        }
+
+        // Llamamos al motor de cálculo
+        $respuesta = $this->calcularDatosPago($idPanadero);
+
+        // Convertimos a JSON para el AJAX del administrador
+        return $this->response->setJSON($respuesta);
     }
 
-    $FechActual = $this->fecha();
-    $modeloTablaProduccionFecha = new TablaProduccionFecha();
-    $fechas = $modeloTablaProduccionFecha->obtenerUltimasFechasIDs($FechActual);
     
-    $resultado = $this->contarSemanasActuales($fechas);
-    $modeloTablaProduccionFechaHasProductos = new TablaProduccionFechaHasProductos();
+private function calcularDatosPago($idPanadero)
+    {
+        $FechActual = $this->fecha();
+        $modeloTablaProduccionFecha = new TablaProduccionFecha();
+        $fechas = $modeloTablaProduccionFecha->obtenerUltimasFechasIDs($FechActual);
+        
+        $resultado = $this->contarSemanasActuales($fechas);
+        $modeloTablaProduccionFechaHasProductos = new TablaProduccionFechaHasProductos();
 
-    $respuesta = [];
+        $respuesta = [];
 
-    foreach ($resultado as $item) {
-        $Idconsulta = $item['idTabla_Produccion'];
-        $datosProductos = $modeloTablaProduccionFechaHasProductos->obtenerProductosPorProduccion($Idconsulta, $idPanadero);
+        foreach ($resultado as $item) {
+            $Idconsulta = $item['idTabla_Produccion'];
+            $datosProductos = $modeloTablaProduccionFechaHasProductos->obtenerProductosPorProduccion($Idconsulta, $idPanadero);
 
-        $total = 0;
-        foreach ($datosProductos as $producto) {
-            if (isset($producto['Valor_produccion']) && isset($producto['Cantidad_Realizada'])) {
-                $total += $producto['Valor_produccion'] * $producto['Cantidad_Realizada'];
+            $total = 0;
+            foreach ($datosProductos as $producto) {
+                if (isset($producto['Valor_produccion']) && isset($producto['Cantidad_Realizada'])) {
+                    $total += $producto['Valor_produccion'] * $producto['Cantidad_Realizada'];
+                }
             }
+
+            $respuesta[] = [
+                'dia' => $item['Día de la semana'],
+                'fecha' => $item['Fecha'],
+                'total' => $total,
+                'productos' => $datosProductos
+            ];
         }
 
-        $respuesta[] = [
-            'dia' => $item['Día de la semana'],
-            'fecha' => $item['Fecha'],
-            'total' => $total,
-            'productos' => $datosProductos
-        ];
+        return $respuesta; // Retornamos el arreglo limpio
     }
 
-    return $this->response->setJSON($respuesta);
-}
 
 
 

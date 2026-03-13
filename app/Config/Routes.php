@@ -53,6 +53,9 @@ $routes->get('/producto','Home::Producto',['filter'=>'PermissionFilter:admin.acc
 $routes->get('/Uso_Materia_Prima','Home::Uso_Materia_Prima',['filter'=>'PermissionFilter:admin.access']);
 $routes->get('/Produccion_Deseada_admin','Home::Vista_Produccion_deseada',['filter'=>'PermissionFilter:admin.access']);
 $routes->get('/PedidosdeMaterialConfirmacion','Pedidos::PedidosdeMaterialConfirmacion',['filter'=>'PermissionFilter:admin.access']);// Agregar al server
+// Seccion de Reportes SuperAdmin
+$routes->get('/VistaReportes', 'Home::Dasboard',['filter'=>'PermissionFilter:admin.access']);
+$routes->post('/Dasboard', 'Home::Dasboard',['filter'=>'PermissionFilter:admin.access']);
 
 $routes->get('/GenerarReporteProduccion','Home::GenerarReporteProduccion',['filter'=>'PermissionFilter:admin.access']);
 $routes->post('/GenerarReporteProduccion','Home::ConsultarPagoPanadero',['filter'=>'PermissionFilter:admin.access']);
@@ -61,8 +64,9 @@ $routes->post('/GenerarReporteProduccion','Home::ConsultarPagoPanadero',['filter
 
 $routes->get('/Vista_Produccion_Real','Home::Vista_Produccion_Real',['filter'=>'PermissionFilter:user.index']);
 $routes->get('/Produccion_Deseada','Home::Produccion_Deseada',['filter'=>'PermissionFilter:user.access']);
-$routes->get('/Eliminarpanadero','Home::VistaEliminarRegistroProduccion');
+$routes->get('/Eliminarpanadero','Home::VistaEliminarRegistroProduccion',['filter'=>'PermissionFilter:user.access']);
 $routes->post('/SeleccionarYEliminarPanadero','Home::SeleccionarYEliminarPanadero');
+$routes->get('/VistaReportePanadero','Home::VistaReportePanadero',['filter'=>'PermissionFilter:user.access']);
 
 
 // seccion de Distribucion
@@ -80,9 +84,7 @@ $routes->get('/mermas', 'Mermas::index',['filter'=>'PermissionFilter:distribucio
 
 
 
-// Seccion de Reportes SuperAdmin
-$routes->get('/VistaReportes', 'Home::Dasboard');
-$routes->post('/Dasboard', 'Home::Dasboard');
+
 
 
 $routes->post('/MandarProducto_Gasto', 'Home::MandarProducto_Gasto');
