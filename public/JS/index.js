@@ -145,6 +145,8 @@ $("#FormEditarMerma").submit(function(event) {
 		//console.log(datosFormulario.serialize());
 		ajaxgeneral(datosFormulario,"ActualizarMermas",csrfName,csrfHash);
 
+		location.reload();
+
 	});
 
 

@@ -14,7 +14,7 @@ class mermasfinalesdescompuestos extends Model
     protected $useSoftDeletes   = false;
 
 
-    protected $allowedFields    = ['razon_eliminacion','Cantidad_Eliminar','mermas_idSupervision'];
+    protected $allowedFields    = ['razon_eliminacion','Cantidad_Eliminar','mermas_idSupervision','Historial'];
 
     // Dates
     protected $useTimestamps = false;

@@ -69,16 +69,8 @@
                                     </td>
                                   <td class="text-end pe-4">
     <div class="btn-group" role="group">
-        <a href="#" class="btn btn-sm btn-outline-info Editarmermas" 
-           title="Editar" 
-           data-toggle="modal" 
-           data-target="#modalEditar"
-           data-id="<?= $merma['idSupervision'] ?>" 
-           data-cantidad="<?= $merma['Conteo_Merma'] ?>">
-            <i class="fas fa-pen"></i>
-        </a>
-        
-        <a href="#" class="btn btn-sm btn-outline-danger" 
+     
+         <a href="#" class="btn btn-sm btn-outline-danger" 
            title="Eliminar"
            data-toggle="modal" 
            data-target="#modalEliminar"
@@ -87,6 +79,8 @@
            data-nombre="<?= $merma['Nombre_Producto'] ?? 'Producto Desconocido' ?>">
             <i class="fas fa-trash"></i>
         </a>
+        
+      
     </div>
 </td>
                                 </tr>
@@ -108,48 +102,8 @@
     </div>
 </div>
 
-<div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content text-dark">
-      
-      <div class="modal-header">
-        <h5 class="modal-title text-dark" id="exampleModalLabel">Editar Información</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      
-      <div class="modal-body">
-          <form id="FormEditarMerma" class="Actualizarmermas" method="POST" action="<?= base_url('/ActualizarMermas') ?>">
-                <input type="hidden" class="txt_csrfname" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
-                
-                
-                <input type="hidden" name="tipo_baja" value="SI"> <!-- 0 para baja sin repercusión, 1 para baja con repercusión -->
-                
-                
-                <div class="form-group">
-                <label for="idMermaInput" class="col-form-label font-weight-bold text-dark">ID Merma:</label>
-                <input type="text" class="form-control" id="idMermaInput" name="id_merma" readonly style="background-color: #e9ecef;">
-            </div>
 
-            <div class="form-group">
-                <label for="Razon_eliminacion" class="col-form-label font-weight-bold text-dark">Razón de la eliminación:</label>
-                <textarea class="form-control" id="Razon_eliminacion" placeholder="Ej: Panes Descompuestos" rows="3" name="razon_eliminacion"></textarea>
-            </div> 
-            <div class="form-group">
-                <label for="Cantidad_Eliminar" class="col-form-label font-weight-bold text-dark">Número de mermas:</label>
-                <input class="form-control" id="Cantidad_Eliminar" min="1" placeholder="Ej: 5" type="number" name="cantidad">
-            </div>
-        </form>
-      </div>
-      
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="submit" form="FormEditarMerma" class="btn btn-primary">Guardar Cambios</button>
-      </div>
-  </div>
- </div>
-</div>
+
 
 <div class="modal fade" id="modalEliminar" tabindex="-1" role="dialog" aria-labelledby="modalEliminarLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -201,19 +155,9 @@
 </div>
 
 <script>
-    // ----------------------------------------------------
-    // SCRIPT PARA EL MODAL DE EDITAR
-    // ----------------------------------------------------
-    $('#modalEditar').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget); 
-        var idRecibido = button.data('id');
-        var cantidadRecibida = button.data('cantidad');
-        var modal = $(this);
-        modal.find('.modal-body #idMermaInput').val(idRecibido);
-        modal.find('.modal-body #Cantidad_Eliminar').val(cantidadRecibida);
-    });
+  
 
-    // ----------------------------------------------------
+        // ----------------------------------------------------
     // SCRIPT PARA EL MODAL DE BAJA / ELIMINAR MERMA
     // ----------------------------------------------------
     $('#modalEliminar').on('show.bs.modal', function (event) {

@@ -90,8 +90,6 @@ public function ObtenerDistribucionParaEliminar($idTablaProduccion)
 
   
 
-  // --- NUEVAS FUNCIONES PARA EL DASHBOARD DE REPORTES ---
-
 public function ReporteDiarioDashboard($idTablaProduccion)
     {
         if (empty($idTablaProduccion)) {
@@ -108,11 +106,26 @@ public function ReporteDiarioDashboard($idTablaProduccion)
                 mercancia_sucursal.Confirmacion_Salida, 
                 mercancia_sucursal.Nota,
                 (
-                    SELECT SUM(m.Conteo_Merma) 
+                    SELECT SUM(
+                        /* Como la tabla mermas YA se actualizó (ej. bajó a 4), 
+                           le SUMAMOS las mermas dadas de baja (ej. + 2) 
+                           SOLO si el Historial dice "NO" (pan descompuesto, no repercute en contra de la vendedora).
+                           Si dice "SI" (error de dedo), suma 0 y la vendedora se queda con 4.
+                        */
+                        m.Conteo_Merma + COALESCE((
+                            SELECT SUM(mfd.Cantidad_Eliminar)
+                            FROM mermasfinalesdescompuestos mfd
+                            WHERE mfd.mermas_idSupervision = m.idSupervision
+                              AND mfd.Historial = "NO"
+                        ), 0)
+                    )
                     FROM mermas m
                     LEFT JOIN productos p_merma ON p_merma.idProductos = m.productos_idProductos
+                    LEFT JOIN empleados e ON e.users_id = m.users_id
+                    LEFT JOIN sucursales s_merma ON s_merma.Empleados_idEmpleados = e.idEmpleados
+                    
                     WHERE m.tabla_produccion_fecha_idTabla_Produccion = salida_mercancia.Tabla_Produccion_Fecha_idTabla_Produccion
-                    AND m.Sucursales_idSucursales = salida_mercancia.Sucursales_idSucursales
+                    AND s_merma.idSucursales = salida_mercancia.Sucursales_idSucursales
                     AND (
                         /* CONDICIÓN 1: Si el producto tiene categoría, suma todas las mermas de esa misma categoría */
                         (productos.Categoria != "" AND productos.Categoria IS NOT NULL AND p_merma.Categoria = productos.Categoria)
@@ -121,7 +134,7 @@ public function ReporteDiarioDashboard($idTablaProduccion)
                         ((productos.Categoria = "" OR productos.Categoria IS NULL) AND m.productos_idProductos = salida_mercancia.Productos_idProductos)
                     )
                 ) as Total_Merma
-            ')
+            ', false)
             ->join('productos', 'productos.idProductos = salida_mercancia.Productos_idProductos', 'INNER')
             ->join('sucursales', 'sucursales.idSucursales = salida_mercancia.Sucursales_idSucursales', 'INNER')
             ->join('mercancia_sucursal', 'mercancia_sucursal.Salida_Mercancia_idSalida_Mercancia = salida_mercancia.idSalida_Mercancia', 'LEFT')
@@ -132,7 +145,6 @@ public function ReporteDiarioDashboard($idTablaProduccion)
         return !empty($resultados) ? $resultados : [];
     }
 
-    
 
     public function ReporteSemanalDashboard($fechaInicio, $fechaFin)
     {

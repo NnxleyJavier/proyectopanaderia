@@ -11,6 +11,7 @@ use App\Models\MermasModel;
 use App\Models\Produccion_Deseada;
 use App\Models\mermasfinalesdescompuestos;
 
+
 class Pedidos extends BaseController
 {
     public function index()
@@ -342,9 +343,19 @@ public function Consultamermas()
                  // O retornar la vista sin datos
             }
 
+			 $Vista = 'html/mermasDistribuidor'; // Menú por defecto
+
+        if (auth()->user()->inGroup('admin')) {
+            $Vista = 'html/mermas';
+        } elseif (auth()->user()->inGroup('superadmin')) {
+            $Vista = 'html/mermas';
+        } elseif (auth()->user()->inGroup('distribucion')) {
+            $Vista = 'html/mermasDistribuidor';
+			}				
+
             return view('html/Cabecera') .
                 view('html/menu') .
-                view('html/mermas', array('ListaMermas' => $ListaMermasActuales));
+                view($Vista ,array('ListaMermas' => $ListaMermasActuales));
         }
     }
 
@@ -384,7 +395,7 @@ public function ActualizarMermas(){
 
 private function validarDatosMerma()
 {
-    // 1. Verificar si hay datos POST
+  // 1. Verificar si hay datos POST
     if (!$this->request->getPost()) {
         return false;
     }
@@ -393,22 +404,29 @@ private function validarDatosMerma()
     $id_merma = trim($this->request->getPost("id_merma"));
     $razon_eliminacion = trim($this->request->getPost("razon_eliminacion"));
     $cantidad = trim($this->request->getPost("cantidad"));
+	$tipo_baja = trim($this->request->getPost("tipo_baja"));
 
     // 3. Validar que no estén vacíos
-    if (!empty($id_merma) && !empty($razon_eliminacion) && !empty($cantidad)) {
+    if (!empty($id_merma) && !empty($razon_eliminacion) && !empty($cantidad) && !empty($tipo_baja)) {
         
         // Retornamos el array listo para insertar/actualizar
         return [
             "mermas_idSupervision"          => $id_merma,
             "razon_eliminacion" => $razon_eliminacion,
-            "Cantidad_Eliminar"          => $cantidad
+            "Cantidad_Eliminar"          => $cantidad,
+			"Historial" => $tipo_baja
         ];
     }
 
     // Si falta algún dato, devolvemos false
     return false;
 }
+
+
+
+
 	
+
 
 
 }
