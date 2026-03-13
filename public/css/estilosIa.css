@@ -1,0 +1,93 @@
+/* =========================================
+   1. ESTILOS GENERALES (TEMA AURORITA)
+   ========================================= */
+body {
+    background-color: #1a1a1a; /* Fondo Oscuro General */
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
+
+/* Espaciado para que el contenido no choque con el menú */
+.main-content {
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+/* =========================================
+   2. TARJETAS Y CONTENEDORES
+   ========================================= */
+.card-aurorita {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+
+.card-header-custom {
+    background-color: #252525;
+    border-bottom: 1px solid #333;
+    padding: 15px;
+}
+
+/* =========================================
+   3. FORMULARIOS (INPUTS Y SELECTS)
+   ========================================= */
+.form-control-dark {
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.form-control-dark:focus {
+    background-color: #333;
+    border-color: #ffc107; /* Amarillo Aurorita */
+    color: #fff;
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+}
+
+/* Corrección para selects */
+.form-control-dark option {
+    background-color: #2c2c2c;
+    color: white;
+}
+
+/* =========================================
+   4. TEMA ESPECIAL: PAGO A PANADEROS (AZUL)
+   ========================================= */
+/* Agrega esta clase al body o al contenedor principal de la vista de pagos */
+.tema-azul-pagos {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%) !important;
+    background-attachment: fixed; /* Para que el degradado no se corte al scrollear */
+}
+
+/* Tarjeta Blanca para el tema azul */
+.card-blanca {
+    background-color: #fff;
+    color: #333;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card-blanca h3, 
+.card-blanca label {
+    color: #1e3c72;
+}
+
+/* Input especial para el tema azul */
+.input-azul {
+    border: 2px solid #2a5298;
+    color: #333;
+}
+
+.btn-azul-gradiente {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #fff;
+    border: none;
+}
+.btn-azul-gradiente:hover {
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(30, 60, 114, 0.3);
+}

@@ -1,0 +1,46 @@
+
+body {
+    background: radial-gradient(black, transparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    animation: fadeIn 1s ease-in-out;
+
+}
+.form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+h1,h3 {
+    text-align: center;
+    color: black;
+    font-size: 2em;
+}
+label {
+    color: black;
+}
+p {
+    margin: auto;
+    color: black;
+    font-size: 1em;
+    text-align: center;
+}

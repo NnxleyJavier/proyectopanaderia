@@ -21,13 +21,73 @@ class TablaProduccionFechaHasProductos extends Model
     protected $deletedField  = 'deleted_at';
 
 
-public function insertar($FechaIdExiste,$idInsertado){
-    $sql = "INSERT INTO `tabla_produccion_fecha_has_produccion_productos` 
+    public function insertar($FechaIdExiste,$idInsertado){
+        $sql = "INSERT INTO `tabla_produccion_fecha_has_produccion_productos` 
     (`id`, `Tabla_Produccion_idTabla_Produccion_Fecha`, `Produccion_Productos_idProduccion_Productos`)
      VALUES (NULL, '$FechaIdExiste', '$idInsertado')";
 
-    $this->query($sql);
-}
+        $this->query($sql);
+    }
+
+    public function ConsultarPorduccionRegistrada($fecha){
+        // Validar que $fecha no sea nula o inválida
+        if (empty($fecha)) {
+            echo "No existe la fecha";
+        }
+
+        // Realizar la consulta
+        $resultados = $this
+            ->select('id,Cantidad_Realizada,Nombre_Producto,idProductos')
+            ->join('produccion_productos', 'produccion_productos.idProduccion_Productos = tabla_produccion_fecha_has_produccion_productos.Produccion_Productos_idProduccion_Productos', 'INNER')
+            ->join('productos', 'productos.idProductos = produccion_productos.Productos_idProductos', 'INNER')
+            ->where('Tabla_Produccion_idTabla_Produccion_Fecha', $fecha)
+            ->findAll();
+
+        // Devolver un arreglo vacío si no hay resultados
+        return !empty($resultados) ? $resultados : [];
+
+    }
+
+
+    public function ConsultarPorduccionRegistradaPorID($ID){
+        // Validar que $fecha no sea nula o inválida
+        if (empty($ID)) {
+            echo "No existe EL ID";
+        }
+
+        // Realizar la consulta
+        $resultados = $this
+            ->select('*')
+            ->join('produccion_productos', 'produccion_productos.idProduccion_Productos = tabla_produccion_fecha_has_produccion_productos.Produccion_Productos_idProduccion_Productos', 'INNER')
+            ->where('id', $ID)
+            ->first();
+
+        // Devolver un arreglo vacío si no hay resultados
+        return !empty($resultados) ? $resultados : [];
+
+    }
+
+
+   
+    public function obtenerProductosPorProduccion($Idconsulta, $userId){
+        // Validar que $Idconsulta no sea nula o inválida
+        if (empty($Idconsulta)) {
+            echo "No existe EL ID de consulta";
+        }
+
+        // Realizar la consulta
+        $resultados = $this
+            ->select('produccion_productos.idProduccion_Productos, produccion_productos.Cantidad_Realizada, productos.Nombre_Producto, productos.idProductos, Valor_produccion')
+            ->join('produccion_productos', 'produccion_productos.idProduccion_Productos = tabla_produccion_fecha_has_produccion_productos.Produccion_Productos_idProduccion_Productos', 'INNER')
+            ->join('productos', 'productos.idProductos = produccion_productos.Productos_idProductos', 'INNER')
+            ->where('Tabla_Produccion_idTabla_Produccion_Fecha', $Idconsulta)
+            ->where('users_id', $userId)
+            ->findAll();
+
+        // Devolver un arreglo vacío si no hay resultados
+        return !empty($resultados) ? $resultados : [];
+
+    }
 
 
 

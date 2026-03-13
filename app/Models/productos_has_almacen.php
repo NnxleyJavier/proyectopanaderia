@@ -10,7 +10,7 @@ class productos_has_almacen extends Model{
 	protected $returnType    ='array';
 	protected $useSoftDeletes= false;
 
-	protected $allowedFields=['Almacen_idAlmacen','Cantidad_uso','Productos_idProductos '];
+	protected $allowedFields=['Almacen_idAlmacen','Cantidad_uso','Productos_idProductos'];
 
 	protected $useTimestamps=false;
 	protected $createdField ='created_at';

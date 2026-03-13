@@ -10,7 +10,7 @@ class Produccion_productos extends Model{
 	protected $returnType    ='array';
 	protected $useSoftDeletes= false;
 
-	protected $allowedFields=['Cantidad_Realizada','Productos_idProductos'];
+	protected $allowedFields=['Cantidad_Realizada','Productos_idProductos','users_id'];
 
 	protected $useTimestamps=false;
 	protected $createdField ='created_at';

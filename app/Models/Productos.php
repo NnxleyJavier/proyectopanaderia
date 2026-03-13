@@ -10,7 +10,7 @@ class Productos extends Model{
 	protected $returnType    ='array';
 	protected $useSoftDeletes=false;
 
-	protected $allowedFields=['Nombre_Producto','Valor_produccion','Url_Imagen','Valor_Venta'];
+	protected $allowedFields=['Nombre_Producto','Valor_produccion','Url_Imagen','Valor_Venta','Categoria','Can_Predeterminada','Categoria'];
 
 	protected $useTimestamps=false;
 	protected $createdField ='created_at';
@@ -27,13 +27,40 @@ class Productos extends Model{
 		$query = $this->findAll();
 		return $query;
 	}
+	public function Buscar_porNombre($Nombre){
+		$this->select('idProductos')
+		->where('Nombre_Producto', $Nombre);
+		$query = $this->first();
+		return $query;
+	}
 
-	public function Buscarlista(){
+	public function Buscar_productosyCategorias(){
+		$this->select('idProductos,Nombre_Producto,Categoria');
+		$query = $this->findAll();
+		return $query;
+	}
+	public function Buscar_productosyCategoriasparticular($Nombre){
+		$this->select('idProductos,Nombre_Producto,Categoria')
+		->where('Nombre_Producto', $Nombre)
+		->orWhere('Categoria', $Nombre);
+		$query = $this	->first();
+		return $query;
+	}
+
+public function Buscarlista(){
+        // Agregamos Categoria a la consulta
+        $this->select('Nombre_Producto, Categoria');
+        $query = $this->findAll();
+        return $query;
+    }
+	
+		public function BuscarlistaUno(){
 		$this->select('Nombre_Producto');
 		$query = $this->findAll();
 		return $query;
 		
 	}
+
 	
 	public function BuscarCantidadUso($productos) {
 		$resultados = $this->select('idAlmacen, Nombre_Producto, Cantidad_uso, Cantidad_Existente, Nombre_Materia, Cantidad_medida')
@@ -54,6 +81,15 @@ class Productos extends Model{
 	return $this->select('Nombre_Producto')
 	->where('idProductos', $id)
 	->first();
+	}
+
+	public function CambiarValorPredeterminado($Nombre_Producto, $Categoria, $Cantidad) {
+		$this->set('Can_Predeterminada', $Cantidad)
+			->groupStart()
+			->where('Nombre_Producto', $Nombre_Producto)
+			->orWhere('Categoria', $Categoria)
+			->groupEnd()
+			->update();
 	}
 
 

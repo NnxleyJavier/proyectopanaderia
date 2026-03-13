@@ -24,6 +24,7 @@ class Almacen extends Model{
 	public function Buscarproductos_almacen(){
 		$this->select('*');
 		$this->join('referencias_almacen', 'referencias_almacen.idReferencias_Almacen = almacen.Referencias_Almacen_idReferencias_Almacen','left');
+    	$this->join('provedores', 'provedores.idProvedores = almacen.provedores_idProvedores','left');//AGREGAR LINEA DE PRODUCTOS CON ALERTAS
 		$query = $this->findAll();
 		return $query;
 	}
@@ -42,6 +43,15 @@ class Almacen extends Model{
 		$query = $this->first();
 		return $query;
 	}
+	
+	public function Buscar_almacen_Cantidad_medida($Id_Busqueda){
+		$this->select('Cantidad_medida');
+		$this->join('referencias_almacen', 'referencias_almacen.idReferencias_Almacen = almacen.Referencias_Almacen_idReferencias_Almacen','left');
+		$this->where('idAlmacen',$Id_Busqueda);
+		$query = $this->first();
+		return $query;
+	}
+
 
 	public function Buscar_Almacen_especifico(){
 		$this->select('idAlmacen,Nombre_Materia');

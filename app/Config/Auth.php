@@ -448,6 +448,12 @@ class Auth extends ShieldAuth
      */
     public function logoutRedirect(): string
     {
+        if (auth()->user()->can('user.access')) {
+			return '/paginaprincipal';
+		}if (auth()->user()->can('superadmin.vista')){
+			return '/Pedidos';
+		}
+        
         $url = setting('Auth.redirects')['logout'];
 
         return $this->getUrl($url);
