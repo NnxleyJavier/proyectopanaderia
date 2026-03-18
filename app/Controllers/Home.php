@@ -416,6 +416,28 @@ public function Produccion_Deseada()
     }
 
 
+    public function obtenerNotificacionesAjax()
+    {
+        // 1. Reutilizamos tu lógica para buscar pedidos de hoy
+        $fecha = $this->fecha();
+        $ConsultarPedidos = new PedidosModel();
+        
+        $Pedidoshoy = $ConsultarPedidos->BuscarPedidoshoy($fecha);
+        // Usamos tu misma función para agrupar y sumar
+        $PedidosTotal = $this->SumadeValoresporProductos($Pedidoshoy); 
+
+        // 2. Contamos cuántos pedidos diferentes hay
+        $cantidadPedidos = count($PedidosTotal);
+
+        // 3. Devolvemos la respuesta en formato JSON
+        return $this->response->setJSON([
+            'status' => 'success',
+            'cantidad' => $cantidadPedidos,
+            'pedidos' => $PedidosTotal
+        ]);
+    }
+
+
 
     /**
      * Función privada para agrupar, renombrar y ordenar los productos del panadero

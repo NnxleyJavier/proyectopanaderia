@@ -1,0 +1,227 @@
+CRITICAL - 2026-03-17 12:53:13 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 430.
+ 1 APPPATH\Controllers\Home.php(430): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->obtenerNotificacionesAjax()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+CRITICAL - 2026-03-17 12:53:13 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 430.
+ 1 APPPATH\Controllers\Home.php(430): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->obtenerNotificacionesAjax()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+CRITICAL - 2026-03-17 12:53:24 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 430.
+ 1 APPPATH\Controllers\Home.php(430): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->obtenerNotificacionesAjax()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+CRITICAL - 2026-03-17 12:53:24 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 430.
+ 1 APPPATH\Controllers\Home.php(430): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->obtenerNotificacionesAjax()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+CRITICAL - 2026-03-17 12:53:54 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 430.
+ 1 APPPATH\Controllers\Home.php(430): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->obtenerNotificacionesAjax()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+CRITICAL - 2026-03-17 12:54:02 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 430.
+ 1 APPPATH\Controllers\Home.php(430): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->obtenerNotificacionesAjax()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+CRITICAL - 2026-03-17 12:54:03 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 430.
+ 1 APPPATH\Controllers\Home.php(430): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->obtenerNotificacionesAjax()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+CRITICAL - 2026-03-17 12:54:08 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 430.
+ 1 APPPATH\Controllers\Home.php(430): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->obtenerNotificacionesAjax()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+CRITICAL - 2026-03-17 12:54:09 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 430.
+ 1 APPPATH\Controllers\Home.php(430): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->obtenerNotificacionesAjax()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+CRITICAL - 2026-03-17 12:54:13 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 430.
+ 1 APPPATH\Controllers\Home.php(430): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->obtenerNotificacionesAjax()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+CRITICAL - 2026-03-17 12:59:09 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 430.
+ 1 APPPATH\Controllers\Home.php(430): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->obtenerNotificacionesAjax()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+INFO - 2026-03-17 19:00:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-03-17 19:01:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-17 13:01:04 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 430.
+ 1 APPPATH\Controllers\Home.php(430): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->obtenerNotificacionesAjax()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+CRITICAL - 2026-03-17 13:03:33 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 430.
+ 1 APPPATH\Controllers\Home.php(430): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->obtenerNotificacionesAjax()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+INFO - 2026-03-17 19:03:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-03-17 19:03:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-03-17 19:03:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-03-17 19:03:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-17 13:03:34 --> Trying to access array offset on value of type bool
+in APPPATH\Controllers\Mermas.php on line 32.
+ 1 APPPATH\Controllers\Mermas.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type bool', 'C:\\xampp\\htdocs\\proyectopanaderia-server\\app\\Controllers\\Mermas.php', 32)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Mermas->index()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Mermas))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+INFO - 2026-03-17 19:03:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-03-17 19:03:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-03-17 19:03:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-03-17 19:03:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-03-17 19:03:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-03-17 19:03:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-03-17 19:03:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-03-17 19:03:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-03-17 19:03:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-03-17 19:03:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-17 13:03:40 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 430.
+ 1 APPPATH\Controllers\Home.php(430): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->obtenerNotificacionesAjax()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+INFO - 2026-03-17 23:53:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-03-17 23:53:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-03-17 23:53:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-17 17:54:26 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 430.
+ 1 APPPATH\Controllers\Home.php(430): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->obtenerNotificacionesAjax()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+CRITICAL - 2026-03-17 17:54:26 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 430.
+ 1 APPPATH\Controllers\Home.php(430): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->obtenerNotificacionesAjax()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+CRITICAL - 2026-03-17 17:54:33 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 430.
+ 1 APPPATH\Controllers\Home.php(430): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->obtenerNotificacionesAjax()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+CRITICAL - 2026-03-17 17:54:45 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 430.
+ 1 APPPATH\Controllers\Home.php(430): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->obtenerNotificacionesAjax()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+CRITICAL - 2026-03-17 23:54:47 --> Call to a member function can() on null
+in APPPATH\Config\Auth.php on line 452.
+ 1 VENDORPATH\codeigniter4\shield\src\Controllers\LoginController.php(103): Config\Auth->logoutRedirect()
+ 2 SYSTEMPATH\CodeIgniter.php(915): CodeIgniter\Shield\Controllers\LoginController->logoutAction()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(CodeIgniter\Shield\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+CRITICAL - 2026-03-17 23:54:51 --> Call to a member function can() on null
+in APPPATH\Config\Auth.php on line 452.
+ 1 VENDORPATH\codeigniter4\shield\src\Controllers\LoginController.php(103): Config\Auth->logoutRedirect()
+ 2 SYSTEMPATH\CodeIgniter.php(915): CodeIgniter\Shield\Controllers\LoginController->logoutAction()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(CodeIgniter\Shield\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+CRITICAL - 2026-03-17 17:55:31 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 430.
+ 1 APPPATH\Controllers\Home.php(430): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->obtenerNotificacionesAjax()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+CRITICAL - 2026-03-17 17:55:31 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 430.
+ 1 APPPATH\Controllers\Home.php(430): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->obtenerNotificacionesAjax()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+CRITICAL - 2026-03-17 17:55:36 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 430.
+ 1 APPPATH\Controllers\Home.php(430): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->obtenerNotificacionesAjax()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+CRITICAL - 2026-03-17 17:55:43 --> count(): Argument #1 ($value) must be of type Countable|array, bool given
+in APPPATH\Controllers\Home.php on line 430.
+ 1 APPPATH\Controllers\Home.php(430): count(false)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->obtenerNotificacionesAjax()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')
+CRITICAL - 2026-03-17 23:57:26 --> Call to a member function can() on null
+in APPPATH\Config\Auth.php on line 452.
+ 1 VENDORPATH\codeigniter4\shield\src\Controllers\LoginController.php(103): Config\Auth->logoutRedirect()
+ 2 SYSTEMPATH\CodeIgniter.php(915): CodeIgniter\Shield\Controllers\LoginController->logoutAction()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(CodeIgniter\Shield\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\proyectopanaderia-server\\public\\index.php')

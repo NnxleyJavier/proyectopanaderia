@@ -170,6 +170,9 @@
         
         </div>
     </div>
+<div class="d-flex justify-content-center my-4">
+    <img src="https://prodigits.co.uk/content4/wallpapers/2024/p2/28/s6ad6853.jpg" alt="Imagen decorativa" class="img-fluid rounded shadow" style="max-width: 400px;">
+</div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>

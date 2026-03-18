@@ -21,19 +21,19 @@
             <div class="card card-aurorita">
                 <div class="card-header-custom" id="headingOne">
                     <h5 class="mb-0 w-100">
-                        <button class="btn btn-accordion focus-none" type="button" data-toggle="collapse" data-target="#collapsePedidos" aria-expanded="false" aria-controls="collapsePedidos">
+                        <button class="btn btn-accordion focus-none" type="button" data-toggle="collapse" data-target="#collapsePedidos" aria-expanded="true" aria-controls="collapsePedidos">
                             <div class="d-flex align-items-center">
                                 <div class="icon-circle bg-icon-orders">
                                     <i class="fas fa-shopping-basket"></i>
                                 </div>
                                 <span>Pedidos Especiales</span>
                             </div>
-                            <i class="fas fa-chevron-down text-secondary"></i>
+                            <i class="fas fa-chevron-down text-secondary" style="transform: rotate(180deg);"></i>
                         </button>
                     </h5>
                 </div>
 
-                <div id="collapsePedidos" class="collapse" aria-labelledby="headingOne">
+                <div id="collapsePedidos" class="collapse show" aria-labelledby="headingOne">
                     <div class="card-body p-0">
                         <div class="list-group list-group-flush">
                             <?php if (empty($ConsultaPedidos)): ?>

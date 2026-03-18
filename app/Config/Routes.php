@@ -68,6 +68,7 @@ $routes->get('/Eliminarpanadero','Home::VistaEliminarRegistroProduccion',['filte
 $routes->post('/SeleccionarYEliminarPanadero','Home::SeleccionarYEliminarPanadero');
 $routes->get('/VistaReportePanadero','Home::VistaReportePanadero',['filter'=>'PermissionFilter:user.access']);
 
+$routes->get('/obtenerNotificacionesAjax', 'Home::obtenerNotificacionesAjax');
 
 // seccion de Distribucion
 $routes->get('/Vista_Produccion_Registrado','Home::Vista_Produccion_Registrado',['filter'=>'PermissionFilter:distribucion.access']);

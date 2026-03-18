@@ -14,7 +14,7 @@
         /* Estilos Globales */
         body {
             /* Imagen de fondo fija */
-            background-image: url('../Recursos/zyro-image.png');
+            background-image: url('http://213.210.13.29/proyectopanaderia-server/public/Recursos/zyro-image.png');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;

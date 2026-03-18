@@ -446,6 +446,7 @@ class Auth extends ShieldAuth
      * Returns the URL that a user should be redirected
      * to after they are logged out.
      */
+    //componer estos redireccionamientos para que dependiendo del rol del usuario redirija a una pagina u otra
     public function logoutRedirect(): string
     {
         if (auth()->user()->can('user.access')) {
