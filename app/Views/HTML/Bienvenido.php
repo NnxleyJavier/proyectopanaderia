@@ -53,7 +53,7 @@
 
                 </div>
                 <div class="modal-footer" style="border-top: 1px solid #444;">
-                    <a href="<?= base_url('/Produccion_Deseada') ?>" class="btn btn-outline-info">Ver panel de Producción</a>
+                    <a href="<?= base_url('/mostrarPedidos') ?>" class="btn btn-outline-info">Ver panel de Producción</a>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>

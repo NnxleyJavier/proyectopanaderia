@@ -41,6 +41,9 @@
                     <a class="dropdown-item" href="<?= base_url('/mermas') ?>">
                         <i class="fas fa-trash-alt me-2 text-muted"></i> Registrar Mermas
                     </a>
+                    <a class="dropdown-item" href="<?= base_url('/mostrarPedidos') ?>">
+                        <i class="fas fa-trash-alt me-2 text-muted"></i> Mostrar Pedidos del Día
+                    </a>
                 </div>
             </li>
 

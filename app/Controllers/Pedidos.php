@@ -10,46 +10,29 @@ use App\Models\UtileriasSucursalesModel;
 use App\Models\MermasModel;
 use App\Models\Produccion_Deseada;
 use App\Models\mermasfinalesdescompuestos;
+use App\Models\TablaSucursales;
 
 
 class Pedidos extends BaseController
 {
-    public function index()
-    {
-
-        if (auth()->user()->inGroup('admin')) {
-
-            $datos_Productos = new Productos();
-            $select_Productos = $datos_Productos->Buscar_productos();
-
-
-            $vistaProduccionDeseada =
-                view('html/Cabecera') .
-                view('html/menu') .
-                view('html/pedidos',array('Productos' => $select_Productos));
-
-            return $vistaProduccionDeseada;
+public function index()
+{
+    // ... código existente de productos ...
+  	$modelo_productos = new Productos();
+	$modelo_sucursales = new TablaSucursales(); // Usamos tu modelo existente
+  
+$data = [
+        'Productos'  => $modelo_productos->Buscar_productos(),
+        'Sucursales' => $modelo_sucursales->Buscar_Sucursales() // Llamada correcta al modelo
+    ];
 
 
+  $vista = auth()->user()->inGroup('admin') ? 'html/menu' : 'html/menuvendedoras';
 
-        }else{
-
-            $datos_Productos = new Productos();
-            $select_Productos = $datos_Productos->Buscar_productos();
-
-
-            $vistaProduccionDeseada =
-                view('html/Cabecera') .
-                view('html/menuvendedoras') .
-                view('html/pedidos',array('Productos' => $select_Productos));
-
-            return $vistaProduccionDeseada;
-        }
-
-
-
-
-    }
+    return view('html/Cabecera') .
+           view($vista) .
+           view('html/pedidos', $data);
+}
 
     public function AgregarPedidos()
     {
@@ -69,20 +52,24 @@ class Pedidos extends BaseController
 			$Fecha_Pedido = trim($this->request->getPost("fecha"));
 			$Cantidad_requerida = trim($this->request->getPost("cantidad"));
 			$Productos_idProductos = trim($this->request->getPost("Nombre_Producto"));
+			$NumeroTelefono = trim($this->request->getPost("telefono"));
+			$sucursal_recoleccion = trim($this->request->getPost("sucursal_recoleccion"));
 		}
 		if (
 			isset($Nombre_Cliente) && !empty($Nombre_Cliente) &&
 			isset($Fecha_Pedido) && !empty($Fecha_Pedido) &&
 			isset($Cantidad_requerida) && !empty($Cantidad_requerida) &&
-			isset($Productos_idProductos) && !empty($Productos_idProductos)
-
+			isset($Productos_idProductos) && !empty($Productos_idProductos) &&
+			isset($NumeroTelefono) && !empty($NumeroTelefono) &&
+			isset($sucursal_recoleccion) && !empty($sucursal_recoleccion)
 		) {
 			$validarformpedidos = array(
 				"Nombre_Cliente" => $Nombre_Cliente,
 				"Fecha_Pedido" => $Fecha_Pedido,
 				"Cantidad_requerida" => $Cantidad_requerida,
-				"Productos_idProductos" => $Productos_idProductos
-
+				"Productos_idProductos" => $Productos_idProductos,
+				"NumeroTelefono" => $NumeroTelefono,
+				"sucursal_recoleccion" => $sucursal_recoleccion
 			);
 			
 			return $validarformpedidos;
@@ -256,19 +243,27 @@ class Pedidos extends BaseController
 	private function validarpedidosLimpieza(){
 		$controlerHome = new Home();
 
+		$Cantidad_Pedido = null;
+		$almacen_idAlmacen = null;
+		$Fecha_Pedido = null;
+		$User_id = null;
+
 		if ($this->request->getPost()) {
 			$Cantidad_Pedido = trim($this->request->getPost("Cantidad_Pedido"));
 			$almacen_idAlmacen = trim($this->request->getPost("almacen_idAlmacen"));
-			$Fecha_Pedido = $Fecha_Pedido = $controlerHome->fecha();
+			$Fecha_Pedido = $controlerHome->fecha();
 			$User_id = trim($this->request->getPost("users_id"));
+		} else {
+			echo "❌ Error: No hay datos POST.";
+			return false;
 		}
+
 		if (
-			$almacen_idAlmacen !== 'sin_dato'||
 			isset($Cantidad_Pedido) && !empty($Cantidad_Pedido) &&
 			isset($almacen_idAlmacen) && !empty($almacen_idAlmacen) &&
-			isset($Fecha_Pedido) && !empty($Fecha_Pedido) && 
+			$almacen_idAlmacen !== 'sin_dato' &&
+			isset($Fecha_Pedido) && !empty($Fecha_Pedido) &&
 			isset($User_id) && !empty($User_id)
-
 		) {
 			$validarformpedidos = array(
 				"Cantidad_Pedido" => $Cantidad_Pedido,
@@ -277,9 +272,8 @@ class Pedidos extends BaseController
 				"users_id" => $User_id,
 				"Estado" => "Pendiente",
 				"Fecha_Entrega" => Null
-
 			);
-			
+
 			return $validarformpedidos;
 		} else {
 			echo "❌ Error: Faltan campos obligatorios.";
@@ -424,7 +418,24 @@ private function validarDatosMerma()
 
 
 
+public function mostrarPedidosPanes()
+    {
+        $modeloPedidos = new PedidosModel();
+        
+        // 1. Obtenemos la fecha actual del servidor
+        $fechaHoy = date('Y-m-d');
+        
+        // 2. Ejecutamos la función filtrando por la fecha de hoy
+        $listaPedidos = $modeloPedidos->ObtenerPedidosPanesHoy($fechaHoy);
 
+        // 3. Validamos el grupo para saber qué menú cargar
+        $vistaMenu = auth()->user()->inGroup('admin') ? 'html/menu' : 'html/menuvendedoras';
+
+        // 4. Retornamos la vista unida
+        return view('html/Cabecera') .
+               view($vistaMenu) .
+               view('html/vista_pedidos_panes', array('Pedidos' => $listaPedidos));
+    }
 	
 
 

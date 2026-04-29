@@ -14,7 +14,7 @@ class PedidosModel extends Model
     protected $useSoftDeletes   = false;
 
 
-    protected $allowedFields    = ['Nombre_Cliente','Fecha_Pedido','Cantidad_requerida','Productos_idProductos'];
+    protected $allowedFields    = ['Nombre_Cliente','Fecha_Pedido','Cantidad_requerida','Productos_idProductos','NumeroTelefono','sucursal_recoleccion'];
 
     // Dates
     protected $useTimestamps = false;
@@ -41,6 +41,21 @@ class PedidosModel extends Model
             return false; // Retorna false si no hay pedidos
         }
       
+    }
+    public function ObtenerPedidosPanesHoy($fecha)
+    {
+        // Seleccionamos los datos incluyendo el teléfono y la sucursal de recolección
+        $resultado = $this->select('pedidos.Nombre_Cliente, pedidos.Cantidad_requerida, pedidos.NumeroTelefono, pedidos.Fecha_Pedido, productos.Nombre_Producto, sucursales.NombreSucursal as SucursalRecoleccion')
+            ->join('productos', 'productos.idProductos = pedidos.Productos_idProductos', 'left')
+            ->join('sucursales', 'sucursales.idSucursales = pedidos.sucursal_recoleccion', 'left')
+            ->where('pedidos.Fecha_Pedido', $fecha)
+            ->findAll();
+    
+        if ($resultado) {
+            return $resultado;
+        } else {
+            return false; 
+        }
     }
 
 

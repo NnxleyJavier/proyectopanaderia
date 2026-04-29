@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panadería Aurorita | Gestión</title>
+
+    <link rel="manifest" href="<?= base_url('manifest.json') ?>">
+
+    <meta name="theme-color" content="#181a1f">
+
+        <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('<?= base_url('sw.js') ?>').then(function(registration) {
+        console.log('ServiceWorker registrado con éxito');
+      }, function(err) {
+        console.log('Error al registrar ServiceWorker: ', err);
+      });
+    });
+  }
+        </script>
     
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">

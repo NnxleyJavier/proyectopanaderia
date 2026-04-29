@@ -103,6 +103,7 @@ $routes->post('/Registrar_Solicitud_Material','Pedidos::Registrar_Solicitud_Mate
 $routes->post('/Registrar_mercancia_sucursal','Home::Registrar_mercancia_sucursal');
 $routes->post('/ActualizarMermas', 'Pedidos::ActualizarMermas');
 
+$routes->get('/mostrarPedidos', 'Pedidos::mostrarPedidosPanes');
 
 $routes->get('/Error_401', 'Home::Error_401');
 

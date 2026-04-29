@@ -49,7 +49,7 @@
                     </div>
                     
                     <div class="list-group list-group-flush" id="lista-notificaciones" style="max-height: 250px; overflow-y: auto;">
-                        <a href="<?= base_url('/Produccion_Deseada') ?>" class="list-group-item list-group-item-action text-white" style="background-color: transparent; border-bottom: 1px solid #333;">
+                        <a href="<?= base_url('/mostrarPedidos') ?>" class="list-group-item list-group-item-action text-white" style="background-color: transparent; border-bottom: 1px solid #333;">
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-shopping-basket text-info mr-3"></i>
                                 <div>
@@ -103,7 +103,7 @@ $(document).ready(function() {
                     if (totalAvisos > 0) {
                         $.each(respuesta.pedidos, function(nombreProducto, cantidad) {
                             let itemHtml = `
-                                <a href="<?= base_url('/Produccion_Deseada') ?>" class="list-group-item list-group-item-action text-white" style="background-color: transparent; border-bottom: 1px solid #333;">
+                                <a href="<?= base_url('/mostrarPedidos') ?>" class="list-group-item list-group-item-action text-white" style="background-color: transparent; border-bottom: 1px solid #333;">
                                     <div class="d-flex align-items-center">
                                         <i class="fas fa-bread-slice text-info mr-3"></i>
                                         <div>
